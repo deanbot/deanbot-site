@@ -7,7 +7,7 @@ create config.src, i.e.
 ```sh
 _key='/home/[user]/.ssh/[key]'
 _remote='[user]@[host]:[dir]/'
-_local='/opt/lampp/htdocs/[dir]/'
+_local='/path/to/htdocs/[dir]/'
 ```
 
 ## Create symbolic links
@@ -15,6 +15,6 @@ _local='/opt/lampp/htdocs/[dir]/'
 i.e.
 
 ```sh
-ln -s /opt/lampp/htdocs/[dir]/.sync/sync-up.sh /home/[user]/bin/sync-up.[name]
-ln -s /opt/lampp/htdocs/[dir]/.sync/sync-down.sh /home/[user]/bin/sync-down.[name]
+ln -s /path/to/htdocs/[dir]/.sync/sync-up.sh /home/[user]/bin/sync-up.[name]
+ln -s /path/to/htdocs/[dir]/.sync/sync-down.sh /home/[user]/bin/sync-down.[name]
 ```

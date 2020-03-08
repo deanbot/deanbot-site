@@ -42,4 +42,7 @@ Icon
 # twtxt
 twtxt.txt
 
+# sync module config
 .sync/config*
+
+setOwner.sh

@@ -1,3 +1,5 @@
 .sync
+site/sessions
 twtxt.txt
 .git
+*.sh
