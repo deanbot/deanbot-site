@@ -1,0 +1,19 @@
+# Exports:
+#   - Methods: y_or_n_val
+y_or_n_val() {
+  local __prompt="$1"
+  local __default="$2"
+  while true; do
+    if [ ! -z "$__default" ]; then
+      read -e -p "$__prompt" -i "$__default" val
+    else
+      read -e -p "$__prompt" val
+    fi
+    if [ ! -z "$val" ]; then
+      if [[ "$val" =~ ^([yY]|[nN])$ ]]; then
+        break
+      fi
+    fi
+  done
+  echo "$val"
+}
