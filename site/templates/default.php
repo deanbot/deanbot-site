@@ -36,6 +36,5 @@
   <script src="https://www.google-analytics.com/analytics.js" async></script>
   */
   ?>
-  <?php echo get_current_user(); ?>
 </body>
 </html>
