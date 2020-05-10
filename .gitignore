@@ -46,3 +46,4 @@ twtxt.txt
 .sync/config*
 
 setOwner.sh
+/example-*

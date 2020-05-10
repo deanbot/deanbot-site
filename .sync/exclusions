@@ -3,3 +3,7 @@ site/sessions
 twtxt.txt
 .git
 *.sh
+node_modules
+package.json
+tools
+src
