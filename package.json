@@ -4,7 +4,7 @@
   "description": "dev tooling for spirited refactor site",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch",
+    "start": "node ./tools/srcServer.js",
     "build": "cross-env NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
