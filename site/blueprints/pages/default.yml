@@ -1,8 +1,10 @@
 title: Default Page
 preset: page
 fields:
+  pageTitle:
+    label: Page Title
+    type: text
   text:
     label: Text
     type: textarea
     size: large
-

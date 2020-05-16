@@ -42,9 +42,12 @@ Icon
 # twtxt
 twtxt.txt
 
+# pgp
+pgp.txt
+
 # sync module config
 .sync/config*
-
 setOwner.sh
-/example-*
+
+# node modules
 node_modules

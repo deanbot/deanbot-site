@@ -1,0 +1,10 @@
+.footer {
+  margin-top: 2.5rem;
+  @media (min-width: $screen-sm-min) {
+    height: 100px;
+    margin: 60px auto;
+  }
+  .meta {
+    padding-bottom: 1.5em;
+  }
+}

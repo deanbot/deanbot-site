@@ -18,14 +18,14 @@ module.exports = {
         'webpack-hot-middleware/client?reload=true'
       ],
       'assets/builds/bundle.css': [
-        './src/scss/main.scss',
+        './src/scss/site.scss',
         'webpack-hot-middleware/client?reload=true'
       ]
     }
     : {
       'assets/builds/bundle': [
         './src/index.js',
-        './src/scss/main.scss'
+        './src/scss/site.scss'
       ]
     },
   output: {

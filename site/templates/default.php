@@ -1,16 +1,20 @@
 <?php snippet('header') ?>
 
-<?php
-  $breaths = array(
-    "breathe",
-    "atmen",
-    "respirer",
-  );
-  $roll = rand( 0, count( $breaths ) - 1 );
-  $breathe = $breaths[$roll];
-?>
-  <div>
-    <h1><?php echo $breathe ?></h1>
-  </div>
+  <main>
+    <div class="container">
+      <header class="page-header">
+        <h1>
+          <?php
+            $title = $page->pageTitle()->html();
+            if ($title == '') {
+              $title = $page->title()->html();
+            }
+            echo $title;
+          ?>
+        </h1>
+      </header>
+      <?= $page->text()->kt() ?>
+    </div>
+  </main>
 
 <?php snippet('footer'); ?>

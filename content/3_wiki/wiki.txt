@@ -1,0 +1,5 @@
+Title: Wiki
+
+----
+
+Text: A future digital catalog of notes.

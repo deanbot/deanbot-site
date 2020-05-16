@@ -2,8 +2,13 @@
 site/sessions
 twtxt.txt
 .git
+.gitignore
 *.sh
 node_modules
 package.json
 tools
 src
+pnpm-lock.yaml
+README.md
+webpack*
+config/

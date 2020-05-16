@@ -1,0 +1,28 @@
+Title: About
+
+----
+
+PageTitle: About Me
+
+----
+
+Text:
+
+I'm Dean Verleger, a **full stack developer** who loves to open source. I'm currently maintaining a large (link: https://www.typescriptlang.org/ text: TypeScript target: _blank) and (link: https://reactjs.org/ text: React target: _blank), (link: https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview text: SharePoint Framework target: _blank), codebase with (link: https://rushjs.io/ text: rush target: _blank). Refactoring code and building automations put me in the zone. Writing readme's is my zen. I love to learn, and I strive to maintain a good work/life balance.
+
+## Currently
+- Living in Wisconsin with my amazing wife Krista and our dreamy dog Knödel.
+- Studying German with course books, flash cards, and short-stories.
+- Making SPFX web parts, Azure automations, and bash/PowerShell tooling at (link: https://www.envistacorp.com/ text: EnVista target: _blank).
+- Making habit tracking console app.
+- Reading "The Witcher" series.
+- Practicing the art of tidying.
+
+## Previously
+- Programmed the EnVista (link: https://www.envistacorp.com/ text: website target: _blank) using sass, WordPress, and JavaScript.
+- Worked for veggies at (link: https://bluemooncommunityfarm.com/ text: Blue Moon Community Farm target: _blank).
+- Made SharePoint Apps and WordPress sites at Apparatus/Virtusa until 2017.
+- Started keeping a bullet journal.
+- Hosted and created WordPress sites with (link: https://www.biancagarfias.com/ text: Bianca Garfias target: _blank) and Anja Komoniki.
+- I cut my teeth making WordPress sites at (link: https://web.archive.org/web/20130906081002/http://silversquareinc.com/meet-the-squares/#dean text: Silver Square target: _blank) from 2010-2013.
+- Made Flash games in college with (link: https://jackiecrofts.com/ text: Jackie Crofts target: _blank) and (link: https://www.instagram.com/mushmuse/ text: Becca Cromer target: _blank).
