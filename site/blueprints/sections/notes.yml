@@ -1,0 +1,6 @@
+type: pages
+headline: Notes
+info: "{{ page.date.toDate('d.m.Y') }}"
+template: note
+empty: No notes yet
+sortBy: date desc

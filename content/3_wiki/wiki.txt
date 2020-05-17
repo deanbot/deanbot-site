@@ -2,4 +2,4 @@ Title: Wiki
 
 ----
 
-Text: A future digital catalog of notes.
+Text: This wiki or (link: /wiki/memex text: memex) is a type of personal knowledge base which I use to store digital notes.

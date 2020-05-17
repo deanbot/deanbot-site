@@ -1,0 +1,25 @@
+Title: Memex
+
+----
+
+Pagetitle: Memex or "memory index
+
+----
+
+Text:
+
+Since the concept of a memex predates the internet, any instance of one is an interpretation. In the minimalist interpretation a  memex might be described simply as a **personal wiki** though with most hypothetical proto-computing, proto-hypertext, or proto-internet imaginings a *simple* description seems reductive. As a hypothetical idea, a memex is an intimate personal digital assistant connecting the user to their media and the information they acquire.
+
+This wiki is a digital playground and catalog of notes and references I've found useful to record. It's is a living system and as such it will always be incomplete - a work in progress.. and *I'm okay with that*.
+
+## References & Credits
+
+> "Consider a future device, a sort of mechanized private library in which an individual stores all his books, records, and communications, and which may be consulted with exceeding speed and flexibility. It is an enlarged intimate supplement to his memory."
+
+—**Vannevar Bush, "As We May Think"**
+
+> [...], a kind of archive and mirror of everything that one has done, that one has learnt. It's a living document that outlines where one has been, and a tool that advises where one could go.
+
+—**Devine Lu Linvega, "XXIVV"**
+
+Note: This site is highly inspired by the website of (link: https://wiki.xxiivv.com/ text: Devine Lu Linvega). I encourage you to get lost in their website. In comparison mine is much more straightforward.

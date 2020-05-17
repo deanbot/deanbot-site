@@ -1,0 +1,31 @@
+title: Notes
+icon: 📚
+
+columns:
+  left:
+    width: 1/2
+    sections:
+      intro:
+        type: fields
+        fields:
+          text:
+            label: Text
+            type: textarea
+
+  right:
+    width: 1/2
+    sections:
+      drafts:
+        extends: sections/notes
+        headline: Drafts
+        status: draft
+
+      listed:
+        extends: sections/notes
+        headline: Published Notes
+        status: listed
+
+      unlisted:
+        extends: sections/notes
+        headline: Unlisted Notes
+        status: unlisted

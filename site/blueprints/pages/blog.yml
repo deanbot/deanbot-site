@@ -1,0 +1,10 @@
+title: Blog
+preset: pages
+fields:
+  pageTitle:
+    label: Page Title
+    type: text
+  text:
+    label: Text
+    type: textarea
+    size: large

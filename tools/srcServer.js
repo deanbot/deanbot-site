@@ -10,8 +10,8 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../webpack.config');
 const devConfig = require('../config/devConfig');
-
 const bundler = webpack(config);
+const projectRoot = path.join(__dirname, '..');
 
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
@@ -22,7 +22,6 @@ browserSync({
   proxy: {
     target: devConfig.proxyUrl,
     middleware: [
-
       webpackDevMiddleware(bundler, {
         publicPath: '/',
 
@@ -52,13 +51,18 @@ browserSync({
     }],
   },
   https: false,
-  open: true,
+  open: false,
   notify: false,
   files: [
-    path.join(__dirname, 'assets', '**/*'),
-  ],
+    path.join(projectRoot, 'site', '**/*'),
+
+    (devConfig.reloadOnContentChange
+      ? path.join(projectRoot, 'content', '**/*')
+      : null)
+  ]
+    .filter(_ => !!_),
   // watchOptions: {
   //   ignoreInitial: true,
   // }
-  // reloadOnRestart: true,
+  reloadOnRestart: true,
 });

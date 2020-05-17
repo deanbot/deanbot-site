@@ -11,7 +11,7 @@
   <?php //echo js('assets/builds/bundle.js') ?>
     <footer class="footer container">
       <div class="meta">
-        <a href="<?= $site->licenseUrl()->html() ?>" target="_blank"><?= $site->license()->html() ?></a> - <a href="<?= $site->sourceUrl()->html() ?>">Source Code</a>
+        <a class="self" href="<?= $site->url() ?>"><?= $site->title() ?></a> © <?= Date('Y') ?> - <a href="<?= $site->licenseUrl()->html() ?>" target="_blank"><?= $site->license()->html() ?></a> - <a href="<?= $site->sourceUrl()->html() ?>">Source Code</a>
       </div>
 
       <nav class="links">
