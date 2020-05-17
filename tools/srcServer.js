@@ -52,9 +52,11 @@ browserSync({
     }],
   },
   https: false,
-  open: false,
+  open: true,
   notify: false,
-  files: [path.join(__dirname, 'assets', '**/*')],
+  files: [
+    path.join(__dirname, 'assets', '**/*'),
+  ],
   // watchOptions: {
   //   ignoreInitial: true,
   // }

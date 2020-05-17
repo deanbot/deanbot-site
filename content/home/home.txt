@@ -2,4 +2,8 @@ Title: Home
 
 ----
 
-Text: 
+Text:
+
+# Hi, I'm Dean.
+
+I'm a full stack developer specializing in modern javascript development and SharePoint development. I come from a PHP/front-end background. Now I straddle something between dev-ops and developer.

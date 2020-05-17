@@ -8,18 +8,18 @@ PageTitle: About Me
 
 Text:
 
-I'm Dean Verleger, a **full stack developer** who loves to open source. I'm currently maintaining a large (link: https://www.typescriptlang.org/ text: TypeScript target: _blank) and (link: https://reactjs.org/ text: React target: _blank), (link: https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview text: SharePoint Framework target: _blank), codebase with (link: https://rushjs.io/ text: rush target: _blank). Refactoring code and building automations put me in the zone. Writing readme's is my zen. I love to learn, and I strive to maintain a good work/life balance.
+I'm Dean Verleger, a **full stack developer** who loves to (link: https://github.com/deanbot text: open source target: _blank). I'm currently building .NET & React SPAs and maintaining a large TypeScript, SharePoint Framework, codebase with (link: https://rushjs.io/ text: rush target: _blank) at (link: https://www.envistacorp.com/ text:EnVista target: _blank). Refactoring code and building automations put me in the zone. Writing readme's is my zen. I love to learn, and I strive to maintain a good work/life balance.
 
 ## Currently
 - Living in Wisconsin with my amazing wife Krista and our dreamy dog Knödel.
 - Studying German with course books, flash cards, and short-stories.
-- Making SPFX web parts, Azure automations, and bash/PowerShell tooling at (link: https://www.envistacorp.com/ text: EnVista target: _blank).
-- Making habit tracking console app.
+- Making SPFX web parts, .NET React SPAs, Azure automations, and bash/PowerShell tooling at (link: https://www.envistacorp.com/ text: EnVista target: _blank).
+- Making a habit tracking console app.
 - Reading "The Witcher" series.
 - Practicing the art of tidying.
 
 ## Previously
-- Programmed the EnVista (link: https://www.envistacorp.com/ text: website target: _blank) using sass, WordPress, and JavaScript.
+- Programmed the EnVista (link: https://www.envistacorp.com/ text: website target: _blank).
 - Worked for veggies at (link: https://bluemooncommunityfarm.com/ text: Blue Moon Community Farm target: _blank).
 - Made SharePoint Apps and WordPress sites at Apparatus/Virtusa until 2017.
 - Started keeping a bullet journal.

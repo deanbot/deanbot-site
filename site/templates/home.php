@@ -1,17 +1,8 @@
 <?php snippet('header') ?>
 
-  <main>
-    <?php
-      $breaths = array(
-        "breathe",
-        "atmen",
-        "respirer",
-      );
-      $roll = rand( 0, count( $breaths ) - 1 );
-      $breathe = $breaths[$roll];
-    ?>
+  <main class="">
     <div class="container">
-      <h1><?php echo $breathe ?></h1>
+      <?= $page->text()->kt() ?>
     </div>
   </main>
 

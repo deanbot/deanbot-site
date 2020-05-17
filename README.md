@@ -4,7 +4,7 @@
 
 ## Requirements
 
-Kirby runs on PHP 7.1+, Apache or Nginx.
+Kirby runs on PHP 7.1+, Apache or Nginx. Dev tooling uses node v10.16.
 
 ## Develop
 
