@@ -10,5 +10,5 @@ tools
 src
 pnpm-lock.yaml
 README.md
-webpack*
-config/
+webpack.config.js
+/config
