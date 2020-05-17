@@ -2,4 +2,8 @@ Title: Blog
 
 ----
 
-Text: A future index of musings. Come back later once I've written about my projects¸ hobbies, and highly-specific, surely ephemeral, technical finds which I hope will benefit the talented passerby.
+Pagetitle: 
+
+----
+
+Text: A future index of musings. Come back later once I've written about my projects, hobbies, and highly-specific, surely ephemeral, technical finds which I hope will benefit the talented passerby.
