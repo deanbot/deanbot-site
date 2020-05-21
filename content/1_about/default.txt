@@ -12,8 +12,9 @@ I'm Dean Verleger, a **full stack developer** who loves to (link: https://github
 
 ## Currently
 - Living in Wisconsin with my amazing wife Krista and our dreamy dog Knödel.
-- Studying German with course books, flash cards, and short-stories.
+- Studying German with course books, flash cards, and short stories.
 - Making SPFX web parts, .NET React SPAs, Azure automations, and bash/PowerShell tooling at (link: https://www.envistacorp.com/ text: EnVista target: _blank).
+- Learning Linux.
 - Making a habit tracking console app.
 - Reading "The Witcher" series.
 - Practicing the art of tidying.

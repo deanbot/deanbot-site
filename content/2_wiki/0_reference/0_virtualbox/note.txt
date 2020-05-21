@@ -1,0 +1,26 @@
+Title: VirtualBox
+
+----
+
+Pagetitle: 
+
+----
+
+Text:
+
+(link: https://www.virtualbox.org/manual/UserManual.html text: Docs)
+
+**List vms**
+`vboxmanage list vms`
+or
+`vboxmanage list runningvms`
+
+**Start vm**
+`vboxmanage startvm <name or UUID>`
+
+**Pause or Resume**
+`vboxmanage controlvm <name or UUID> pause`
+`vboxmanage controlvm <name or UUID> resume`
+
+**Poweroff / Shutdown**
+`vboxmanage controlvm <name or UUID> poweroff`
