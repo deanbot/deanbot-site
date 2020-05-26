@@ -31,7 +31,7 @@ module.exports = {
   output: {
     publicPath: '/',
     path: path.resolve(__dirname),
-    filename: '[name]',
+    filename: dev ? '[name]' : '[name].js',
     // chunkFilename: '[name].[id].chunk.js'
   },
   plugins: dev
