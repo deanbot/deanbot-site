@@ -1,8 +1,10 @@
 <?php snippet('header') ?>
 
-  <main class="">
+  <main class="home">
     <div class="container">
-      <?= $page->text()->kt() ?>
+      <div>
+        <?= $page->text()->kt() ?>
+      </div>
     </div>
   </main>
 

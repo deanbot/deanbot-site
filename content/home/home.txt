@@ -6,8 +6,4 @@ Pagetitle:
 
 ----
 
-Text:
-
-# Hi, I'm Dean.
-
-I'm a full stack developer specializing in modern javascript development and SharePoint development. I come from a PHP/front-end background. Now I straddle something between dev-ops and developer.
+Text: Hello, I'm (link: /about text: Dean Verleger), a programmer specializing in modern JavaScript development and SharePoint development. I come from a PHP/front-end background. Now I straddle something between dev-ops and developer. I keep a (link: /blog text: blog) where you can read about my projects, hobbies, and technical musings. You can also flip through notes I've written in the (link: /wiki text: wiki) - I'm continually adding more. Please stay and explore!

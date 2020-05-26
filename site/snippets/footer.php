@@ -1,17 +1,27 @@
-  <?php
-  /*
-  !-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-  */
-  ?>
-  <?php //echo js('assets/builds/bundle.js') ?>
+    <?php
+    /*
+    !-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+      ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    */
+    ?>
+    <?php echo js('assets/builds/bundle.js') ?>
     <footer class="footer container">
       <div class="meta">
-        <a class="self" href="<?= $site->url() ?>"><?= $site->title() ?></a> © <?= Date('Y') ?> - <a href="<?= $site->licenseUrl()->html() ?>" target="_blank"><?= $site->license()->html() ?></a> - <a href="<?= $site->sourceUrl()->html() ?>">Source Code</a>
+        <div>
+          <a class="self" href="<?= $site->url() ?>"><?= $site->title() ?></a> © <?= Date('Y') ?>
+        </div>
+        <span> - </span>
+        <div>
+          <a href="<?= $site->licenseUrl()->html() ?>" target="_blank"><?= $site->license()->html() ?></a>
+        </div>
+        <span> - </span>
+        <div>
+          <a href="<?= $site->sourceUrl()->html() ?>">Source Code</a>
+        </div>
       </div>
 
       <nav class="links">

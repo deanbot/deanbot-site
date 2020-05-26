@@ -1,20 +1,81 @@
-$offset: 30px;
-main {
-  // margin-top: $header-height-sm + $offset;
-  // @media (min-width: $screen-sm-min) {
-  //   margin-top: $header-height-lg + $offset;
-  // }
-  padding-top: 1rem;
-  .page-header {
-    margin-bottom: 1.5rem;
-    .meta {
-      font-size: .9rem;
-    }
+html {
+  background-color: $color-background;
+}
+
+p,
+ol,
+ul,
+dl,
+table {
+  margin: 0 0 1.5rem 0;
+}
+
+ul li ul {
+  margin-bottom: 0;
+}
+
+ol li ol {
+  margin-bottom: 0;
+}
+
+// blockquote
+blockquote {
+  margin: 0 0 1.5rem 0;
+  border-left: 16px solid $color-border;
+  padding: 0 1.5rem;
+  font-size: 1.5rem;
+  cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    text-align: right;
   }
-  p {
-    line-height: 1.5rem;
+}
+
+// pre, code, kbd
+pre {
+  border: 0;
+  border-radius: 4px;
+  background: $color-background-alt;
+  padding: 1rem;
+  tab-size: 2;
+  color: $color-body;
+  font-family: $font-mono;
+  font-size: 14px;
+  margin: 0 0 1.5rem 0;
+  code {
+    font-family: $font-mono;
+    line-height: 1.2;
   }
-  figure {
-    margin: 0 0 1.5rem 0;
-  }
+}
+
+:not(pre) > code {
+  color: $color-theme-accent;
+  background: transparent;
+  font-family: $font-mono;
+  // font-size: 14px;
+  padding: 0 0.2rem;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+}
+
+kbd {
+  display: inline-block;
+  background-color: $color-background-alt;
+  border: 1px solid $color-border;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  color: $color-body;
+  font-family: $font-mono;
+  // font-size: 13px;
+  // line-height: 1.4;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
+  text-shadow: 0 1px 0 #fff;
+}
+
+// Highlight
+mark {
+  background: $color-theme-tertiary;
+  padding: 0 0.2rem;
 }

@@ -1,0 +1,31 @@
+.footer {
+  margin-top: 2.5rem;
+  margin-bottom: $content-margin;
+  @include small-breakpoint {
+    height: 100px;
+    margin: $content-margin auto;
+  }
+  .meta {
+    padding-bottom: 1.5em;
+    span {
+      display: none;
+    }
+    @include small-breakpoint {
+      > div {
+        display: inline;
+      }
+      span {
+        display: inline;
+      }
+    }
+  }
+  a.self {
+    text-decoration: none;
+  }
+  a {
+    color: $color-body;
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}

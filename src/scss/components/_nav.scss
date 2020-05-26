@@ -1,0 +1,94 @@
+.bar {
+  height: 10px;
+  background-image: linear-gradient(90deg,$color-theme-darker 0,$color-theme-primary 35%,$color-theme-lighter);
+}
+.no-js {
+  .nav {
+    position: inherit;
+    .container {
+      transition: none;
+      @include small-breakpoint {
+        height: 60px;
+      }
+    }
+  }
+}
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: $color-background;
+  &.scroll {
+    box-shadow: 1px 2px 18px rgba(0,0,0,.1);
+    .container {
+      height: $header-height-sm;
+    }
+  }
+  .container {
+    transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $header-height-sm;
+    @include small-breakpoint {
+      height: $header-height-lg;
+    }
+  }
+  .brand {
+    display: flex;
+    justify-content: center;
+    a:before {
+      content: 'DV';
+      font-weight: bold;
+      padding: .35rem 0;
+    }
+    span {
+      display: none;
+    }
+    @include small-breakpoint {
+      display: block;
+      a:before {
+        content: '';
+      }
+      span {
+        display: inline;
+      }
+    }
+    a {
+      text-decoration: none;
+      font-size: 1.3rem;
+    }
+  }
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin-left: -.2rem;
+    margin-right: -.2rem;
+    @include small-breakpoint {
+      justify-content: flex-end;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    a {
+      text-decoration: none;
+      margin: 0 .2rem;
+      padding: .35rem;
+      @include small-breakpoint {
+        margin: 0 .5rem;
+        padding: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  a {
+    color: $color-body;
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}

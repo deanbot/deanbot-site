@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+}
+
+*,
+:after,
+:before,
+html {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+  @include small-breakpoint {
+    padding: 0 2rem;
+  }
+}
+
+$offset: 30px;
+.no-js {
+  main {
+    margin-top: 0;
+  }
+}
+main {
+  margin-top: $header-height-sm + $offset;
+  @include small-breakpoint {
+    margin-top: $header-height-lg + $offset;
+  }
+  > .container {
+    margin-top: 25px
+  }
+  // padding-top: 1rem;
+}

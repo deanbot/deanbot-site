@@ -13,6 +13,6 @@
   // This will enable the livereload feature when your are in development
   function liveCSS ($href, $media = null) {
     return isWebpack()
-      ? js($href . '.js')
+      ? js($href)
       : css($href, $media);
   }

@@ -2,4 +2,4 @@ Title: Wiki
 
 ----
 
-Text: This wiki or (link: /wiki/memex text: memex) is a type of personal knowledge base which I use to store digital notes.
+Text: This wiki or (link: /wiki/memex text: memex) is a personal knowledge base which I use to store digital notes.

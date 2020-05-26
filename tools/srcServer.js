@@ -34,7 +34,7 @@ browserSync({
           version: false,
           hash: false,
           timings: false,
-          chunks: false,
+          chunks: true,
           chunkModules: false
         }
         // for other settings see

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <title><?php
@@ -29,11 +29,11 @@
 </head>
 <body>
   <div>
-    <div class="bar"></div>
-    <nav class="nav">
+    <nav class="main-nav nav">
+      <div class="bar"></div>
       <div class="container">
         <div class="brand">
-          <a class="logo" href="<?= $site->url() ?>"><?= $site->title() ?></a>
+          <a class="logo" href="<?= $site->url() ?>"><span><?= $site->title() ?></span></a>
         </div>
 
         <div class="links">

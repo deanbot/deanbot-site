@@ -1,0 +1,15 @@
+.home {
+  .container > div {
+    @include small-breakpoint {
+      padding: 0 24px;
+    }
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    @include small-breakpoint {
+      line-height: 1.8;
+      font-size: 1.2rem;
+    }
+  }
+}

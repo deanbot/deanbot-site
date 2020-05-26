@@ -1,0 +1,30 @@
+Title: gpg
+
+----
+
+Pagetitle: 
+
+----
+
+Text:
+
+**generate key (simple)**
+`gpg --gen-key`
+
+**generate key (advaned)**
+`gpg --full-gen-key`
+select `(1) RSA and RSA (default)`
+enter 4096 for the key size
+enter 2y for 2 years expiration
+
+**output key**
+`gpg --armor --output key.txt --export email@address.com`
+
+**list keys**
+`gpg --list-keys`
+
+**delete secret key**
+`gpg --delete-secret-keys id-here`
+
+**delete public key**
+`gpg --delete-keys id-here`
