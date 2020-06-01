@@ -1,5 +1,6 @@
 title: Note
 num: zero
+icon: markdown
 
 status:
   draft:
@@ -10,7 +11,7 @@ status:
     text: The note is online and can be visited with the direct URL.
   listed:
     label: Published
-    text: The note is online and listed in the wiki
+    text: The note is online and listed in the wiki.
 
 columns:
   main:
@@ -23,6 +24,7 @@ columns:
         label: Text
         type: textarea
         size: large
+        autofocus: true
   sidebar:
     width: 1/3
     sections:

@@ -1,6 +1,9 @@
 title: Notes
-icon: 📚
-
+icon: layers
+options:
+  delete: false
+  status: false
+  url: false
 columns:
   left:
     width: 1/2
@@ -11,21 +14,20 @@ columns:
           text:
             label: Text
             type: textarea
-
-  right:
-    width: 1/2
-    sections:
       drafts:
         extends: sections/notes
         headline: Drafts
         status: draft
 
-      listed:
-        extends: sections/notes
-        headline: Published Notes
-        status: listed
-
       unlisted:
         extends: sections/notes
         headline: Unlisted Notes
         status: unlisted
+
+  right:
+    width: 1/2
+    sections:
+      listed:
+        extends: sections/notes
+        headline: Published Notes
+        status: listed

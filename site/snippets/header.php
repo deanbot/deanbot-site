@@ -23,6 +23,13 @@
   <!-- <link rel="manifest" href="site.webmanifest"> -->
   <!-- <link rel="apple-touch-icon" href="icon.png"> -->
   <!-- Place favicon.ico in the root directory --> */ ?>
+<!--
+    `
+   _|__
+  ((O O)
+   | --|
+  /  ===\
+-->
 
   <?php echo liveCSS('assets/builds/bundle.css'); ?>
   <?php /* <!-- <meta name="theme-color" content="#fafafa"> --> */ ?>

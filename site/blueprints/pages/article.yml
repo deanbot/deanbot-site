@@ -1,0 +1,54 @@
+title: Article
+num: '{{ page.date.toDate("Ymd") }}'
+icon: text
+
+status:
+  draft:
+    label: Draft
+    text: The article is still in draft mode. It can only be seen by editors with panel access.
+  unlisted:
+    label: Unlisted
+    text: The article is online and can be visited with the direct URL.
+  listed:
+    label: Published
+    text: The article is online and listed in the blog.
+
+columns:
+  main:
+    width: 2/3
+    fields:
+      text:
+        label: Text
+        type: textarea
+        size: large
+  sidebar:
+    width: 1/3
+    sections:
+      meta:
+        type: fields
+        fields:
+          date:
+            label: Published On
+            type: date
+            default: now
+            time: false
+          dateUpdated:
+            label: Updated On
+            type: date
+            time: false
+          category:
+            label: Category
+            type: select
+            options: query
+            max: 1
+            query:
+              fetch: site.find("blog").categories.toStructure
+              text: "{{ structureItem.title }}"
+              value: "{{ structureItem.title }}"
+          tags:
+            label: Tags
+            type: tags
+            max: 5
+            options: query
+            query:
+              fetch: site.find("blog").childrenAndDrafts.pluck("tags", ",", true)

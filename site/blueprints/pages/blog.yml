@@ -1,10 +1,46 @@
 title: Blog
-preset: pages
-fields:
-  pageTitle:
-    label: Page Title
-    type: text
-  text:
-    label: Text
-    type: textarea
-    size: large
+icon: 📚
+options:
+  delete: false
+  status: false
+  url: false
+columns:
+  left:
+    width: 1/2
+    sections:
+      intro:
+        type: fields
+        fields:
+          pageTitle:
+            label: Page Title
+            type: text
+          text:
+            label: Text
+            type: textarea
+            size: small
+          categories:
+            type: structure
+            fields:
+              title:
+                label: Title
+                type: text
+              description:
+                label: Description
+                type: textarea
+  right:
+    width: 1/2
+    sections:
+
+      drafts:
+        extends: sections/articles
+        headline: Drafts
+        status: draft
+      unlisted:
+        extends: sections/articles
+        headline: Unlisted Articles
+        status: unlisted
+
+      listed:
+        extends: sections/articles
+        headline: Published Articles
+        status: listed
