@@ -18,7 +18,10 @@
             Updated <time><?= $page->modified('M j, Y') ?></time>
           </a>
         </header>
-        <?= $page->text()->kt() ?>
+
+        <section class="content">
+          <?= $page->text()->kt() ?>
+        </section>
       </article>
 
       <?php

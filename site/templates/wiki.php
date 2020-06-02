@@ -2,7 +2,7 @@
 
   <main class="wiki-index">
     <div class="container">
-
+      <?php snippet('pageHeader'); ?>
       <div class="intro">
         <?= $page->text()->kt() ?>
       </div>

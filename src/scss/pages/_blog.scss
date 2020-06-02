@@ -1,0 +1,27 @@
+.blog {
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    .main,
+    .sub {
+      position: relative;
+      width: 100%;
+      padding-right: $gutter;
+      padding-left: $gutter;
+    }
+    .main {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+    }
+    .sub {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+
+  aside {
+    margin-bottom: 2rem;
+  }
+}

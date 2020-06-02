@@ -6,7 +6,7 @@ Pagetitle:
 
 ----
 
-Text: 
+Text: A future index of musings. Come back later once I've written about my projects, hobbies, and highly-specific, surely ephemeral, technical finds which I hope will benefit the talented passerby.
 
 ----
 
@@ -14,11 +14,16 @@ Categories:
 
 - 
   title: Ephemera
+  description: ""
 - 
   title: Hobby
+  description: ""
 - 
   title: Purely Technical
+  description: ""
 - 
   title: Deutsch Lernen
+  description: ""
 - 
   title: Releases
+  description: ""

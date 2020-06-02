@@ -30,8 +30,8 @@ main {
   @include small-breakpoint {
     margin-top: $header-height-lg + $offset;
   }
-  > .container {
-    margin-top: 25px
-  }
+  // > .container {
+  //   margin-top: 25px
+  // }
   // padding-top: 1rem;
 }
