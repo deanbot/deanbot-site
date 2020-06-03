@@ -6,7 +6,7 @@ Pagetitle:
 
 ----
 
-Text: A future index of musings. Come back later once I've written about my projects, hobbies, and highly-specific, surely ephemeral, technical finds which I hope will benefit the talented passerby.
+Text: An index of musings. I write about my projects, passions. I occasionally record my findings regarding highly specific and often ephemeral dev puzzles and other technical oddities. There may be something here to interest the curious passerby.
 
 ----
 
