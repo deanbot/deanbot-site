@@ -37,9 +37,9 @@ The following section details how to install [WSL](https://docs.microsoft.com/en
 1. Open Windows PowerShell as Administrator
 2. Install WSL via:
 
-    ```PowerShell
-    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-    ```
+```PowerShell
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
 
 [Updating to WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2) is more involved. WSL 2 requires Windows **Build 19041**. For the time being, the most straight-forward method of updating to this build is to [join Windows Insider](https://insider.windows.com/insidersigninboth/).
 
@@ -49,9 +49,9 @@ If you meet the requirements:
 
 1. Enable the required feature:
 
-    ```PowerShell
-    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-    ```
+```PowerShell
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
 
 2. Restart your machine.
 3. Open Windows PowerShell and run the command: `wsl --set-default-version 2`
@@ -245,10 +245,10 @@ Where to go from here? Some suggestions in no particular order:
 
 ## Revert to Bash
 
-If you'd like to return from Zsh to bash this can be easily done:
+So you want to cut and run aye? Returning to a bash shell is easily done:
 
 1. **Uninstall Oh My Zsh** ([ref](https://github.com/ohmyzsh/ohmyzsh#uninstalling-oh-my-zsh)): `uninstall_oh_my_zsh`
-1. **Set default shell to bash**: `chsh -s $(which bash)`
+2. **Set default shell to bash**: `chsh -s $(which bash)`
 
 ----
 
@@ -264,4 +264,4 @@ Category: Purely Technical
 
 ----
 
-Tags: WSL, Zsh, Windows Terminal, Shell,
+Tags: WSL, Zsh, Windows Terminal, Shell

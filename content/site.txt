@@ -1,16 +1,29 @@
-Title: Dean Verleger
+Title: spiritedrefactor.net
+
 ----
-Nickname: spiritedrefactor
+
+Author: Dean Verleger
+
 ----
+
 Description: Full Stack Tinkerer
+
 ----
+
 License: BY-NC-SA 4.0
+
 ----
-LicenseURL: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+Licenseurl: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
 ----
-SourceUrl: https://github.com/deanbot/spiritedrefactor-site
+
+Sourceurl: https://github.com/deanbot/spiritedrefactor-site
+
 ----
+
 Social:
+
 -
   platform: GH
   url: https://github.com/deanbot

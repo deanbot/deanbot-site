@@ -6,7 +6,7 @@ Pagetitle:
 
 ----
 
-Text: An index of musings. I write about my projects, passions. I occasionally record my findings regarding highly specific and often ephemeral dev puzzles and other technical oddities. There may be something here to interest the curious passerby.
+Text: An index of musings on my projects, passion and dev puzzles and other technical oddities. There may be something here to interest the curious passerby.
 
 ----
 

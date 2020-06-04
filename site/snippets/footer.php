@@ -12,7 +12,7 @@
     <footer class="footer container">
       <div class="meta">
         <div>
-          <a class="self" href="<?= $site->url() ?>"><?= $site->title() ?></a> © <?= Date('Y') ?>
+          <a class="self" href="<?= $site->url() ?>"><?= $site->author() ?></a> © <?= Date('Y') ?>
         </div>
         <span> - </span>
         <div>
