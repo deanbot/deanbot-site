@@ -1,5 +1,5 @@
 <?php
-return function($kirby, $page) {
+return function($kirby, $page, $site) {
     $alert = null;
 
     if($kirby->request()->is('POST') && get('submit')) {
@@ -29,8 +29,10 @@ return function($kirby, $page) {
         try {
           $kirby->email([
             'template' => 'email',
-            'from'     => 'form@' . $site->url(),
-            'to'       => $site->primaryAuthor()->email(),
+
+            // todo get domain from kirby
+            'from'     => 'form@spiritedrefactor.net',
+            'to'       => $site->primaryAuthor()->toUser()->email(),
             'subject'  => 'Someone sent you a blog comment',
             'data'     => [
               'pageTitle' => $page->title()->html(),
@@ -39,7 +41,7 @@ return function($kirby, $page) {
             ]
           ]);
         } catch (Exception $error) {
-          $alert['error'] = 'Sorry, the form could not be sent.';
+          $alert['error'] = 'Sorry, the form could not be sent.' . $error;
         }
 
         // no exception occured, let's send a success message
