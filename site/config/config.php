@@ -2,6 +2,9 @@
 
 return [
   'debug'  => true,
+  'markdown' => [
+    'extra' => true
+  ],
   'routes' => [
     // feed.xml route
     [

@@ -18,9 +18,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
-  background: $color-background;
+  z-index: -1;
   &.scroll {
+    z-index: 3;
+    background: $color-background;
     box-shadow: 1px 2px 18px rgba(0,0,0,.1);
     .container {
       transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);

@@ -82,4 +82,18 @@ body {
     background: $color-theme-tertiary;
     padding: 0 0.2rem;
   }
+
+  hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    border: 0;
+    border-bottom: 2px solid $color-border;
+    margin: 3rem 0;
+    width: 9rem;
+    &.long {
+      width: 100%;
+      border-width: 1px;
+    }
+  }
 }

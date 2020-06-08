@@ -26,7 +26,7 @@ $color-theme-darker: #043E40;
 $color-theme-primary: #01677D;
 $color-theme-lighter: #6BC4D8;
 $color-theme-accent: #A4243B;
-$color-theme-tertiary: #D8C99B;
+$color-theme-tertiary: #fff4ce;
 $color-neutral-light: #dedede;
 
 $color-white: #FBFBFF;
@@ -40,3 +40,5 @@ $color-link: $color-theme-primary;
 $color-link-hover: $color-theme-lighter; //$color-white;
 $color-link-background-hover: $color-theme-darker;
 $color-border: $color-neutral-light;
+$color-text-subdued: lighten( $color-black, 20% );
+$color-text-warning: $color-theme-accent;

@@ -1,3 +1,73 @@
 title: Site
-preset: pages
 unlisted: true
+
+tabs:
+  pages:
+    label: Pages
+    icon: layers
+    preset: pages
+  settings:
+    label: 'Settings'
+    icon: settings
+    columns:
+      headerSettings:
+        width: 1/2
+        sections:
+          headerSettings:
+            type: fields
+            fields:
+              headerSettings:
+                label: Header/Navigation
+                type: headline
+              description:
+                label: Description
+                type: text
+              homeLinkTitle:
+                label: Home Link Title
+                type: text
+      blogSettings:
+        width: 1/2
+        sections:
+          blogSettings:
+            type: fields
+            fields:
+              blogSettings:
+                label: Authoring Settings
+                type: headline
+              primaryAuthor:
+                label: Author
+                type: users
+                multipe: false
+              commentFormText:
+                label: Comment Form Text
+                type: textarea
+      footerSettings:
+        width: 3/3
+        sections:
+          footerSettings:
+            type: fields
+            fields:
+              footerSettings:
+                label: Footer Settings
+                type: headline
+              license:
+                width: 1/2
+                label: License
+                type: text
+              licenseurl:
+                width: 1/2
+                label: License URL
+                type: url
+              sourceurl:
+                label: Source URL
+                type: url
+              social:
+                label: Social
+                type: structure
+                fields:
+                  title:
+                    label: Title
+                    type: text
+                  url:
+                    label: URL
+                    type: url

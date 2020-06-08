@@ -1,12 +1,22 @@
-Title: spiritedrefactor.net
-
-----
-
-Author: Dean Verleger
+Title: Spirited Refactor
 
 ----
 
 Description: Full Stack Tinkerer
+
+----
+
+Homelinktitle: spiritedrefactor.net
+
+----
+
+Primaryauthor:
+
+- AYy6axgX
+
+----
+
+Commentformtext: Have a comment? Fill out this simple form to send me an email. No personal data will be saved. If you'd like a response, be sure to include your email address.
 
 ----
 
@@ -24,9 +34,34 @@ Sourceurl: https://github.com/deanbot/spiritedrefactor-site
 
 Social:
 
--
-  platform: GH
+- 
+  title: GH
   url: https://github.com/deanbot
--
-  platform: TW
+- 
+  title: TW
   url: https://twitter.com/deanbot88
+- 
+  title: RSS
+  url: https://spiritedrefactor.net/feed.xml
+
+----
+
+Author:
+
+- 
+  icon:
+    type: user
+    ratio: 3/2
+    back: pattern
+    color: '#c5c9c6'
+    cover: false
+  id: AYy6axgX
+  image:
+    ratio: 3/2
+    back: pattern
+    cover: false
+  email: deanverleger@gmail.com
+  info: ""
+  link: /users/AYy6axgX
+  text: Dean Verleger
+  username: Dean Verleger

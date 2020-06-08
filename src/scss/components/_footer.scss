@@ -2,9 +2,20 @@
   margin-top: 2.5rem;
   margin-bottom: $content-margin;
   @include small-breakpoint {
-    height: 100px;
     margin: $content-margin auto;
   }
+
+  .anchor {
+    // padding-top: 1rem;
+    text-align: center;
+    hr.long {
+      width: 9rem;
+      margin-left: auto;
+      margin-right: auto;
+      border-width: 3px;
+    }
+  }
+
   .meta {
     padding-bottom: 1.5em;
     span {

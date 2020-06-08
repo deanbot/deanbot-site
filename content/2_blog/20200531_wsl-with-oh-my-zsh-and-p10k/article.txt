@@ -4,7 +4,13 @@ Title: WSL with Oh My Zsh and P10k
 
 Text:
 
-Follow along to setup [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) and [Z shell](https://en.wikipedia.org/wiki/Z_shell), an alternative to bash with awesome plugin and theme support. This setup uses the popular [Oh My Zsh](https://ohmyz.sh/) Zsh configuration framework to manage plugins and themes (it also comes bundled with a suite of aliases and helpers) and the impressive, [Powerlevel10k](https://github.com/romkatv/powerlevel10k) Zsh theme.
+WSL is the best way to work on Windows.
+
+(image: wsl-screenshot.png link: wsl-screenshot.png target: _blank)
+
+Follow along to setup [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) and [Z shell](https://en.wikipedia.org/wiki/Z_shell), an alternative to bash with awesome plugin & theme support. This setup uses the popular [Oh My Zsh](https://ohmyz.sh/) Zsh configuration framework to manage Zsh plugins and themes (it comes bundled with helpers & aliases as well). As for the theme, we use the impressive, [Powerlevel10k](https://github.com/romkatv/powerlevel10k) seen in the screenshot above.
+
+You can find this tutorial and referenced files on github at [deanbot/easy-wsl-oh-my-zsh-p10k](https://github.com/deanbot/easy-wsl-oh-my-zsh-p10k).
 
 ## Table of contents
 
@@ -16,7 +22,7 @@ Follow along to setup [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) 
     1. [Install Windows Terminal](#Install-Windows-Terminal)
     2. [Update default profile](#Update-default-profile)
     3. [Configure Windows Terminal](#Configure-Windows-Terminal)
-4. [Zsh and Oh My Zsh](#zsh-and-oh-my-zsh)
+4. [Zsh and Oh My Zsh](#Zsh-and-Oh-My-Zsh)
     1. [Install and setup Zsh](#Install-and-setup-Zsh)
     2. [Install Oh My Zsh](#Install-Oh-My-Zsh)
 5. [Powerlevel10k](#Powerlevel10k)
@@ -28,41 +34,39 @@ Follow along to setup [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) 
 7. [Next steps](#Next-steps)
 8. [Revert to bash](#Revert-to-bash)
 
-## WSL and Ubuntu
+## WSL and Ubuntu {#WSL-and-Ubuntu}
 
-The following section details how to install [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) installing the latest LTS of Ubuntu.
+First let's set about installing [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and the latest LTS of Ubuntu.
 
-### Enable features for WSL and WSL 2
+### Enable features for WSL and WSL 2 {#Enable-features-for-WSL-and-WSL-2}
 
-1. Open Windows PowerShell as Administrator
-2. Install WSL via:
+1. Run Windows PowerShell as administrator
+2. Install WSL via: `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
 
-```PowerShell
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-```
+(image: activate-features.png)
 
 [Updating to WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2) is more involved. WSL 2 requires Windows **Build 19041**. For the time being, the most straight-forward method of updating to this build is to [join Windows Insider](https://insider.windows.com/insidersigninboth/).
 
-To verify which Windows build you are running, open **Settings** and select **System**. Scroll to **Windows specifications** and note the value for **OS build**.
+To verify which Windows build you are running, open **Settings** and select **System** then scroll to **Windows specifications** and note the value for **OS build**.
+
+(image: os-build.png)
 
 If you meet the requirements:
 
-1. Enable the required feature:
-
-```PowerShell
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-```
-
+1. Enable the required feature via: `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
 2. Restart your machine.
 3. Open Windows PowerShell and run the command: `wsl --set-default-version 2`
 
-_I skipped enabling WSL 2, and it hasn't issues as far as I can tell._ I will likely revisit this once the build is distributed via Windows Update.
+_I decided to put off enabling WSL 2 until the build is distributed via Windows Update._
 
-### Install Ubuntu
+### Install Ubuntu {#Install-Ubuntu}
 
 To install the latest Ubuntu LTS version (i.e. 20.04):
 
 1. Open Windows Store and search for Ubuntu ([quick link](https://aka.ms/wslstore)). Select **Ubuntu** (note you can verify the Ubuntu version by selecting **More**) and then select **Install**.
+
+   (image: download-ubuntu.png)
+
 2. Launch **Ubuntu** to complete installation.
 3. [Create a user account](https://docs.microsoft.com/en-us/windows/wsl/user-support) by entering a **User Name**, i.e. your first name (typically lowercase) and a password.
 
@@ -76,25 +80,25 @@ To install the latest Ubuntu LTS version (i.e. 20.04):
 
 We'll switch to Windows Terminal in a following step, as the default WSL/Ubuntu terminal emulator is not the greatest.
 
-## VS Code
+## VS Code {#VS-Code}
 
-If you're a VS Code user some light setup is required for proper WSL use, namely installation of the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension or the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension pack.
+If you're a VS Code user, some light setup is required for proper WSL use.
 
-**Remote - WSL** contains just the requirements for using WSL where as **Remote Development** contains a bundle of remote dev tools.
+After installing WSL, launch VS Code. It should prompt you to install [**Remote - WSL**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). Alternatively, install the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension pack which bundles a few related extensions.
 
-VS Code will prompt you to install **Remote - WSL** after it detects that WSL is installed. Alternatively, install either extension via the extensions tab in VS Code or with the **Install** button on the extensions' page.
+See also: [VS Code: Developing in WSL](https://code.visualstudio.com/docs/remote/wsl)
 
-See also: [[VS Code:] Developing in WSL](https://code.visualstudio.com/docs/remote/wsl)
+## Windows Terminal {#Windows-Terminal}
 
-## Windows Terminal
+I highly recommend installing [Windows Terminal](https://aka.ms/terminal). The most compelling reason might be how easy it is to launch different shells be they PowerShell, WSL, git bash, or command prompt... but it can (link: https://docs.microsoft.com/en-us/windows/terminal/panes text: split/resize/move between panes) really well too.
 
-This section details how to install and configure [Windows Terminal](https://aka.ms/terminal).
-
-### Install Windows Terminal
+### Install Windows Terminal {#Install-Windows-Terminal}
 
 To install Windows Terminal, open **Windows Store**. Search for and install **Windows Terminal**. I suggest pinning Windows Terminal to your start menu or taskbar.
 
-### Update default profile
+(image: download-windows-terminal.png)
+
+### Update default profile {#Update-default-profile}
 
 The default profile shown when you launch Windows Terminal is Windows PowerShell. Selecting the dropdown reveals Ubuntu.
 
@@ -103,9 +107,13 @@ To change the default profile:
 1. Enter `ctrl+,` to open the settings file for Windows Terminal in you default editor.
 2. Locate the `guid` for WSL/Ubuntu and then copy and paste this value in the `defaultProfile` property.
 
-### Configure Windows Terminal
+(image: windows-terminal-profiles.png)
 
-See [settings.json](./settings.json) in this repo for reference.
+(image: default-profile.png)
+
+### Configure Windows Terminal {#Configure-Windows-Terminal}
+
+Note: See [settings.json](https://raw.githubusercontent.com/deanbot/easy-wsl-oh-my-zsh-p10k/master/settings.json) for reference.
 
 1. Include the following settings for `profiles.defaults`:
 
@@ -122,27 +130,29 @@ See [settings.json](./settings.json) in this repo for reference.
     },
     ```
 
-    Leave fontFace commented until you [install the font](#Install-fonts) in a following section.
+    Leave fontFace commented until you [install the font](#nstall-fonts) in a following section.
 2. Hide irrelevant profiles by setting the `hidden` property to `true`.
 
-## Zsh and Oh My Zsh
+## Zsh and Oh My Zsh {#Zsh-and-Oh-My-Zsh}
 
-The following section details how to install Zsh and [Oh My Zsh](https://ohmyz.sh/).
+Next, we'll install Zsh and [Oh My Zsh](https://ohmyz.sh/).
 
-### Install and setup Zsh
+### Install and setup Zsh {#Install-and-setup-Zsh}
 
 To install Z shell and set it as your default shell run:
 
 ```sh
 sudo apt install zsh
-chsh -s $(which zsh)
+chsh -s /bin/zsh
 ```
 
 Log out and login back again to use your new default shell.
 
 If you have no `.zsh[...]` files in your home directory you will be prompted. Feel free to run through the configuration wizard however this will get replaced by Oh My Zsh. I recommend selecting `2` at the prompt to create a `.zshrc` with defaults.
 
-### Install Oh My Zsh
+(image: zsh.png)
+
+### Install Oh My Zsh {#Install-Oh-My-Zsh}
 
 To install Oh My Zsh run:
 
@@ -150,11 +160,11 @@ To install Oh My Zsh run:
 
 If you had a `.zshrc` file it's now backed up as `.zshrc.pre-oh-my-zsh` and replaced with a new configuration file which loads Oh My Zsh.
 
-## Powerlevel10k
+## Powerlevel10k {#Powerlevel10k}
 
-The following section outlines how to install the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) Zsh theme. The recommended font for p10k works well in Windows Terminal.
+Next, we'll install the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) Zsh theme. The recommended font for p10k works well in Windows Terminal.
 
-### Install fonts
+### Install fonts {#Install-fonts}
 
 First, manually install the recommended Meslo Nerd Font (patched for p10k) - [found here](https://github.com/romkatv/powerlevel10k#manual-font-installation).
 
@@ -162,16 +172,18 @@ To install, download and double-click each variation and select install.
 
 _Note: If using Windows Terminal, enable the font by adding `"fontFace": "MesloLGS NF"` to `profile.defaults` or the WSL profile._
 
-### Install theme
+### Install theme {#Install-theme}
 
 To install p10k:
 
 1. Run: `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k`
 2. Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
 
-### Run configuration wizard
+### Run configuration wizard {#Run-configuration-wizard}
 
 Restart your shell by logging out logging back in. The configuration wizard should start automatically, otherwise run `p10k configure`.
+
+(image: pk10.png)
 
 Follow prompts to configure p10k to your liking. First, it prompt you to verify whether you see given icons. Afterwards, you'll be prompted for ui preferences. **These are up to you.** The following choices work well but go crazy.
 
@@ -193,33 +205,33 @@ Follow prompts to configure p10k to your liking. First, it prompt you to verify 
 
 If you don't like what you came up with restart or remove your `.p10k.zsh` file.
 
-See [p10k.zsh](./p10k.zsh) in this repo for reference.
+Note: see [p10k.zsh](https://github.com/deanbot/easy-wsl-oh-my-zsh-p10k/blob/master/.p10k.zsh) for reference.
 
 The configuration I'm using at any given time is found in my [deanbot/dotfiles](https://github.com/deanbot/dotfiles) repo.
 
-### Enable battery indicator
+### Enable battery indicator {#Enable-battery-indicator}
 
 1. Edit `.p10k.zsh`
 2. Uncomment the `battery               # internal batter` line in the list of `POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS` and save.
 3. Run: `source ~/.p10k.zsh` to see changes.
 
-## Install Zsh Plugins
+## Install Zsh Plugins {#Install-zsh-plugins}
 
 Most plugins are installed automatically with Oh My Zsh by editting `plugins` in `.zshrc`.
 
 The following suggested plugins have minimal installation steps:
 
-* [zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
-* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
+* [zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) - fish shell style autosuggestion based on history and completions.
+* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) - color coding in the terminal to let you know if a command you're about to enter is valid.
 
 To install [zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh):
 
 1. Run the following commands one at a time:
 
-    ```sh
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-    ```
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
 
 2. Permissions on these two plugins may be too permissive (you'll be warned by zsh the next time you log into your shell). To correct this run:
 
@@ -230,9 +242,12 @@ To install [zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions
     ```
 
 3. Edit `.zshrc` via your preferred editor be it nano, [micro](https://micro-editor.github.io/), VSCode, etc (i.e. for VSCode `code ~/.zshrc`).
+
+    (image: plugins.png)
+
 4. update the `plugins` line to: `plugins=(git zsh-autosuggestion zsh-syntax-highlighting)` and save.
 
-## Next steps
+## Next steps {#Next-steps}
 
 Where to go from here? Some suggestions in no particular order:
 
@@ -243,7 +258,7 @@ Where to go from here? Some suggestions in no particular order:
 * Explore the Oh My Zsh [plugins](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins) directory.
 * [Customize](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins) p10k.
 
-## Revert to Bash
+## Revert to Bash {#Revert-to-bash}
 
 So you want to cut and run aye? Returning to a bash shell is easily done:
 
@@ -256,7 +271,7 @@ Date: 2020-05-31
 
 ----
 
-Dateupdated: 
+Dateupdated:
 
 ----
 

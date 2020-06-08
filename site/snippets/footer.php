@@ -10,9 +10,17 @@
     ?>
     <?php echo js('assets/builds/bundle.js') ?>
     <footer class="footer container">
+      <div class="anchor">
+        <hr class="long"/>
+      </div>
       <div class="meta">
         <div>
-          <a class="self" href="<?= $site->url() ?>"><?= $site->author() ?></a> © <?= Date('Y') ?>
+          <?php
+          $copyrightTitle = $site->primaryAuthor() && !$site->primaryAuthor()->isEmpty()
+            ? $site->primaryAuthor()->toUser()->name()
+            : $site->title()->html();
+          ?>
+          <a class="self" href="<?= $site->url() ?>"><?= $copyrightTitle ?></a> © <?= Date('Y') ?>
         </div>
         <span> - </span>
         <div>
@@ -26,7 +34,7 @@
 
       <nav class="links">
         <?php foreach ($site->social()->toStructure() as $social): ?>
-        <a href="<?= $social->url() ?>" target="_blank"><?= $social->platform() ?></a>
+        <a href="<?= $social->url() ?>" target="_blank"><?= $social->title() ?></a>
         <?php endforeach ?>
       </nav>
     </footer>

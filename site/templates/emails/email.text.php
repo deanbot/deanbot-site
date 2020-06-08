@@ -1,0 +1,5 @@
+<?= $text ?>
+
+Source:
+<?= $pageTitle ?>
+<?= $pageUrl ?>

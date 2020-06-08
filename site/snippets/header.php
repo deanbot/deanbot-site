@@ -13,7 +13,7 @@
       printf(
         '%s | %s',
         $page->title()->html(),
-        $site->nickname()->html()
+        $site->title()->html()
       );
     }
   ?></title>
@@ -23,14 +23,11 @@
   <!-- <link rel="manifest" href="site.webmanifest"> -->
   <!-- <link rel="apple-touch-icon" href="icon.png"> -->
   <!-- Place favicon.ico in the root directory --> */ ?>
-<!--
-    `
+<!--`
    _|__
   ((O O)
    | --|
-  /  ===\
--->
-
+  /  ===\-->
   <?php echo liveCSS('assets/builds/bundle.css'); ?>
   <?php /* <!-- <meta name="theme-color" content="#fafafa"> --> */ ?>
 </head>
@@ -40,7 +37,12 @@
       <div class="bar"></div>
       <div class="container">
         <div class="brand">
-          <a class="logo" href="<?= $site->url() ?>"><span><?= $site->title() ?></span></a>
+          <?php
+            $homeTitle = $site->homeLinkTitle() && !$site->homeLinkTitle()->isEmpty()
+              ? $site->homeLinkTitle()->html()
+              : $site->title();
+          ?>
+          <a class="logo" href="<?= $site->url() ?>"><span><?= $homeTitle ?></span></a>
         </div>
 
         <div class="links">

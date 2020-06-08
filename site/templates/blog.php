@@ -64,23 +64,27 @@
               </div>
             </article>
 
-            <?php endforeach ?>
-
-            <!-- pagination -->
-            <nav class="pagination">
-              <?php if($pagination->hasPrevPage()): ?>
-              <a href="<?= $pagination->prevPageUrl() ?>">Previous</a>
-              <?php endif ?>
-
-              <?php if($pagination->hasNextPage()): ?>
-              <a href="<?= $pagination->nextPageUrl() ?>">Next</a>
-              <?php endif ?>
-            </nav>
+            <?php endforeach; ?>
 
           <?php else: ?>
             <?php // don't show any message as we can use the kirbytext to explain why no results are shown and no results would be redundant ?>
           <?php endif; ?>
           </section>
+
+          <?php
+            $hasPrevPage = $pagination->hasPrevPage();
+            $hasNextPage = $pagination->hasNextPage();
+            if($hasPrevPage || $hasNextPage):
+            ?>
+            <nav class="pagination">
+              <?php if($hasPrevPage): ?>
+              <a href="<?= $pagination->prevPageUrl() ?>">Previous</a>
+              <?php endif; ?>
+              <?php if($hasNextPage): ?>
+              <a href="<?= $pagination->nextPageUrl() ?>">Next</a>
+              <?php endif; ?>
+            </nav>
+            <?php endif; ?>
         </div>
 
         <?php if ($articles->isNotEmpty() && !$isEntryArchive) : ?>
