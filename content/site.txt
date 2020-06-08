@@ -2,7 +2,7 @@ Title: Spirited Refactor
 
 ----
 
-Description: Full Stack Tinkerer
+Description: Dean Verleger
 
 ----
 
@@ -16,7 +16,7 @@ Primaryauthor:
 
 ----
 
-Commentformtext: Have a comment? Fill out this simple form to send me an email. No personal data will be saved. If you'd like a response, be sure to include your email address.
+Commentformtext: Have a comment? Fill out the form below to send me an email. No personal data will be saved. If you'd like a response, be sure to include your email address.
 
 ----
 

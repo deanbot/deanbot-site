@@ -242,10 +242,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
     ```
 
 3. Edit `.zshrc` via your preferred editor be it nano, [micro](https://micro-editor.github.io/), VSCode, etc (i.e. for VSCode `code ~/.zshrc`).
-
-    (image: plugins.png)
-
 4. update the `plugins` line to: `plugins=(git zsh-autosuggestion zsh-syntax-highlighting)` and save.
+
+ (image: plugins.png)
 
 ## Next steps {#Next-steps}
 
@@ -267,11 +266,11 @@ So you want to cut and run aye? Returning to a bash shell is easily done:
 
 ----
 
-Date: 2020-05-31
+Date: 2020-06-07
 
 ----
 
-Dateupdated:
+Dateupdated: 
 
 ----
 
