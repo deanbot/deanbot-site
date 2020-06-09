@@ -12,11 +12,16 @@
     font-style: italic;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    @media (min-width: 360px) {
+      flex-direction: row;
+    }
   }
   p {
     margin: 0;
   }
   .author-link {
+    align-self: center;
     &:hover,
     &:focus,
     ::selection {
@@ -31,17 +36,21 @@
   }
 }
 .tags {
-  margin-top: 1rem;
+  padding: 0;
+  margin: 1rem 0 -1rem 0;
   font-size: .9rem;
+  list-style: none;
+  li {
+    padding: 0;
+    margin: 0 1rem 1rem 0;
+    display: inline-block;
+  }
   a {
     background-color: $color-background-alt;
     border-radius: 4px;
     display: inline-block;
     padding: 5px 10px;
     text-decoration: none;
-    + a {
-      margin-left: 9px;
-    }
   }
 }
 .intro {
@@ -121,11 +130,13 @@ article {
 .article-contact {
   margin: 3rem -1.5rem 0 -1.5rem;
   padding: 1.5rem;
-  border-radius: 15px;
   background: $color-theme-tertiary;
   color: $color-text-subdued;
   // ::selection {
-  // }
+    // }
+  @include small-breakpoint {
+    border-radius: 15px;
+  }
   .alert {
     &.error {
       p {

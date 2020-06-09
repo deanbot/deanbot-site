@@ -21,7 +21,7 @@ body {
     // margin: 1.5rem 0;
     // font-weight: 600;
     // font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
-    line-height: 1.2rem;
+    line-height: 1.5;
   }
 
   // Increased margin on additional headings
@@ -50,30 +50,30 @@ body {
   h5 {
     font-size: 1rem;
   }
+  @include small-breakpoint {
+    h1:not(:first-child),
+    h2:not(:first-child),
+    h3:not(:first-child) {
+      margin-top: 2.5rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.75rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+    h5 {
+      font-size: 1.25rem;
+    }
+  }
 }
 
-@include small-breakpoint {
-  h1:not(:first-child),
-  h2:not(:first-child),
-  h3:not(:first-child) {
-    margin-top: 2.5rem;
-  }
-  h1 {
-    font-size: 2.25rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-  h3 {
-    font-size: 1.75rem;
-  }
-  h4 {
-    font-size: 1.5rem;
-  }
-  h5 {
-    font-size: 1.25rem;
-  }
-}
 
 // links
 a {

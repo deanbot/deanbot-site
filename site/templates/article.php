@@ -29,13 +29,13 @@
           <?php
           if ($page->tags() && !$page->tags()->isEmpty()):
           ?>
-          <div class="tags">
-            <p>
-              <?php foreach($page->tags()->split() as $tag): ?>
+          <ul class="tags">
+            <?php foreach($page->tags()->split() as $tag): ?>
+            <li>
               <a href="<?= $blogUrl . '/' . urlencode($tag) ?>"><?= html($tag) ?></a>
-              <?php endforeach; ?>
-            </p>
-          </div>
+            </li>
+            <?php endforeach; ?>
+          </ul>
           <?php endif; ?>
         </header>
 
