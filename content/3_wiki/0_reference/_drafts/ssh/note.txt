@@ -1,0 +1,73 @@
+Title: ssh
+
+----
+
+Pagetitle: 
+
+----
+
+Text:
+
+## Connect to server
+
+Assuming you don't have an identity file configured you will be prompted for your password:
+
+`ssh myuser@actual.domain.com`
+
+Use -i to specify an ssh key:
+
+`ssh myuser@actual.domain.com -i ~/.ssh/my-private-key`
+
+## Config
+
+To create an alias for a domain edit `~/.ssh/config`:
+
+```
+Host myserver
+	HostName actual.domain.com
+```
+
+Now you can connect via `ssh myuser@myserver`.
+
+To pre-configure a username add the `User` option:
+
+```
+Host myserver
+	HostName actual.domain.com
+	User myuser
+```
+
+Now you can connect via `ssh myserver`.
+
+To specify an ssh key add the `IdentityFile` option:
+
+```
+Host myserver
+	HostName actual.domain.com
+	User myuser
+	IdentityFile /home/myName/.ssh/my-private-key
+```
+
+To use `ssh myserver` instead of `ssh myserver -i ~/.ssh/my-private-key`.
+
+## Generating keys
+
+`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+
+## Adding key to remote server
+
+## Copying public key to clipboard
+
+```sh
+# if you need to install xclip
+sudo apt-get install xclip
+
+# target your public key
+xclip -sel clip < ~/.ssh/id_rsa.pub 
+```
+
+## Changing passphrase
+
+At prompt target existing key file. You will be prompted to enter and confirm the new passphrase.
+
+`ssh-keygen -p`

@@ -22,6 +22,10 @@ or
 `vboxmanage controlvm <name or UUID> pause`
 `vboxmanage controlvm <name or UUID> resume`
 
+**Savestate / Suspend**
+Quit without shutting vm down
+`vboxmanage controlvm <name or UUID> savestate`
+
 **Poweroff / Shutdown**
 `vboxmanage controlvm <name or UUID> poweroff`
 
