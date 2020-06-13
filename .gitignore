@@ -58,3 +58,5 @@ setOwner.sh
 
 # node modules
 node_modules
+
+purgeCache.sh

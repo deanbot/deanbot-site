@@ -1,0 +1,73 @@
+Title: Purge Cloudflare cache in a shell script
+
+----
+
+Text:
+
+If you develop sites which run through [Cloudflare](https://www.cloudflare.com/), you're probably used to the tedious task of logging into Cloudflare to purge cached files every time you publish an update. As I was doing this the umpteenth time I started to wonder whether an API existed so that this step could be automated... and there is one! 
+
+Cloudflare clearly links to [API instruction](https://api.cloudflare.com/) near relevant controls in their dashboard. And it's really not that hard to make a quick helper script that implements their API.
+
+## Auth
+
+I chose the newer [bearer token method](https://api.cloudflare.com/#getting-started-requests):
+
+1. Log into CF and navigate to My Profile > [Api Tokens](https://dash.cloudflare.com/profile/api-tokens)
+2. Select **Create Token** next to **API Tokens**
+3. Select **Get Started** next to **Create Custom Token**
+4. Create the token as follows:
+    1. **Token name**: something descriptive, i.e. "([name of site]) Purge Cache"
+    2. **Permissions**: Zone > Cache Purge > Purge
+    3. **Zone Resources**: Include > Specific Zone > [site domain]
+
+(image: cf-token.png)
+
+Make sure to copy your bearer token and store it somewhere secure.
+
+## Making the request
+
+The [cURL example](https://api.cloudflare.com/#zone-purge-all-files) that CloudFlare gives for purging cache will work just fine *after modifying the request to use the token instead of the api key*.
+
+Create the following shell script, i.e. as purgeCache.sh
+
+```sh
+#!/bin/sh
+curl -X POST "https://api.cloudflare.com/client/v4/zones/<zone id>/purge_cache" \
+     -H "Authorization: Bearer <api token>“ \
+     -H "Content-Type: application/json" \
+     --data '{"purge_everything":true}'
+```
+
+Before making the call, you'll need to grab the zone id for your site. You can find this on the **Overview** tab for your site in Cloudflare (scroll down... it's on the right).
+
+(image: cf-zone-id.png)
+
+Plug in the values for `<zone id>` and `<api token>`, give the script execute permissions (i.e. `chmod +x ./purgeCache.sh`) and give it a go. You should get a success response.
+
+## Don't check in your API token
+
+An API token is essentially a password.
+
+If you include this file within a git project, make sure to exclude it with your `.gitignore` or implement some other means of obscuring your API token (i.e. `.env`).
+
+To avoid this issue you could throw this into your `~/bin` instead (needs to be on your path).
+
+## And how?
+
+Here's the part where I try and get you to teach me some new tricks. How do you automate Cloudflare? How would you kick off the purge cache script?
+
+----
+
+Date: 2020-06-09
+
+----
+
+Dateupdated: 
+
+----
+
+Category: Purely Technical
+
+----
+
+Tags: Cloudflare, Shell, API

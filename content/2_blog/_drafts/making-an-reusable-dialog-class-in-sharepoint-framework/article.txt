@@ -1,0 +1,21 @@
+Title: Making an reusable dialog class in SharePoint Framework
+
+----
+
+Text: 
+
+----
+
+Date: 2020-06-11
+
+----
+
+Dateupdated: 
+
+----
+
+Category: 
+
+----
+
+Tags: Library Components, SPFX, SharePoint
