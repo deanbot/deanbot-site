@@ -60,3 +60,4 @@ setOwner.sh
 node_modules
 
 purgeCache.sh
+start.sh

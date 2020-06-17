@@ -56,6 +56,14 @@ To use `ssh myserver` instead of `ssh myserver -i ~/.ssh/my-private-key`.
 
 ## Adding key to remote server
 
+If you have linux you can run:
+
+`ssh-copy-id -i ~/.ssh/id_rsa.pub user@host`
+
+Otherwise you can run something like the following (exclude mkdir part if the .ssh directory already exists): 
+
+`cat ~/.ssh/id_rsa.pub | ssh user@host "mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys"`
+
 ## Copying public key to clipboard
 
 ```sh
