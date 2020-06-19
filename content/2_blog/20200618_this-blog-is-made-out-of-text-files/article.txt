@@ -14,7 +14,7 @@ Leaving performance benefits aside (enhanced with SSD hosting and further with c
 
 `Rsync [options] src user@host:dest`
 
-**Rsync** allows me to step through all files in a (mark: source) and (mark: target) keeping only the latest versions in my target. I can preserve permissions and ownership (`-a`). I can transfer files quickly with compression (`-z`). If I'm confident in a particular source I can delete any extraneous files in my target (`--delete`). I can configure files and directories to ignore (`--exclude-from`), and execute a dry-run to see what will change (`-n`). See more [rsync notes](/wiki/reference/rsync) in the wiki.
+**Rsync** allows me to step through all files in a (mark: source) and (mark: target) keeping only the latest versions in my target. I can traverse files recursively, preserving permissions and ownership (`-a`). I can transfer files quickly with compression (`-z`). If I'm confident in a particular source I can delete any extraneous files in my target (`--delete`). I can configure files and directories to ignore (`--exclude-from`), and execute a dry-run to see what will change (`-n`). See more [rsync notes](/wiki/reference/rsync) in the wiki.
 
 If you have a `~/.ssh/config` entry for your source/target, these will apply when you run rsync in the terminal, however, I've found that when running rsync from a script I need to go the extra mile and specify the ssh identity file. In this case, and whenever you need to customize ssh connection info use `-e 'ssh [...]'`.
 
