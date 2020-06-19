@@ -1,14 +1,14 @@
-Title: ssh
+Title: SSH
 
 ----
 
-Pagetitle: 
+Pagetitle: SSH notes
 
 ----
 
 Text:
 
-## Connect to server
+## Connect to a remote server with SSH {#Connect-to-a-remote-server-with-SSH}
 
 Assuming you don't have an identity file configured you will be prompted for your password:
 
@@ -18,18 +18,18 @@ Use -i to specify an ssh key:
 
 `ssh myuser@actual.domain.com -i ~/.ssh/my-private-key`
 
-## Config
+## Configure SSH {#Configure-SSH}
 
-To create an alias for a domain edit `~/.ssh/config`:
+To create an alias for a domain, edit `~/.ssh/config`:
 
 ```
 Host myserver
 	HostName actual.domain.com
 ```
 
-Now you can connect via `ssh myuser@myserver`.
+Now you can connect via `ssh myuser@myserver [...]`.
 
-To pre-configure a username add the `User` option:
+To pre-configure a username, add the `User` option:
 
 ```
 Host myserver
@@ -37,7 +37,7 @@ Host myserver
 	User myuser
 ```
 
-Now you can connect via `ssh myserver`.
+Now you can connect via `ssh myserver [...]`.
 
 To specify an ssh key add the `IdentityFile` option:
 
@@ -48,23 +48,23 @@ Host myserver
 	IdentityFile /home/myName/.ssh/my-private-key
 ```
 
-To use `ssh myserver` instead of `ssh myserver -i ~/.ssh/my-private-key`.
+Now you can use `ssh myserver` instead of `ssh myserver -i ~/.ssh/my-private-key`.
 
-## Generating keys
+## Generating ssh key pairs {#Generating-ssh-key-pairs}
 
 `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
-## Adding key to remote server
+## Adding ssh public key to remote server {#Adding-ssh-public-key-to-remote-server}
 
-If you have linux you can run:
+If you are running linux you can use:
 
 `ssh-copy-id -i ~/.ssh/id_rsa.pub user@host`
 
-Otherwise you can run something like the following (exclude mkdir part if the .ssh directory already exists): 
+Otherwise, you can run something like the following (exclude the mkdir part if the .ssh directory already exists): 
 
 `cat ~/.ssh/id_rsa.pub | ssh user@host "mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys"`
 
-## Copying public key to clipboard
+## Copying public key to clipboard {#Copying-public-key-to-clipboard}
 
 ```sh
 # if you need to install xclip
@@ -74,7 +74,7 @@ sudo apt-get install xclip
 xclip -sel clip < ~/.ssh/id_rsa.pub 
 ```
 
-## Changing passphrase
+## Changing ssh key passphrase {#Changing-ssh-key-passphrase}
 
 At prompt target existing key file. You will be prompted to enter and confirm the new passphrase.
 

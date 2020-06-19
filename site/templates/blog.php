@@ -2,20 +2,14 @@
 
   <?php
     $blogUrl = page('blog')->url();
-    $isCategoryArchive = $isTagArchive = false;
-    if (isset($category)) {
-      $isCategoryArchive = true;
-    } else if (isset($tag)) {
-      $isTagArchive = true;
-    }
-    $isEntryArchive = $isCategoryArchive || $isTagArchive;
+    $isFilteredArchive = $isCategoryArchive || $isTagArchive;
   ?>
   <main class="blog">
     <div class="container">
       <div class="header-wrapper">
         <header class="page-header">
           <h1><?php
-            if (!$isEntryArchive) {
+            if (!$isFilteredArchive) {
               $title = $page->pageTitle()->html();
               if ($title == '') {
                 $title = $page->title()->html();
@@ -28,16 +22,16 @@
             echo $title;
           ?></h1>
         </header>
-        <?php if ($isEntryArchive): ?>
+        <?php if ($isFilteredArchive): ?>
         <p><a href="<?= $blogUrl ?>">Return to the blog</a></p>
         <?php else: ?>
         <p>Subscribe via <a href="/feed.xml">RSS</a></p>
         <?php endif; ?>
       </div>
 
-      <?php if (!$isEntryArchive && $page->text()->isNotEmpty()): ?>
+      <?php if (isset($intro)): ?>
       <div class="intro">
-        <?= $page->text()->kt() ?>
+        <?= $intro ?>
       </div>
       <?php endif; ?>
 
@@ -87,7 +81,7 @@
             <?php endif; ?>
         </div>
 
-        <?php if ($articles->isNotEmpty() && !$isEntryArchive) : ?>
+        <?php if ($articles->isNotEmpty() && !$isFilteredArchive) : ?>
         <div class="sub">
 
           <?/* <aside>

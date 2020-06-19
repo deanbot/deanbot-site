@@ -14,13 +14,13 @@ Categories:
 
 - 
   title: Ephemera
-  description: ""
+  description: Timely, transient, journals and musings.
 - 
   title: Hobby
   description: ""
 - 
   title: Purely Technical
-  description: ""
+  description: Technical articles and mini-articles.
 - 
   title: Deutsch Lernen
   description: ""

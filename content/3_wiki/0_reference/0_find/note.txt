@@ -2,7 +2,7 @@ Title: find
 
 ----
 
-Pagetitle: 
+Pagetitle: find command notes
 
 ----
 

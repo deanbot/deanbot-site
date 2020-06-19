@@ -1,0 +1,82 @@
+Title: This blog is made out of text files
+
+----
+
+Text:
+
+*I'm a fan of simple software and simple tools.*
+
+[Kirby](https://getkirby.com/), the CMS I chose for this blogging website, forgoes the traditional database-centric approach to storing content in favor of a simpler, file-based, option which stores data in simple `.txt` files. It doesn't store html either, but instead, content is saved (and authored) in markdown. 
+
+Leaving performance benefits aside (enhanced with SSD hosting and further with caching enabled), the file-based-cms method makes trivial the task of synchronizing content between local and remote environments. In other words, synchronizing the *content* is done like any other file. This lack of separation allows me to use a unified process for updating programming *and content*. What's more, I get to use simple, ubiquitous, tools like rsync and ssh.
+
+## Synchronizing files with rsync
+
+`Rsync [options] src user@host:dest`
+
+**Rsync** allows me to step through all files in a (mark: source) and (mark: target) keeping only the latest versions in my target. I can preserve permissions and ownership (`-a`). I can transfer files quickly with compression (`-z`). If I'm confident in a particular source I can delete any extraneous files in my target (`--delete`). I can configure files and directories to ignore (`--exclude-from`), and execute a dry-run to see what will change (`-n`). See more [rsync notes](/wiki/reference/rsync) in the wiki.
+
+If you have a `~/.ssh/config` entry for your source/target, these will apply when you run rsync in the terminal, however, I've found that when running rsync from a script I need to go the extra mile and specify the ssh identity file. In this case, and whenever you need to customize ssh connection info use `-e 'ssh [...]'`.
+
+### Rsync helper scripts
+
+The [.sync](https://github.com/deanbot/spiritedrefactor-site/tree/master/.sync) directory in my repo for this site contains reusable, modular, implementations of these commands. After adding configuration storing my destination ssh connection info (not checked in) I can run the [sync-up.sh](https://github.com/deanbot/spiritedrefactor-site/blob/master/.sync/sync-up.sh) or [sync-down.sh](https://github.com/deanbot/spiritedrefactor-site/blob/master/.sync/sync-down.sh) helper scripts.
+
+Example: 
+```sh
+$ .sync/sync-up.sh 
+Do you want to do a dry run [y/n]: y
+sending incremental file list
+content/2_blog/blog+this-blog-is-made-out-of-text-files/
+content/2_blog/blog+this-blog-is-made-out-of-text-files/article.txt
+
+sent 19,439 bytes  received 225 bytes  7,865.60 bytes/sec
+total size is 6,765,867  speedup is 344.07 (DRY RUN)
+
+Do you want to overwrite user@host:web-directory/? [y/n]: y
+sending incremental file list
+content/2_blog/blog+this-blog-is-made-out-of-text-files/
+content/2_blog/blog+this-blog-is-made-out-of-text-files/article.txt
+          1,879 100%    1.12MB/s    0:00:00 (xfr#1, to-chk=622/685)
+
+sent 19,692 bytes  received 267 bytes  13,306.00 bytes/sec
+total size is 6,765,867  speedup is 338.99
+```
+
+On my local computer I can create aliases or symlinks to cut this command down to a few keystrokes. Adding `~/bin` to the path and dropping in a symlink the the script does the trick. To scale this pattern I might name my script-symlink something like `sync-up.[sitename]`.
+
+## Making a secure connection with SSH
+
+`ssh [options] user@host`
+
+**SSH** facilitates secure encrypted communication between two machines. I can use a (mark: ssh client) to log into a remote machine (i.e. my web host) and execute commands. I can use rsync to transfer files between a remote host over ssh. See more [SSH notes](/wiki/reference/ssh) in the wiki.
+
+To truly sing and to achieve big efficiency gains you need [a small amount of configuration](/wiki/reference/ssh#Configure-SSH). By specifying ssh configuration you can turn a lengthy command like `ssh -p 2222 -i ~/.ssh/github_id_rsa username@hostname` in to `ssh mysite`. 
+
+A (mark: ssh key pair) enables the secure password-less connection. A key pair consists of (mark:private) and (mark:public) counterparts. After creating the key pair, the public key is copied to the remote (destination) server. A few lines of code add your ssh key to every terminal session on your machine making using ssh a truly streamlined process.
+
+## Loose bits
+
+* **Dev Tooling** - I plan to make another write up about the webpack dev tooling. That said, I've abstracted out the setup into this boilerplate [deanbot/kirby-webpack-kit](https://github.com/deanbot/kirby-webpack-kit).
+* **Caching** - I wrote a [helper script to clear static file caching](/blog/purge-cloudflare-cache-with-a-shell-script) on Cloudflare. This saves time whenever I've made updates to css or js files.
+* **File permissions/ownership** - Occasionally, depending on how and where I'm making changes, file permissions/ownership might get borked. In those cases I can run [helper scripts](https://github.com/deanbot/spiritedrefactor-site/blob/master/setPermissions.sh) to restore them. 
+
+## And how
+
+Do you use Kirby or another file-based CMS? Do you use simple tools and software? **Do you know how I can use my ssh config for rsync when running  in a script?!**. Let me know in the comment form.
+
+----
+
+Date: 2020-06-18
+
+----
+
+Dateupdated: 
+
+----
+
+Category: Ephemera
+
+----
+
+Tags: Kirby, rsync, ssh

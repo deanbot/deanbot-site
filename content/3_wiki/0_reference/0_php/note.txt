@@ -1,0 +1,38 @@
+Title: PHP
+
+----
+
+Pagetitle: PHP notes
+
+----
+
+Text:
+
+## Search Multidimensional array
+
+To get the the key/index of an array by a nested value combine `array_search` and `array_column`.
+
+[array_search](https://www.php.net/manual/en/function.array-search.php)
+: Get key for item in array (aka its index in the array)
+: Returns first match
+
+[array_column](https://www.php.net/manual/en/function.array-column.php)
+: Return array containing all values for a column in an array (aka associative array property)
+
+```php
+$fish = array(
+   0 => array(
+      'description' => 'A red fish',
+      'title' => 'Salmon'
+   ),
+   1 => array(
+      'description' => 'A whiskered fish',
+      'title' => 'Catfish'
+   )
+);
+
+$key = array_search($fish, array_column($, 'catfish')); // returns 1
+
+print_r($fish[$key]); 
+// prints Array( Description] => A whiskered fish [Title] => Catfish )
+```

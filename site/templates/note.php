@@ -15,7 +15,7 @@
             ?>
           </h1>
           <div class="meta">
-            Updated <time><?= $page->modified('M j, Y') ?></time>
+            <p>Updated </span> <time><?= $page->modified('M j, Y') ?></time></p>
           </a>
         </header>
 
