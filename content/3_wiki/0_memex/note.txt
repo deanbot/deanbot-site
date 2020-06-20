@@ -14,10 +14,10 @@ This wiki is a catalog of notes and references I've found useful to record. It's
 
 ## References & Credits
 
-> "Consider a future device, a sort of mechanized private library in which an individual stores all his books, records, and communications, and which may be consulted with exceeding speed and flexibility. It is an enlarged intimate supplement to his memory."
-—**Vannevar Bush, "As We May Think"**
+> Consider a future device, a sort of mechanized private library in which an individual stores all his books, records, and communications, and which may be consulted with exceeding speed and flexibility. It is an enlarged intimate supplement to his memory.
+(cite: Vannevar Bush, "As We May Think")
 
 > [...] "memex", a kind of archive and mirror of everything that one has done, that one has learnt. It's a living document that outlines where one has been, and a tool that advises where one could go.
-—**Devine Lu Linvega, "XXIVV"**
+(cite: Devine Lu Linvega, "XXIVV")
 
 Note: This site is heavily inspired by the website of Devine Lu Linvega. I encourage you to get lost in (link: https://wiki.xxiivv.com/ text: their website). In comparison mine is much more straightforward.
