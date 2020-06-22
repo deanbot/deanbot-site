@@ -48,7 +48,7 @@
         </footer>
       </article>
 
-      <?php snippet('contact-form'); ?>
+      <?php snippet('contactForm'); ?>
     </div>
   </main>
 
