@@ -15,9 +15,9 @@
                 $title = $page->title()->html();
               }
             } elseif ($isCategoryArchive) {
-              $title = 'Posts filed in <em>' . $category . '</em>';
+              $title = 'Posts filed in <mark>' . $category . '</mark>';
             } elseif ($isTagArchive) {
-              $title = 'Posts tagged as <em>' . $tag . '</em>';
+              $title = 'Posts tagged as <mark>' . $tag . '</mark>';
             }
             echo $title;
           ?></h1>
@@ -82,13 +82,11 @@
         </div>
 
         <?php if ($articles->isNotEmpty() && !$isFilteredArchive) : ?>
-        <div class="sub">
-
-          <?/* <aside>
+        <div class="sub"><?/*
+          <aside>
             <h4>Subscribe via <a href="/feed.xml">RSS</a></h4>
-          </aside> */?>
-
-          <?php /* <aside>
+          </aside>
+          <aside>
             <h3>Categories</h3>
             <ul class="categories">
               <?php foreach($categories as $category): ?>
@@ -99,9 +97,8 @@
               </li>
               <?php endforeach ?>
             </ul>
-          </aside> */ ?>
-
-          <?php /* <aside>
+          </aside>
+          <aside>
             <h4>Tags</h4>
             <ul class="tags">
               <?php foreach($tags as $tag): ?>
@@ -112,8 +109,8 @@
               </li>
               <?php endforeach ?>
             </ul>
-          </aside> */ ?>
-        </div>
+          </aside>
+        */ ?></div>
         <?php endif; ?>
       </div>
 

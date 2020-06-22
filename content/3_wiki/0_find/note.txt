@@ -19,3 +19,11 @@ Aka find the directories to exclude and prune them then find the files you want.
 * `-o` means or
 * `-print0 | xargs -0` keeps spaces in paths from creating problems
 * `-n 1` means process one at a time (aka you can batch 10 processes with `-n 10`
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: 

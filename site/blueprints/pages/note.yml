@@ -28,6 +28,24 @@ columns:
   sidebar:
     width: 1/3
     sections:
-      subPages:
-        extends: sections/notes
-        headline: Sub-notes
+      metaFields:
+        type: fields
+        fields:
+          topic:
+            label: Topic
+            type: select
+            options: query
+            max: 1
+            query:
+              fetch: site.find("wiki").children.listed.not(page.uri)
+              text: "{{ page.title }}"
+              value: "{{ page.uri }}"
+          related:
+            label: Related
+            type: multiselect
+            options: query
+            max: 5
+            query:
+              fetch: site.index.filterBy('template', 'note').listed.not(page.uri)
+              text: "{{ page.title }}"
+              value: "{{ page.uri }}"

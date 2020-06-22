@@ -1,0 +1,37 @@
+Title: PGP and Thunderbird
+
+----
+
+Pagetitle: PGP and Thunderbird notes
+
+----
+
+Text:
+
+**Install Thunderbird**
+`sudo apt-get install thunderbird`
+
+**Install gnupg**
+`sudo apt update`
+`sudo apt-get install gnupg`
+
+**Install enigmail (Thunderbird gpg extension)**
+`sudo apt-get install enigmail`
+
+**Generate keys with gpg**
+See [gpg](/wiki/gpg)
+
+**Select keys in Thunderbird**
+Open Thunderbird and apply keys:
+
+1. Navigate to Account Settings > [select account] > OpenPGP Security
+2. Select **Enable OpenPGP support for this identity**
+3. Select **Use specific OpenPGP key ID** and then **Select Key**
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: wiki/gpg

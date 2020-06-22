@@ -67,3 +67,11 @@ Quit without shutting vm down
 
 - add `--mode all` to clone all snapshots
 - add `--options KeepAllMACs` to reuse the MAC address (the default is to reinitialize/make new MACs)
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: 

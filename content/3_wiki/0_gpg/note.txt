@@ -2,7 +2,7 @@ Title: gpg
 
 ----
 
-Pagetitle: 
+Pagetitle: gpg notes
 
 ----
 
@@ -28,3 +28,11 @@ enter 2y for 2 years expiration
 
 **delete public key**
 `gpg --delete-keys id-here`
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: wiki/pgp-and-thunderbird

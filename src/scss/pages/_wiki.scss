@@ -1,4 +1,16 @@
-.wiki-index {
+.wiki {
+  .content-wrapper {
+    display: flex;
+  }
+  section.nav {
+    mark {
+      font-style: italic;
+    }
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+  }
   nav {
     display: flex;
     flex-direction: column;
@@ -8,7 +20,7 @@
     }
   }
 }
-.related-notes {
+.note {
   nav {
     display: flex;
     flex-wrap: wrap;
@@ -29,6 +41,53 @@
     }
     a {
       margin-bottom: .5rem;
+      &.active {
+        color: $color-theme-darker;
+        &:hover,
+        &:focus {
+          color: $color-link-hover;
+        }
+      }
+    }
+    h3 {
+      margin-top:0;
+    }
+  }
+  section.nav {
+    display: flex;
+    flex-direction: column;
+    a {
+      margin-bottom: .5rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+    mark {
+      font-style: italic;
+    }
+  }
+  aside.related-notes {
+    div {
+      background-color: $color-neutral-lighter;
+      border-radius: 5px;
+      padding: 1rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: .9rem;
+    }
+  }
+  .article-content  {
+    display: flex;
+    flex-direction: column;
+    @include small-breakpoint {
+      flex-direction: row;
+    }
+    .content-wrapper {
+      flex-grow: 1;
     }
   }
 }

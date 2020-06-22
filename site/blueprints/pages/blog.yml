@@ -39,7 +39,6 @@ columns:
         extends: sections/articles
         headline: Unlisted Articles
         status: unlisted
-
       listed:
         extends: sections/articles
         headline: Published Articles

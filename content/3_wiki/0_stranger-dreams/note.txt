@@ -20,3 +20,11 @@ The game was never developed past a small beta version including a tutorial and 
 
 Source: (link: https://github.com/deanbot/stranger-dreams text: game target: _blank), (link: https://github.com/deanbot/stranger-dreams-site text: site target: _blank)
 (link: https://strangerdreams.dreamfed.net/ text: Website)
+
+----
+
+Topic: wiki/dreamfed-games
+
+----
+
+Related: 

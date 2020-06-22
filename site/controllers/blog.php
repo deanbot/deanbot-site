@@ -39,6 +39,8 @@ return function ($page, $tag, $category) {
     if (!empty($categoryDescription)) {
       $intro = sprintf('<p>%s</p>', $categoryDescription);
     }
+  } else {
+    $intro = '';
   }
 
   return [

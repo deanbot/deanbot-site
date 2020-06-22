@@ -3,7 +3,9 @@
   <main>
     <div class="container">
       <article>
-        <?php snippet('pageHeader'); ?>
+        <header class="page-header">
+          <?php snippet('pageHeading'); ?>
+        </header>
 
         <section class="content">
           <?= $page->text()->kt() ?>

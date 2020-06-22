@@ -29,3 +29,11 @@ A secondary mechanic deals with the "lives" or available viruses the player has.
 (link: http://fdg2013.org/program/festival/networknightmares.pdf text: Research paper target: _blank)
 (link: https://github.com/deanbot/network-nightmares text: Source target: _blank)
 (link: https://dreamfed.net/network-nightmares text: Play target: _blank) (with Flash Player)
+
+----
+
+Topic: wiki/dreamfed-games
+
+----
+
+Related: 

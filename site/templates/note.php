@@ -1,30 +1,117 @@
 <?php snippet('header') ?>
-
-  <main>
+  <?php $topicPage = $page->topicPage(); ?>
+  <main class="note">
     <div class="container">
       <article>
 
         <header class="page-header">
-          <h1>
-            <?php
-              $title = $page->pageTitle()->html();
-              if ($title == '') {
-                $title = $page->title()->html();
-              }
-              echo $title;
-            ?>
-          </h1>
+          <?php snippet('pageHeading'); ?>
           <div class="meta">
-            <p>Updated </span> <time><?= $page->modified('M j, Y') ?></time></p>
+            <p>
+              Updated <time><?= $page->modified('M j, Y') ?></time>
+              <?php
+              if ($topicPage) {
+                $t = $topicPage->title();
+                $u =$topicPage->url();
+                printf( ' / Filed in '
+                  . '<a href="%s" title="%s">%s</a>', $u, $t, $t );
+              }
+              ?>
+            </p>
           </a>
         </header>
 
-        <section class="content">
-          <?= $page->text()->kt() ?>
-        </section>
+        <div class="article-content">
+
+          <div class="content-wrapper">
+
+            <section class="content">
+              <?= $page->text()->kt() ?>
+            </section>
+
+            <?php if ($page->hasChildren()): ?>
+            <section class="nav">
+              <h3>Notes filed in <mark><?= $page->title(); ?></mark></h3>
+              <?php
+              $children = $page->children();
+              foreach($children as $note) {
+                printf(
+                  '<a href="%s" title="%s">%s</a>',
+                  $note->url(),
+                  $note->title(),
+                  $note->title()
+                );
+              }
+              ?>
+            </section>
+            <?php endif; ?>
+
+          </div>
+
+          <?php if ($page->hasRelated()): ?>
+          <aside class="related-notes">
+            <div>
+              <h3>Related Notes</h3>
+              <?php
+              $relatedNotes = $page->related()->toPages();
+              foreach($relatedNotes as $note) {
+                printf(
+                  '<a href="%s" title="%s">%s</a>',
+                  $note->url(),
+                  $note->title(),
+                  $note->title()
+                );
+              }
+            ?>
+            </div>
+          </aside>
+          <?php endif; ?>
+
+        </div>
+
       </article>
 
+      <hr/>
+
+      <nav>
+        <div>
+          <a href="/wiki" title="Wiki">/ (Wiki Index)</a>
+          <?php
+          if ($topicPage) {
+            printf(
+            '<a href="%s" title="%s">.. (%s)</a>',
+              $topicPage->url(),
+              $topicPage->title(),
+              $topicPage->title()
+            );
+          }
+          ?>
+        </div>
+
+        <?php if ($topicPage):
+          $siblings = $page->siblings();
+          if ($siblings->count() > 0):
+        ?>
+        <div>
+          <?php
+          $activeClass = ' class="active"';
+          foreach($siblings as $note) {
+            $isActive = $note->uri() == $page->uri();
+            printf(
+              '<a href="%s" title="%s"%s>%s</a>',
+              $note->url(),
+              $note->title(),
+              $isActive ? $activeClass : '',
+              $note->title()
+            );
+          }
+          ?>
+        </div>
+        <?php endif; endif; ?>
+      </nav>
+
       <?php
+        /*
         $parent = $page->parent();
         $showParent = $showSiblings = false;
         if ($parent->template() == 'note') {
@@ -69,7 +156,7 @@
       </aside>
       <?php else: ?>
       <nav><a href="/wiki">Index</a></nav>
-      <?php endif; ?>
+      <?php endif; */?>
     </div>
   </main>
 

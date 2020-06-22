@@ -79,3 +79,11 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 At prompt target existing key file. You will be prompted to enter and confirm the new passphrase.
 
 `ssh-keygen -p`
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: 

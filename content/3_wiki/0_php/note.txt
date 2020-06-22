@@ -36,3 +36,11 @@ $key = array_search($fish, array_column($, 'catfish')); // returns 1
 print_r($fish[$key]); 
 // prints Array( Description] => A whiskered fish [Title] => Catfish )
 ```
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: 
