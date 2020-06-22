@@ -6,4 +6,12 @@ Pagetitle:
 
 ----
 
-Text: Various script references.
+Text: Assorted notes concerning scripting, programming, and cli's.
+
+----
+
+Topic: 
+
+----
+
+Related: 

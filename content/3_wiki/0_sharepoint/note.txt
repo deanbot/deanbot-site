@@ -1,0 +1,20 @@
+Title: SharePoint
+
+----
+
+Pagetitle: 
+
+----
+
+Text:
+
+**Default Date column value of "last day of previous month"**
+`=DATE(YEAR(TODAY()),MONTH(TODAY()),1)-1`
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: 

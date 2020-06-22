@@ -8,7 +8,7 @@
     <div class="container">
       <article>
         <header class="page-header">
-          <h1><?= $page->pageTitle()->html(); ?></h1>
+          <h1><?= $page->title()->html(); ?></h1>
           <div class="meta">
             <?php snippet('authorImage'); ?>
             <p>
