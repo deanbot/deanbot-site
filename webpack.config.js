@@ -95,7 +95,6 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              // public
             }
           }
         ]
@@ -159,6 +158,10 @@ module.exports = {
               }
           }
         ]
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader'
       },
     ]
   }

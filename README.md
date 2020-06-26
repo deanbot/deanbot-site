@@ -21,3 +21,7 @@ Webpack tooling is set up for sass & js compiliation, but it assumes you're alre
 
 * `pnpm run build` - create prod build of css and js in `assets/builds`
 * `pnpm run start` - launch dev build with webpack + browser-sync
+
+## Mentions
+
+* Icon svgs are from [Remix Icon](http://remixicon.com/)

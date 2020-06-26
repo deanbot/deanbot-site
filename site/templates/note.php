@@ -1,5 +1,6 @@
 <?php snippet('header') ?>
   <?php $topicPage = $page->topicPage(); ?>
+
   <main class="note">
     <div class="container">
       <article>
@@ -30,19 +31,16 @@
             </section>
 
             <?php if ($page->hasChildren()): ?>
-            <section class="nav">
+            <section class="child-nav">
               <h3>Notes filed in <mark><?= $page->title(); ?></mark></h3>
+              <nav>
               <?php
               $children = $page->children();
               foreach($children as $note) {
-                printf(
-                  '<a href="%s" title="%s">%s</a>',
-                  $note->url(),
-                  $note->title(),
-                  $note->title()
-                );
+                echo getNoteLink($note);
               }
               ?>
+              </nav>
             </section>
             <?php endif; ?>
 
@@ -52,38 +50,29 @@
           <aside class="related-notes">
             <div>
               <h3>Related Notes</h3>
+              <nav>
               <?php
               $relatedNotes = $page->related()->toPages();
               foreach($relatedNotes as $note) {
-                printf(
-                  '<a href="%s" title="%s">%s</a>',
-                  $note->url(),
-                  $note->title(),
-                  $note->title()
-                );
+                echo getNoteLink($note);
               }
-            ?>
+              ?>
+              </nav>
             </div>
           </aside>
           <?php endif; ?>
 
         </div>
-
       </article>
 
       <hr/>
 
-      <nav>
+      <nav class="tree-nav">
         <div>
-          <a href="/wiki" title="Wiki">/ (Wiki Index)</a>
+          <a href="/wiki" title="Wiki" class="note-link"><i class="ri-node-tree"></i> <span>Wiki Index</span></a>
           <?php
           if ($topicPage) {
-            printf(
-            '<a href="%s" title="%s">.. (%s)</a>',
-              $topicPage->url(),
-              $topicPage->title(),
-              $topicPage->title()
-            );
+            echo getNoteLink($topicPage);
           }
           ?>
         </div>
@@ -94,16 +83,10 @@
         ?>
         <div>
           <?php
-          $activeClass = ' class="active"';
+          $activeClass = 'active';
           foreach($siblings as $note) {
             $isActive = $note->uri() == $page->uri();
-            printf(
-              '<a href="%s" title="%s"%s>%s</a>',
-              $note->url(),
-              $note->title(),
-              $isActive ? $activeClass : '',
-              $note->title()
-            );
+            echo getNoteLink($note, $isActive ? $activeClass : '');
           }
           ?>
         </div>

@@ -14,17 +14,12 @@
 
       <?php if ($notes): ?>
       <div class="content-wrapper">
-        <section class="nav">
+        <section class="child-nav">
           <h3>Notes and topics filed in <mark>Wiki</mark></h3>
           <nav>
             <?php
             foreach($notes as $note) {
-              printf(
-                '<a href="%s" title="%s">%s</a>',
-                $note->url(),
-                $note->title()->html(),
-                $note->title()->html()
-              );
+              echo getNoteLink($note);
             }
             ?>
           </nav>

@@ -1,8 +1,21 @@
+.note-link {
+  background-color: $color-background-alt;
+  border-radius: 4px;
+  padding: 5px 10px;
+  display: flex;
+  text-decoration: none;
+  color: $color-black;
+  i {
+    width: 18px;
+    margin-right: 9px;
+  }
+}
+
 .wiki {
   .content-wrapper {
     display: flex;
   }
-  section.nav {
+  section.child-nav {
     mark {
       font-style: italic;
     }
@@ -21,7 +34,7 @@
   }
 }
 .note {
-  nav {
+  nav.tree-nav {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -53,9 +66,7 @@
       margin-top:0;
     }
   }
-  section.nav {
-    display: flex;
-    flex-direction: column;
+  section.child-nav {
     a {
       margin-bottom: .5rem;
     }
@@ -65,6 +76,14 @@
     }
     mark {
       font-style: italic;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      a {
+        margin-bottom: .5rem;
+      }
     }
   }
   aside.related-notes {

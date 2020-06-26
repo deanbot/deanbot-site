@@ -13,8 +13,10 @@ dependencies:
   node-sass: 4.14.1
   normalize.css: 8.0.1
   postcss-loader: 3.0.0
+  remixicon: 2.5.0
   sass-loader: 8.0.2_node-sass@4.14.1+webpack@4.43.0
   style-loader: 1.2.1_webpack@4.43.0
+  url-loader: 4.1.0_file-loader@6.0.0+webpack@4.43.0
   webpack: 4.43.0_webpack@4.43.0
   webpack-cli: 3.3.11_webpack@4.43.0
   webpack-dev-middleware: 3.7.2_webpack@4.43.0
@@ -845,6 +847,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qxXzvBO//jO9ZnoasKF1uJzHd2+M6Q2ZPIVfnFps8JJvXy0ZBbwbNOmE6SGIY5XOY6d1Bo5lb9d9RJ8nv3WSeA==
+  /@types/json-schema/7.0.5:
+    dev: false
+    resolution:
+      integrity: sha512-7+2BITlgjgDhH0vvwZU/HZJVyk+2XUlvxXe8dFMedNX/aMkaOq++rMAFXc0tM7ij15QaWlbdQASBR9dihi+bDQ==
   /@types/q/1.5.2:
     dev: false
     resolution:
@@ -1024,6 +1030,14 @@ packages:
       ajv: ^6.9.1
     resolution:
       integrity: sha512-RO1ibKvd27e6FEShVFfPALuHI3WjSVNeK5FIsmme/LYRNxjKuNj+Dt7bucLa6NdSv3JcVTyMlm9kGR84z1XpaQ==
+  /ajv-keywords/3.5.0_ajv@6.12.2:
+    dependencies:
+      ajv: 6.12.2
+    dev: false
+    peerDependencies:
+      ajv: ^6.9.1
+    resolution:
+      integrity: sha512-eyoaac3btgU8eJlvh01En8OCKzRqlLe2G5jDsCr3RiE2uLGMEEB1aaGwVVpwR8M95956tGH6R+9edC++OvzaVw==
   /ajv/6.12.2:
     dependencies:
       fast-deep-equal: 3.1.1
@@ -5456,6 +5470,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-64O87/dPDgfk8/RQqC4gkZoGyyWFIEUTTh80CU6CWuK5vkCGyekIx+oKcEIYtP/RAxSQltCZHCNu/mdd7fqlJw==
+  /remixicon/2.5.0:
+    dev: false
+    resolution:
+      integrity: sha512-q54ra2QutYDZpuSnFjmeagmEiN9IMo56/zz5dDNitzKD23oFRw77cWo4TsrAdmdkPiEn8mxlrTqxnkujDbEGww==
   /remove-trailing-separator/1.1.0:
     dev: false
     resolution:
@@ -5692,6 +5710,16 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-wHutF/WPSbIi9x6ctjGGk2Hvl0VOz5l3EKEuKbjPlB30mKZUzb9A5k9yEXRX3pwyqVLPvpfZZEllaFq/M718hA==
+  /schema-utils/2.7.0:
+    dependencies:
+      '@types/json-schema': 7.0.5
+      ajv: 6.12.2
+      ajv-keywords: 3.5.0_ajv@6.12.2
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==
   /scss-tokenizer/0.2.3:
     dependencies:
       js-base64: 2.5.2
@@ -6597,6 +6625,24 @@ packages:
     dev: false
     resolution:
       integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
+  /url-loader/4.1.0_file-loader@6.0.0+webpack@4.43.0:
+    dependencies:
+      file-loader: 6.0.0_webpack@4.43.0
+      loader-utils: 2.0.0
+      mime-types: 2.1.27
+      schema-utils: 2.7.0
+      webpack: 4.43.0_webpack@4.43.0
+    dev: false
+    engines:
+      node: '>= 10.13.0'
+    peerDependencies:
+      file-loader: '*'
+      webpack: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      file-loader:
+        optional: true
+    resolution:
+      integrity: sha512-IzgAAIC8wRrg6NYkFIJY09vtktQcsvU8V6HhtQj9PTefbYImzLB1hufqo4m+RyM5N3mLx5BqJKccgxJS+W3kqw==
   /url/0.11.0:
     dependencies:
       punycode: 1.3.2
@@ -6986,8 +7032,10 @@ specifiers:
   node-sass: ^4.14.1
   normalize.css: ^8.0.1
   postcss-loader: ^3.0.0
+  remixicon: ^2.5.0
   sass-loader: ^8.0.2
   style-loader: ^1.2.1
+  url-loader: ^4.1.0
   webpack: ^4.43.0
   webpack-cli: ^3.3.11
   webpack-dev-middleware: ^3.7.2
