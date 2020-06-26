@@ -1,5 +1,5 @@
 require('normalize.css');
-import 'remixicon/fonts/remixicon.css';
+// import 'remixicon/fonts/remixicon.css';
 require('./fixedNav');
 
 // remove no-js from body

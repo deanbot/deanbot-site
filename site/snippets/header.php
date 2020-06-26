@@ -29,7 +29,7 @@
    | --|
   /  ===\-->
   <?php echo liveCSS('assets/builds/bundle.css'); ?>
-
+  <?php echo css('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'); ?>
   <?php /* <!-- <meta name="theme-color" content="#fafafa"> --> */ ?>
 </head>
 <body>
