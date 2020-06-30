@@ -16,7 +16,7 @@ I'm Dean Verleger, a **full stack developer** who loves to (link: https://github
 - Making SPFX web parts, .NET React SPAs, Azure automations, and bash/PowerShell tooling at (link: https://www.envistacorp.com/ text: EnVista target: _blank).
 - Learning Linux.
 - Making a habit tracking console app.
-- Reading "The Witcher" series.
+- [Currently Reading](https://www.spiritedrefactor.net/wiki/reading-list).
 - Practicing the art of tidying.
 
 ## Previously

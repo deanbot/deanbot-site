@@ -8,8 +8,28 @@ Pagetitle:
 
 Text:
 
+## Site Columns
+
 **Default Date column value of "last day of previous month"**
 `=DATE(YEAR(TODAY()),MONTH(TODAY()),1)-1`
+
+## Cloning/Adding/Updating list items
+
+The SharePoint REST api as exposed by sp pnp js has some interesting quirks. You can't grab the values of a list item and apply that data object as-is to create/update a list item. Different column types (and single vs multi-value variations) have different considerations. The error messages are esoteric.
+
+- **Choice (Multi)**: retrieved as array, but must be submitted as an object with the array in the `results` property.
+- **People/Group**: 
+    - retrieved in the form of `<column>Id` and `<column>StringId` (i.e. `MyPersonColumnId`) and must be submitted as `<column>Id`. 
+    - The value submitted must be in the form of a web user id, i.e. `17` instead of the long claim form `i:0#.f|membership|sou***@w****`.
+- **People/Group (Multi)**: retrieved as array, but must be submitted as an object with the array in the `results` property.
+- **Single Taxonomy Fields**: 
+   - Retrieved as an object with `Label`, `TermGuid`, and `WssId` properties and submitted the same way. 
+   - `-1` can be used as the `WssId` regardless of the retrieved value. 
+   - I often see people add the the `__metadata` property to this object before submitting, aka `__metadata: { type: 'SP.Taxonomy.TaxonomyFieldValue' }`. I have not found this to be required.
+- **Taxonomy Fields (Multi)**: 
+    - Retrieved in the form of `<column>` and submitted as `<internalColumn>`. The internal column can be looked up via `pnp.sp.web.lists.getByTitle('foo').fields.getByTitle(column + '_0}).get().then(({internalName }) => { ... }` Note the `_0` part, that's important. 
+    - Although the field is retrieved as an array of objects containing `Label`, `TermGuid`, and `WssId` properties it must be returned as a single string in the form of: `<WssId>;#<Label>|<TermGuid>;#<OtherWssid>;#<OtherLabel>|<OtherTermGuid>;#` i.e., `1;#General|80547571-2529-4c0b-8ccd-288a29479da5;#3;#What's Happening|505c9dcd-7b5a-4448-b49c-a24bbd0077fc;#`.  
+    - `-1` can be used as the `WssId` value regardless of the retrieved value.
 
 ----
 
