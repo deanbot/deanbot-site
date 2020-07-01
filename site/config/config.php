@@ -51,5 +51,85 @@ return [
         }
       }
     ]
-  ]
+  ],
+  'pedroborges.meta-tags.default' => function ($page, $site) {
+    $description = $page->isHomePage()
+      ? $site->description()
+      : $page->description();
+    if (!$description) {
+      $description = $site->description();
+    }
+    return [
+      'title' => $site->title(),
+      'meta' => [
+        'description' => $description
+      ],
+      'link' => [
+        'canonical' => $page->url()
+      ],
+      'og' => [
+        'title' => $page->isHomePage()
+          ? $site->title()
+          : $page->title(),
+        'type' => 'website',
+        'site_name' => $site->title(),
+        'url' => $page->url()
+      ]
+    ];
+  },
+  'pedroborges.meta-tags.templates' => function ($page, $site) {
+    $title = $page->pageTitle();
+    if ($title == '') {
+      $title = $page->title();
+    }
+    $format = 'c';
+    $template = $page->template();
+    $published = $page->date()->toDate($format);
+    $modified = '';
+    $tags = '';
+    if ($template == 'article') {
+      $tags = '';
+      if (!$page->tags()->isEmpty()) {
+        foreach($page->tags()->split() as $tag) {
+          if (strlen($tags) > 0) {
+            $tags .= ', ';
+          }
+          $tags .= $tag;
+        }
+      }
+      $modified = !$page->updated()->isEmpty()
+        ? $page->updated()->toDate($format)
+        : $page->date()->toDate($format);
+    }
+    return [
+      'note' => [
+        'meta' => [
+          'description' => 'A wiki note concerning ' . $page->title(),
+        ],
+        'og' => [
+          'title' => $title,
+          'type' => 'website',
+          'site_name' => $site->title(),
+          'url' => $page->url()
+        ]
+      ],
+      'article' => [
+        'meta' => [
+          'description' => $site->description()
+        ],
+        'og' => [
+          'title' => $title,
+          'type' => 'article',
+          'site_name' => $site->title(),
+          'url' => $page->url(),
+          'namespace:article' => [
+            'published_time' => $published,
+            'modified_time' => $modified,
+            'section' => $page->category(),
+            'tag' => $tags
+          ]
+        ]
+      ]
+    ];
+  }
 ];

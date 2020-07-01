@@ -4,11 +4,7 @@
   <meta charset="utf-8">
   <title><?php
     if ($page->isHomePage()) {
-      printf(
-        '%s | %s',
-        $site->title()->html(),
-        $site->description()->html()
-      );
+      echo $site->title()->html();
     } else {
       printf(
         '%s | %s',
@@ -17,7 +13,7 @@
       );
     }
   ?></title>
-  <?php /*<meta name="description" content=""> */?>
+  <?= $page->metaTags() ?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php /*
   <!-- <link rel="manifest" href="site.webmanifest"> -->

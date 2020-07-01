@@ -17,6 +17,9 @@ columns:
   main:
     width: 2/3
     fields:
+      description:
+        label: Meta Description
+        type: text
       text:
         label: Text
         type: textarea

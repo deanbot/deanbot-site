@@ -2,7 +2,7 @@ Title: Spirited Refactor
 
 ----
 
-Description: Dean Verleger
+Description: Dean Verleger is a full stack tinkerer and lifelong learner.
 
 ----
 
@@ -34,13 +34,13 @@ Sourceurl: https://github.com/deanbot/spiritedrefactor-site
 
 Social:
 
-- 
+-
   title: GH
   url: https://github.com/deanbot
-- 
+-
   title: TW
   url: https://twitter.com/deanbot88
-- 
+-
   title: RSS
   url: https://spiritedrefactor.net/feed.xml
 
@@ -48,7 +48,7 @@ Social:
 
 Author:
 
-- 
+-
   icon:
     type: user
     ratio: 3/2

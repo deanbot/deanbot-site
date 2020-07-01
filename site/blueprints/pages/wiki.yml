@@ -14,6 +14,9 @@ columns:
           text:
             label: Text
             type: textarea
+          description:
+            label: Meta Description
+            type: text
       drafts:
         extends: sections/notes
         headline: Drafts
