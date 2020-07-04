@@ -7,6 +7,11 @@ fields:
   description:
     label: Meta Description
     type: text
+  metaImage:
+    label: Meta Image
+    type: files
+    max: 1
+    layout: cards
   text:
     label: Text
     type: textarea

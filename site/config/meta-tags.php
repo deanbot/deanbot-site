@@ -25,7 +25,10 @@ return [
       'card' => 'summary',
       'site' => '@' . $site->twitterHandle(),
     ];
-    $image = $page->cover()->toFile() ?? $site->defaultImage()->toFile();
+    $image = !$page->metaImage()->isEmpty()
+      ? $page->metaImage()->toFile()
+      : $site->defaultImage()->toFile();
+
     // update meta by template name
     $template = $page->template()->name();
     if ($template == 'article') {
@@ -58,7 +61,12 @@ return [
         ]
       ];
     } else if ($template == 'blog') {
-
+      // fallback to first image before default image
+      $image = !$page->metaImage()->isEmpty()
+        ? $page->metaImage()->toFile()
+        : (!$page->image()->isEmpty()
+          ? $page->image()->toFile()
+          : $site->defaultImage()->toFile());
 
       // check whether using category or tag archive
       $isCategoryArchive = $isTagArchive = false;
@@ -93,7 +101,7 @@ return [
     if ($image) {
       $og['image'] = $image->url();
       $twitter['namespace:image'] = [
-        'image' => $image->url(),
+        'image' => $image->thumb('twitter')->url(),
         'alt' => $image->alt()
       ];
     }

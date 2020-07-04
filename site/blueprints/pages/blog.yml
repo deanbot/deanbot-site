@@ -21,6 +21,11 @@ columns:
           description:
             label: Meta Description
             type: text
+          metaImage:
+            label: Meta Image
+            type: files
+            max: 1
+            layout: cards
           categories:
             type: structure
             fields:

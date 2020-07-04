@@ -55,3 +55,8 @@ columns:
             options: query
             query:
               fetch: site.find("blog").childrenAndDrafts.pluck("tags", ",", true)
+          metaImage:
+            label: Meta Image
+            type: files
+            max: 1
+            layout: cards

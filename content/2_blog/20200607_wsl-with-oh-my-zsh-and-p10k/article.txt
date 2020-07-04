@@ -2,6 +2,10 @@ Title: WSL with Oh My Zsh and P10k
 
 ----
 
+Description: 
+
+----
+
 Text:
 
 WSL is the best way to work on Windows.
@@ -279,3 +283,13 @@ Category: Purely Technical
 ----
 
 Tags: WSL, Zsh, Windows Terminal, Shell
+
+----
+
+Metaimage:
+
+- wsl-screenshot.png
+
+----
+
+Image: 
