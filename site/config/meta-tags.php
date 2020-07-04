@@ -61,13 +61,6 @@ return [
         ]
       ];
     } else if ($template == 'blog') {
-      // fallback to first image before default image
-      $image = !$page->metaImage()->isEmpty()
-        ? $page->metaImage()->toFile()
-        : (!$page->image()->isEmpty()
-          ? $page->image()->toFile()
-          : $site->defaultImage()->toFile());
-
       // check whether using category or tag archive
       $isCategoryArchive = $isTagArchive = false;
 
