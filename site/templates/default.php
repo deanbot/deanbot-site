@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-  <main>
+  <main id="content">
     <div class="container">
       <article>
         <header class="page-header">

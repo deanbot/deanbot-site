@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-  <main class="home">
+  <main id="content" class="home">
     <div class="container">
       <div>
         <?= $page->text()->kt() ?>

@@ -4,7 +4,7 @@
     $blogUrl = page('blog')->url();
     $cat = $page->category();
   ?>
-  <main>
+  <main id="content">
     <div class="container">
       <article>
         <header class="page-header">

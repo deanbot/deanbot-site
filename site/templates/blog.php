@@ -4,7 +4,7 @@
     $blogUrl = page('blog')->url();
     $isFilteredArchive = $isCategoryArchive || $isTagArchive;
   ?>
-  <main class="blog">
+  <main id="content" class="blog">
     <div class="container">
       <div class="header-wrapper">
         <header class="page-header">

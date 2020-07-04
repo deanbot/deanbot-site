@@ -1,7 +1,7 @@
 <?php snippet('header') ?>
   <?php $topicPage = $page->topicPage(); ?>
 
-  <main class="note">
+  <main id="content" class="note">
     <div class="container">
       <article>
 

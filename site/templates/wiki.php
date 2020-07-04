@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-  <main class="wiki">
+  <main id="content" class="wiki">
     <div class="container">
       <div class="header-wrapper">
         <header class="page-header">
