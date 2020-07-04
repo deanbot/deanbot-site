@@ -32,7 +32,7 @@ return function ($page, $tag, $category) {
   } else if (
     $isCategoryArchive
   ) {
-    $categoryDescription = getBlogCategoryDescrption($page, $category);
+    $categoryDescription = getBlogCategoryDescription($page, $category);
     if (!empty($categoryDescription)) {
       $intro = sprintf('<p>%s</p>', $categoryDescription);
     }

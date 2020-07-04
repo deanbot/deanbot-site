@@ -1,6 +1,6 @@
 <?php
 $config = [
-  'debug'  => false,
+  'debug'  => true,
   'markdown' => [
     'extra' => true
   ],

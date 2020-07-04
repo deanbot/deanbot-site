@@ -20,7 +20,6 @@ function getNoteLink($note, $class = '') {
 }
 
 function hasChildrenWithCategory($page, $term) {
-  return true;
   $pages = $page->children()->listed();
   return count( $pages->filterBy('category', $term) ) > 0;
 }

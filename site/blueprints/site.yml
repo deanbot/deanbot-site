@@ -14,7 +14,7 @@ tabs:
     icon: settings
     columns:
       headerSettings:
-        width: 1/2
+        width: 3/3
         sections:
           headerSettings:
             type: fields
@@ -22,11 +22,26 @@ tabs:
               headerSettings:
                 label: Header/Navigation
                 type: headline
-              description:
-                label: Description
-                type: text
               homeLinkTitle:
                 label: Home Link Title
+                type: text
+      metaSettings:
+        width: 1/2
+        sections:
+           metaSettings:
+            type: fields
+            fields:
+              metaSettings:
+                label: Meta Settings
+                type: headline
+              defaultImage:
+                label: Default Image
+                type: files
+                max: 1
+                layout: cards
+                help: 120px by 120px
+              twitterHandle:
+                label: Twitter handle
                 type: text
       blogSettings:
         width: 1/2

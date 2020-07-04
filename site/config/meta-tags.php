@@ -14,14 +14,18 @@ return [
       : $page->title();
     $siteTitle = $site->title();
     $url = $page->url();
-    $description = $page->description() ?? $site->description();
+    $description = !$page->description()->isEmpty()
+      ? $page->description()
+      : $site->description();
     $og = [
-      'title' => $pageTitle,
       'type' => 'website',
-      'site_name' => $siteTitle,
-      'url' => $url
+      'site_name' => $siteTitle
     ];
-
+    $twitter = [
+      'card' => 'summary',
+      'site' => '@' . $site->twitterHandle(),
+    ];
+    $image = $page->cover()->toFile() ?? $site->defaultImage()->toFile();
     // update meta by template name
     $template = $page->template()->name();
     if ($template == 'article') {
@@ -40,11 +44,12 @@ return [
       $modified = !$page->updated()->isEmpty()
         ? $page->updated()->toDate($format)
         : $page->date()->toDate($format);
+      $description = !$page->description()->isEmpty()
+        ? $page->description()
+        : $page->text()->excerpt(200, true, '');
       $og = [
-        'title' => $pageTitle,
         'type' => 'article',
         'site_name' => $siteTitle,
-        'url' => $url,
         'namespace:article' => [
           'published_time' => $published,
           'modified_time' => $modified,
@@ -53,19 +58,20 @@ return [
         ]
       ];
     } else if ($template == 'blog') {
-      // get arguments in uri
-      $arguments = $kirby->route()->arguments();
+
 
       // check whether using category or tag archive
       $isCategoryArchive = $isTagArchive = false;
 
-      if (count( $arguments ) > 0) {
-        $term = urldecode($arguments[0]);
+      // get whether we're in cat/tag archive route
+      $isArchive = $kirby->route()->attributes()['pattern'] == 'blog/(:any)';
+      $arguments = $kirby->route()->arguments();
 
+      if ($isArchive && count( $arguments ) > 0) {
         // whether using the blog/(:any) route
-        $isArchive = $kirby->route()->attributes()['pattern'] == 'blog/(:any)';
-        $isCategoryArchive = $isArchive && hasChildrenWithCategory($page, $term);
-        $isTagArchive = $isArchive && hasChildrenWithCategory($page, $term);
+        $term = urldecode($arguments[0]);
+        $isCategoryArchive = hasChildrenWithCategory($page, $term);
+        $isTagArchive = hasChildrenWithCategory($page, $term);
         if ($isCategoryArchive) {
           $pageTitle = sprintf('%s Archives', $term);
           $htmlTitle = sprintf('%s | Category Archives', $term);
@@ -73,15 +79,29 @@ return [
           // set description to category description or fallback
           $categoryDescription = getBlogCategoryDescription($page, $term);
           $description = $categoryDescription ?? sprintf('Blog posts filed in %s.', $term);
+          $url = $kirby->request()->url()->toString();
         } else if ($isTagArchive) {
           $pageTitle = sprintf('%s Archives', $term);
           $htmlTitle = sprintf('%s | Tag Archives', $term);
           $desctiption = sprintf('Blog posts tagged as %s.', $term);
+          $url = $kirby->request()->url()->toString();
         }
       }
     } elseif ($template == 'note') {
       $description = sprintf('A wiki note concerning %s.', $pageTitle);
     }
+    if ($image) {
+      $og['image'] = $image->url();
+      $twitter['namespace:image'] = [
+        'image' => $image->url(),
+        'alt' => $image->alt()
+      ];
+    }
+    $og['url'] = $url;
+    $og['title'] = $pageTitle;
+    $twitter['title'] = $pageTitle;
+    $og['description'] = $description;
+    $twitter['description'] = $description;
 
     return [
       'title' => $htmlTitle,
@@ -91,7 +111,8 @@ return [
       'link' => [
         'canonical' => $url
       ],
-      'og' => $og
+      'og' => $og,
+      'twitter' => $twitter
     ];
   }
 ];
