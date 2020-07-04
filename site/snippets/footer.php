@@ -34,7 +34,7 @@
 
       <nav class="links">
         <?php foreach ($site->social()->toStructure() as $social): ?>
-        <a href="<?= $social->url() ?>" target="_blank"><?= $social->title() ?></a>
+        <a href="<?= $social->url() ?>" target="_blank" title="<?= $social->title() ?>"><i class="ri-<?= $social->icon() ?>"></i></a>
         <?php endforeach ?>
       </nav>
     </footer>

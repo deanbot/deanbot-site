@@ -41,17 +41,17 @@ Sourceurl: https://github.com/deanbot/spiritedrefactor-site
 Social:
 
 - 
-  title: GH
+  title: Github
   url: https://github.com/deanbot
-  icon: ""
+  icon: github-line
 - 
-  title: TW
+  title: Twitter
   url: https://twitter.com/deanbot88
-  icon: ""
+  icon: twitter-line
 - 
   title: RSS
   url: https://spiritedrefactor.net/feed.xml
-  icon: ""
+  icon: rss-line
 
 ----
 

@@ -40,4 +40,19 @@
       color: $color-link-hover;
     }
   }
+  .links {
+    margin: 0 -2px;
+    a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: inline-block;
+      padding: 0 2px;
+    }
+    @include small-breakpoint {
+      margin: 0 -4px;
+      a {
+        padding: 0 4px;
+      }
+    }
+  }
 }
