@@ -19,4 +19,28 @@ function getNoteLink($note, $class = '') {
   );
 }
 
+function hasChildrenWithCategory($page, $term) {
+  return true;
+  $pages = $page->children()->listed();
+  return count( $pages->filterBy('category', $term) ) > 0;
+}
+
+function hasChildrenWithTag($page, $term) {
+  $pages = $page->children()->listed();
+  return count( $pages->filterBy('tag', $term) ) > 0;
+}
+
+function renderWith($page, $key, $value) {
+  return $page->render([
+    $key => $value
+  ]);
+};
+
+function getBlogCategoryDescription($page, $categoryTitle) {
+  $categoryObjects = $page->categories()->yaml();
+  $categoryIndex = array_search($categoryTitle, array_column($categoryObjects, 'title'));
+  $categoryDescription = $categoryObjects[$categoryIndex]['description'];
+  return $categoryDescription ?? '';
+}
+
 echo (new Kirby)->render();

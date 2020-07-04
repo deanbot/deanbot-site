@@ -6,4 +6,4 @@ Text: This wiki or (link: /wiki/memex text: memex) is a personal knowledge base 
 
 ----
 
-Description: This wiki is a personal knowledge base for digital notes.
+Description: A personal knowledge base used to store digital notes.

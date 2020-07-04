@@ -1,0 +1,29 @@
+Title: git
+
+----
+
+Pagetitle: 
+
+----
+
+Text:
+
+## swap out submodule with fork
+
+Edit the (mark: url) param for a submodule in `.gitmodules`
+
+```
+[submodule "ext/foo]
+    path = ext/foo
+    url = git://git.foo.org/bar.git
+```
+
+After changing the url execute: `git submodule sync`.
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: 

@@ -33,9 +33,25 @@ $fish = array(
 
 $key = array_search($fish, array_column($, 'catfish')); // returns 1
 
-print_r($fish[$key]); 
+print_r($fish[$key]);
 // prints Array( Description] => A whiskered fish [Title] => Catfish )
 ```
+
+## var_dump to string
+Use output buffering
+```php
+<?php
+ob_start();
+var_dump($someVar);
+$result = ob_get_clean();
+?>
+```
+
+## operators
+
+*truthy OR*
+
+`$res = $this ?? $that;`
 
 ----
 
@@ -43,4 +59,4 @@ Topic: wiki/reference
 
 ----
 
-Related: 
+Related:

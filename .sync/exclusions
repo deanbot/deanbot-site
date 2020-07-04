@@ -3,6 +3,8 @@ site/sessions
 twtxt.txt
 .git
 .gitignore
+.gitmodules
+.editorconfig
 *.sh
 node_modules
 package.json
@@ -16,3 +18,4 @@ pgp.txt
 site/config/.license
 */.jobs
 */.logins
+media/*

@@ -3,4 +3,4 @@
 	url = https://github.com/bnomei/kirby3-feed.git
 [submodule "site/plugins/meta-tags"]
 	path = site/plugins/meta-tags
-	url = https://github.com/pedroborges/kirby-meta-tags.git
+	url = git@github.com:deanbot/kirby-meta-tags.git

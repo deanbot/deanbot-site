@@ -6,6 +6,9 @@ tabs:
     label: Pages
     icon: layers
     preset: pages
+    unlisted:
+      type: pages
+      headline: Unlisted
   settings:
     label: 'Settings'
     icon: settings
@@ -71,3 +74,6 @@ tabs:
                   url:
                     label: URL
                     type: url
+                  icon:
+                    label: Icon
+                    type: text

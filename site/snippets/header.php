@@ -2,17 +2,6 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
-  <title><?php
-    if ($page->isHomePage()) {
-      echo $site->title()->html();
-    } else {
-      printf(
-        '%s | %s',
-        $page->title()->html(),
-        $site->title()->html()
-      );
-    }
-  ?></title>
   <?= $page->metaTags() ?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php /*
@@ -20,9 +9,9 @@
   <!-- <link rel="apple-touch-icon" href="icon.png"> -->
   <!-- Place favicon.ico in the root directory --> */ ?>
 <!--`
-   _|__
-  ((O O)
-   | --|
+   _|__    ##############
+  ((O O)  ## Hello 🌎! ##
+   | --| ###############
   /  ===\-->
   <?php echo liveCSS('assets/builds/bundle.css'); ?>
   <?php echo css('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'); ?>

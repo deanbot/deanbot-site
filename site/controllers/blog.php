@@ -32,10 +32,7 @@ return function ($page, $tag, $category) {
   } else if (
     $isCategoryArchive
   ) {
-    $categoryObjects = $page->categories()->yaml();
-    $categoryIndex = array_search($category, array_column($categoryObjects, 'title'));
-    $categoryDescription = $categoryObjects[$categoryIndex]['description'];
-
+    $categoryDescription = getBlogCategoryDescrption($page, $category);
     if (!empty($categoryDescription)) {
       $intro = sprintf('<p>%s</p>', $categoryDescription);
     }

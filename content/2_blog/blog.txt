@@ -10,6 +10,10 @@ Text: An index of musings on my projects, passions and the dev puzzles/technical
 
 ----
 
+Description: An index of musings on my projects, passions and the dev puzzles/technical oddities I come across. There may be something here to interest the curious passerby.
+
+----
+
 Categories:
 
 - 
