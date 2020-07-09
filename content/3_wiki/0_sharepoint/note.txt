@@ -8,6 +8,11 @@ Pagetitle:
 
 Text:
 
+
+## Modern
+
+- `?maintenancemode=true` - attach to url to see modern page debug information
+
 ## Site Columns
 
 **Default Date column value of "last day of previous month"**
@@ -37,6 +42,14 @@ The same considerations apply for setting empty values, namely that multi-value 
 const field = await pnp.sp.web.list.getByTitle('foo').fields.getByTitle(fieldId).get();
 const isMultiValue = field.AllowMultipleValues;
 ```
+
+## Links
+
+- [SharePoint Framework Overview](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)
+- [List Template Types](https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.splisttemplatetype.aspx)
+- [KQL Syntax](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/keyword-query-language-kql-syntax-reference)
+- [FQL Syntax](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/fast-query-language-fql-syntax-reference)
+- [Search Query Tokens](https://www.techmikael.com/2015/07/sharepoint-rest-do-support-query.html)
 
 ----
 
