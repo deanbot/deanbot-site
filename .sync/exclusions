@@ -21,3 +21,4 @@ site/config/.license
 media/*
 .vscode
 cache
+kirby

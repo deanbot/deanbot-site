@@ -6,10 +6,25 @@ Pagetitle:
 
 ----
 
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
 Text:
 
+## Modern & SPFX
 
-## Modern
+### Something Went Wrong
+
+**Failed to load entry point from component [...]**
+
+This can mean that you've recently added a package to your project. You likely still serving the dev build, and you have yet to deploy a production build since you added the project.  Fix: build and deploy a prod build. You can then return to a dev build without the above error.
+
+### Misc
 
 - `?maintenancemode=true` - attach to url to see modern page debug information
 
@@ -18,9 +33,9 @@ Text:
 **Default Date column value of "last day of previous month"**
 `=DATE(YEAR(TODAY()),MONTH(TODAY()),1)-1`
 
-## Cloning/Adding/Updating list items
+## Cloning/Adding/Updating list items via sp pnp js.
 
-The SharePoint REST api as exposed by sp pnp js has some interesting quirks. You can't grab the values of a list item and apply that data object as-is to create/update a list item. Different column types (and single vs multi-value variations) have different considerations. The error messages are esoteric.
+The SharePoint REST api as exposed by sp pnp js has some interesting quirks. You can't grab the values of a list item and apply that data object as-is to create/update a list item. Different column types (and single vs multi-value variations) have different considerations, and the error messages are esoteric.
 
 - **Choice (Multi)**: retrieved as array, but must be submitted as an object with the array in the `results` property.
 - **Lookup (Multi)**: retrieved as array, but must be submitted as an object with the array in the `results` property.
