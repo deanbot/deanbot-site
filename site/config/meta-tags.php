@@ -89,7 +89,7 @@ return [
         }
       }
     } elseif ($template == 'note') {
-      $description = sprintf('A wiki note concerning %s.', $pageTitle);
+      $description = 'A wiki note.';
     }
     if ($image) {
       $og['image'] = $image->url();

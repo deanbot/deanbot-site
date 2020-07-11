@@ -58,6 +58,55 @@ const field = await pnp.sp.web.list.getByTitle('foo').fields.getByTitle(fieldId)
 const isMultiValue = field.AllowMultipleValues;
 ```
 
+## OData filter syntax
+
+aka filter syntax used in list items queries in sp rest api as exposed by sp pnp js.
+
+`eq`
+: Equal to
+
+`ne`
+: Not equal to
+
+`gt`
+: Greater than
+
+`ge`
+: Greater than or equal to
+
+`lt`
+: Less than
+
+`le`
+: Less than or equal to
+
+`and`
+: Logical and
+
+`or`
+: Logical or
+
+`not`
+: Logical negation
+
+`add`
+: Addition
+
+`sub`
+: Subtraction
+
+`mul`
+: Multiplication
+
+`div` 
+: Division
+
+`mod`
+: Modulo
+
+`( )`
+: Precedence grouping
+
 ## Links
 
 - [SharePoint Framework Overview](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview)

@@ -30,10 +30,6 @@
         <div>
           <a href="<?= $site->sourceUrl()->html() ?>">Source Code</a>
         </div>
-        <span> - </span>
-        <div>
-          <a href="#content">Back to top ↑</a>
-        </div>
       </div>
 
       <nav class="links">
