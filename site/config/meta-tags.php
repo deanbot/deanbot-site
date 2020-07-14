@@ -27,7 +27,7 @@ return [
     ];
     $image = !$page->metaImage()->isEmpty()
       ? $page->metaImage()->toFile()
-      : $site->defaultImage()->toFile();
+      : '';
 
     // update meta by template name
     $template = $page->template()->name();
@@ -51,11 +51,11 @@ return [
         ? $page->description()
         : $page->text()->excerpt(200, true, '');
 
-      $image = !$page->metaImage()->isEmpty()
-        ? $page->metaImage()->toFile()
-        : (!$page->featuredImage()->isEmpty()
-          ? $page->feauredImage()->toFile()
-          : $site->defaultImage()->toFile());
+      if (!$image) {
+        $image = !$page->featuredImage()->isEmpty()
+          ? $page->featuredImage()->toFile()
+          : '';
+      }
 
       $og = [
         'type' => 'article',
@@ -98,12 +98,23 @@ return [
     } elseif ($template == 'note') {
       $description = 'A wiki note.';
     }
-    if ($image) {
-      $og['image'] = $image->url();
-      $twitter['namespace:image'] = [
-        'image' => $image->thumb('twitter')->url(),
-        'alt' => $image->alt()
-      ];
+
+    if (!$image) {
+      $image = !$site->defaultImage()->isEmpty()
+        ? $site->defaultImage()->toFile()
+        : '';
+    }
+
+    if ($image !== '') {
+      try {
+        $og['image'] = $image->url();
+        $twitter['namespace:image'] = [
+          'image' => $image->thumb('twitter')->url(),
+          'alt' => $image->alt()
+        ];
+      }
+      catch (exception $e) {
+      }
     }
     $og['url'] = $url;
     $og['title'] = $pageTitle;

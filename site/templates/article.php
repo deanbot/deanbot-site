@@ -37,11 +37,11 @@
         <?= $page->headline()->kt() ?>
         <?php endif; ?>
 
-        <?php if (!$page->featuredImage()->isEmpty()): ?>
+        <?php if (!$page->bannerImage()->isEmpty()): ?>
         <figure class="featured-image">
-          <img src="<?= $page->featuredImage()->toFile()->url() ?>" />
-          <?php if (!$page->featuredImageAttribution()->isEmpty()): ?>
-          <figcaption><?= $page->featuredImageAttribution()->kirbytextinline(); ?></figcaption>
+          <img src="<?= $page->bannerImage()->toFile()->url() ?>" />
+          <?php if (!$page->imageAttribution()->isEmpty()): ?>
+          <figcaption><?= $page->imageAttribution()->kirbytextinline(); ?></figcaption>
           <?php endif; ?>
         </figure>
         <?php endif; ?>

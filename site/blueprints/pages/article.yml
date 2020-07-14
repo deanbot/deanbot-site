@@ -58,16 +58,16 @@ columns:
             options: query
             query:
               fetch: site.find("blog").childrenAndDrafts.pluck("tags", ",", true)
-          featuredImage:
-            label: Featured Image
+          bannerImage:
+            label: Banner Image
             type: files
-            max: 1
+            multiple: false
             layout: cards
-          featuredImageAttribution:
+          imageAttribution:
             label: Image Attribution
             type: text
           metaImage:
             label: Meta Image
             type: files
-            max: 1
+            multiple: false
             layout: cards

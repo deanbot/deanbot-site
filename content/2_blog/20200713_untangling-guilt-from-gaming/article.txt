@@ -2,7 +2,7 @@ Title: Untangling guilt from gaming
 
 ----
 
-Description:
+Description: I love gaming, but after a few minutes the intrusive thoughts start. Am I ignoring my goals? - I should be working on my website. I should be reading, studying German, programming. . . I should be. . .
 
 ----
 
@@ -20,7 +20,7 @@ I've done a lot of gaming in my formative years. I played console games, mmorpgs
 
 In college I focused on programming at a media arts school. If I developed the skills I was learning, I could create my own games. Game development being a vocation where generalists and min-maxers alike devote massive amounts of time gaining experience in their chosen skill paths. Yet, there are only so many hours in the day - that I might feel guilt when *consuming* rather than *creating* content (or developing my skills so that I can…) seems like a natural outcome.
 
-Internalized guilt aside, I still want to play games. I consider it a legitimate medium/art-form and gaming a legitimate hobby. My gaming memories, however strange and disjointed these may be (how many times have I restarted FFVIII?), occupy a similar place as my real life experiences. Also, I love geeking out over strategic combat and weapon loadouts.
+Internalized guilt aside, I still want to play games. I consider gaming a legitimate medium/art-form and gaming a legitimate hobby. My gaming memories, however strange and disjointed these may be (how many times have I restarted FFVIII?), occupy a similar place as my real life experiences. Also, I love geeking out over strategic combat and weapon loadouts.
 
 (image: dos2.jpeg alt: divinity original sin 2 combat link: dos2.jpeg)
 
@@ -58,7 +58,7 @@ Follow the [Game Time tag](/blog/Game+Time) for related posts.
 
 ----
 
-Date: 2020-07-12
+Date: 2020-07-13
 
 ----
 
@@ -74,14 +74,14 @@ Tags: Game Time, Gaming
 
 ----
 
-Featuredimage:
-
-- qbert.png
-
-----
-
-Featuredimageattribution: (link: https://www.flickr.com/photos/28796637@N00/3230707404 text: "QBert" target: _blank) by autowitch is licensed under CC BY-NC 2.0
+Imageattribution: (link: https://www.flickr.com/photos/28796637@N00/3230707404 text: "QBert" target: _blank) by autowitch is licensed under CC BY-NC 2.0
 
 ----
 
 Metaimage:
+
+----
+
+Bannerimage:
+
+- qbert.png

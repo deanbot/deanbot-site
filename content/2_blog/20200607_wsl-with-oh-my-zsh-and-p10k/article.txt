@@ -2,7 +2,7 @@ Title: WSL with Oh My Zsh and P10k
 
 ----
 
-Description: 
+Description:
 
 ----
 
@@ -274,7 +274,7 @@ Date: 2020-06-07
 
 ----
 
-Dateupdated: 
+Dateupdated:
 
 ----
 
@@ -286,20 +286,14 @@ Tags: WSL, Zsh, Windows Terminal, Shell
 
 ----
 
-Featuredimage:
+Bannerimage:
 
 - wsl-screenshot.png
 
 ----
 
-Featuredimageattribution: 
+Imageattribution:
 
 ----
 
 Metaimage:
-
-- wsl-screenshot.png
-
-----
-
-Image: 
