@@ -6,11 +6,11 @@ Description:
 
 ----
 
+Headline: WSL is the best way to work on Windows.
+
+----
+
 Text:
-
-WSL is the best way to work on Windows.
-
-(image: wsl-screenshot.png link: wsl-screenshot.png target: _blank)
 
 Follow along to setup [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) and [Z shell](https://en.wikipedia.org/wiki/Z_shell), an alternative to bash with awesome plugin & theme support. This setup uses the popular [Oh My Zsh](https://ohmyz.sh/) Zsh configuration framework to manage Zsh plugins and themes (it comes bundled with helpers & aliases as well). As for the theme, we use the impressive, [Powerlevel10k](https://github.com/romkatv/powerlevel10k) seen in the screenshot above.
 
@@ -283,6 +283,16 @@ Category: Purely Technical
 ----
 
 Tags: WSL, Zsh, Windows Terminal, Shell
+
+----
+
+Featuredimage:
+
+- wsl-screenshot.png
+
+----
+
+Featuredimageattribution: 
 
 ----
 

@@ -2,21 +2,23 @@ Title: Anya's Thai Beef w/ Coconut Rice
 
 ----
 
-Pagetitle:
+Pagetitle: 
 
 ----
 
-Description:
+Description: 
 
 ----
 
-Metaimage:
+Metaimage: 
 
 ----
 
 Text:
 
-(15-20 min prep, 10-15 min cooktime)
+*Thank Anya for this!*
+
+(15-20 min prep, 10-15 min cook time)
 
 **DON'T FORGET THE LIME & FRESH BASIL**
 
@@ -30,7 +32,7 @@ Text:
 
 See prep notes for quantities:
 
-- thai basil (few bunches)
+- Thai (or other) basil (few bunches)
 - onion (1 sm-medium onion)
 - ginger (at least 2 in. or so)
 - garlic
@@ -64,7 +66,7 @@ Once heated, add garlic-ginger-onion-chili mixture with 2-3 tablespoons of oil. 
 
 Add the soy-stuff, cook for 30 seconds to 1 minute more...
 
-Reduce the heat to med-low, add basil & stirrrrrr until it wilts very slightly (20 seconds? it’s quick).
+Reduce the heat to med-low, add basil & stir until it wilts very slightly (20 seconds? it’s quick).
 
 & done.
 
@@ -86,4 +88,4 @@ Topic: wiki/recipes
 
 ----
 
-Related:
+Related: 

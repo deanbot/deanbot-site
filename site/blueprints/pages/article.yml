@@ -20,6 +20,9 @@ columns:
       description:
         label: Meta Description
         type: text
+      headline:
+        label: Headline
+        type: text
       text:
         label: Text
         type: textarea
@@ -55,6 +58,14 @@ columns:
             options: query
             query:
               fetch: site.find("blog").childrenAndDrafts.pluck("tags", ",", true)
+          featuredImage:
+            label: Featured Image
+            type: files
+            max: 1
+            layout: cards
+          featuredImageAttribution:
+            label: Image Attribution
+            type: text
           metaImage:
             label: Meta Image
             type: files

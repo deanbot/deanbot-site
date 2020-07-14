@@ -1,0 +1,87 @@
+Title: Untangling guilt from gaming
+
+----
+
+Description:
+
+----
+
+Headline: Have you ever felt guilty playing a video game?
+
+----
+
+Text:
+
+I love gaming, but after a few minutes the intrusive thoughts start. Am I ignoring my goals? - I should be working on my website. I should be reading, studying German, programming. . .  I should be doing any number of other things. Conventional opinion also tends to run along the lines of the critical voice in my head; gaming is not productive and time spent with games is wasted. On the flip side many game lovers struggle with a [stack of shame](https://www.polygon.com/2014/1/6/5279722/steam-sale-stack-of-shame), games owned and untouched. The implicit urging here being *to game more* or *to play them all*. Gamers like myself walk a strange line.
+
+(image: my-alter-egos.png target: _blank alt: mmporg avatars link: https://www.flickr.com/photos/15765164@N00/1236697089 caption: "my alter egos" by eddiejdf is licensed under CC BY-NC-SA 2.0)
+
+I've done a lot of gaming in my formative years. I played console games, mmorpgs, addictive sims, etc..., but I don't remember feeling guilty about it until I started college.
+
+In college I focused on programming at a media arts school. If I developed the skills I was learning, I could create my own games. Game development being a vocation where generalists and min-maxers alike devote massive amounts of time gaining experience in their chosen skill paths. Yet, there are only so many hours in the day - that I might feel guilt when *consuming* rather than *creating* content (or developing my skills so that I can…) seems like a natural outcome.
+
+Internalized guilt aside, I still want to play games. I consider it a legitimate medium/art-form and gaming a legitimate hobby. My gaming memories, however strange and disjointed these may be (how many times have I restarted FFVIII?), occupy a similar place as my real life experiences. Also, I love geeking out over strategic combat and weapon loadouts.
+
+(image: dos2.jpeg alt: divinity original sin 2 combat link: dos2.jpeg)
+
+Though I'm still evolving my thoughts around *all this*, I've found a few ways to combat guilt and to harness my 'competing' drives to progress on goals *and* play games.
+
+## Coming to terms with an infinite backlog
+
+I find it freeing to give up the idea that I’m going to play all the games in my possession. If you supported [itch.io](https://itch.io/)'s black lives matter/[Racial justice & Equality bundle](https://www.pcgamesn.com/black-lives-matter-bundle-itchio) - a beautiful, highly successful charity - you added some 1000 more titles to your collection. For me, this was a mixed blessing.
+
+This really sent it home for me. You can't play all the games - it doesn't make sense to try. Services like the Google Stadia and PlayStation Now grant access to libraries of games to stream but not own. The stack of shame concept will be meaningless soon.
+
+Leaving behind the idea of a finite playlist of games eliminates analysis paralysis around what to play next and how to finish the backlog. I can play what I'm inspired to  play rather than the next item on a checklist. There's freedom in that.
+
+## Building a personal relationship with games via journaling
+
+One way to infuse more meaning and intention into gaming is to add-in the practice of journaling. After a gaming session jot down as many notes as you like to describe your gaming session.
+
+Journaling helps build memories and writing is good for the brain. Plus physical notebooks are cool. You can be creative - my friends and I have made clue journals for a Nancy Drew playthrough.
+
+Here’s a crude map of the Butcherblock Mountains I prepared for the launch of a new EverQuest progression server. With some convincing, my then-partner Krista agreed to play with me. Soon later, we were married. Coincidence?
+
+(image: butcherblock-mtns.png alt: Map of the Butcherblock Mountains link: butcherblock-mtns.png)
+
+Here's another lovely journal, also re EQ.
+
+(image: lorals-journals.jpeg target: _blank alt: loral’s EverQuest Journals link: https://www.flickr.com/photos/77078001@N00/2109952597 caption: “lorals_journals_2” by mshea is licensed under CC BY-NC 2.0)
+
+## Game Time
+
+I've been working on something I call Game Time. Essentially, the idea, which I will explore more in future posts, is allowing myself to play games after completing meaningful goals-oriented work can actually *enhance* the gaming experience. Sanctioned gaming time helps with the guilt, but more than that, if I'm deliberate about gaming it becomes more meaningful.
+
+Spoiler, I've devoted time towards making systems and writing code on the matter.
+
+Follow the [Game Time tag](/blog/Game+Time) for related posts.
+
+----
+
+Date: 2020-07-12
+
+----
+
+Dateupdated:
+
+----
+
+Category: Ephemera
+
+----
+
+Tags: Game Time, Gaming
+
+----
+
+Featuredimage:
+
+- qbert.png
+
+----
+
+Featuredimageattribution: (link: https://www.flickr.com/photos/28796637@N00/3230707404 text: "QBert" target: _blank) by autowitch is licensed under CC BY-NC 2.0
+
+----
+
+Metaimage:

@@ -33,6 +33,19 @@
 
         <hr/>
 
+        <?php if (!$page->headline()->isEmpty()): ?>
+        <?= $page->headline()->kt() ?>
+        <?php endif; ?>
+
+        <?php if (!$page->featuredImage()->isEmpty()): ?>
+        <figure class="featured-image">
+          <img src="<?= $page->featuredImage()->toFile()->url() ?>" />
+          <?php if (!$page->featuredImageAttribution()->isEmpty()): ?>
+          <figcaption><?= $page->featuredImageAttribution()->kirbytextinline(); ?></figcaption>
+          <?php endif; ?>
+        </figure>
+        <?php endif; ?>
+
         <?= $page->text()->kt() ?>
 
         <hr/>

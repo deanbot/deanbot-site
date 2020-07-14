@@ -50,6 +50,13 @@ return [
       $description = !$page->description()->isEmpty()
         ? $page->description()
         : $page->text()->excerpt(200, true, '');
+
+      $image = !$page->metaImage()->isEmpty()
+        ? $page->metaImage()->toFile()
+        : (!$page->featuredImage()->isEmpty()
+          ? $page->feauredImage()->toFile()
+          : $site->defaultImage()->toFile());
+
       $og = [
         'type' => 'article',
         'site_name' => $siteTitle,
