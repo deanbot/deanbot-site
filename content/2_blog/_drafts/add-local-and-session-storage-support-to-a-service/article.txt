@@ -1,0 +1,41 @@
+Title: Add local and session storage support to a service
+
+----
+
+Description: 
+
+----
+
+Headline: 
+
+----
+
+Text: One technique I've used frequently is creating a base class that includes all save/retrieve functionality and extending this in any domain specific service class.
+
+----
+
+Date: 2020-07-15
+
+----
+
+Dateupdated: 
+
+----
+
+Category: Purely Technical
+
+----
+
+Tags: TypeScript, Releases, API
+
+----
+
+Bannerimage: 
+
+----
+
+Imageattribution: 
+
+----
+
+Metaimage: 

@@ -48,7 +48,7 @@ Here's another lovely journal, also re EQ.
 
 (image: lorals-journals.jpeg target: _blank alt: loral’s EverQuest Journals link: https://www.flickr.com/photos/77078001@N00/2109952597 caption: “lorals_journals_2” by mshea is licensed under CC BY-NC 2.0)
 
-## Game Time
+## Earning game time
 
 I've been working on something I call Game Time. Essentially, the idea, which I will explore more in future posts, is allowing myself to play games after completing meaningful goals-oriented work can actually *enhance* the gaming experience. Sanctioned gaming time helps with the guilt, but more than that, if I'm deliberate about gaming it becomes more meaningful.
 
@@ -62,11 +62,11 @@ Date: 2020-07-13
 
 ----
 
-Dateupdated:
+Dateupdated: 
 
 ----
 
-Category: Ephemera
+Category: Life hacks
 
 ----
 
@@ -74,14 +74,14 @@ Tags: Game Time, Gaming
 
 ----
 
+Bannerimage:
+
+- qbert.png
+
+----
+
 Imageattribution: (link: https://www.flickr.com/photos/28796637@N00/3230707404 text: "QBert" target: _blank) by autowitch is licensed under CC BY-NC 2.0
 
 ----
 
-Metaimage:
-
-----
-
-Bannerimage:
-
-- qbert.png
+Metaimage: 

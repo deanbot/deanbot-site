@@ -52,8 +52,8 @@ return [
         : $page->text()->excerpt(200, true, '');
 
       if (!$image) {
-        $image = !$page->featuredImage()->isEmpty()
-          ? $page->featuredImage()->toFile()
+        $image = !$page->bannerImage()->isEmpty()
+          ? $page->bannerImage()->toFile()
           : '';
       }
 

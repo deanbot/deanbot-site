@@ -26,7 +26,7 @@ function hasChildrenWithCategory($page, $term) {
 
 function hasChildrenWithTag($page, $term) {
   $pages = $page->children()->listed();
-  return count( $pages->filterBy('tag', $term) ) > 0;
+  return count( $pages->filterBy('tags', $term, ',') ) > 0;
 }
 
 function renderWith($page, $key, $value) {

@@ -26,6 +26,7 @@ This can mean that you've recently added a package to your project. You likely s
 
 ### Misc
 
+- To switch from loading debug manifests (site extensions) delete the `spfx-debug` session storage variable.
 - `?maintenancemode=true` - attach to url to see modern page debug information
 
 ## Site Columns
