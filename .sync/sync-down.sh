@@ -8,7 +8,7 @@ source "$DIR/common.src"
 # Exports:
 #   - Strings: _key, _remote and _local
 source "$DIR/config.src"
-exclusions="$DIR/exclusions"
+exclusions="$DIR/exclusionsdown"
 
 # dry run
 dryRun=$(y_or_n_val "Do you want to do a dry run [y/n]: " "y")

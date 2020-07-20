@@ -13,4 +13,6 @@ $config = [
   'routes' => require('routes.php')
 ];
 $metaTagsConfig = require('meta-tags.php');
-return array_merge($config, $metaTagsConfig);
+$sitemapConfig = require('sitemap.php');
+$robots = require('robots.php');
+return array_merge($config, $metaTagsConfig, $sitemapConfig, $robots);

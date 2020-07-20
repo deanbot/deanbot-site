@@ -1,0 +1,48 @@
+Title: scp
+
+----
+
+Pagetitle: 
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+### Syntax 
+
+`scp [options...] <source file> <destination>`
+
+**Transfer from file from remote host to local directory**
+
+`scp user@host.com:foobar.txt /some/local/directory`
+
+**Transfer local file to remote host**
+
+`scp foobar.txt user@host.com:/some/remote/directory`
+
+Notes:
+- remote targets make use of [ssh config](https://www.spiritedrefactor.net/wiki/ssh#Configure-SSH), i.e. for a registered hostname kf, `scp kf:/foo.txt .`
+- source and destination can both be remote
+- use `-r` to transfer a directory, i.e. `scp -r foo <dest>`
+- transfer multiple files by listing, i.e. `scp foo.txt bar.text <dest>`
+- transfer multiple files from remote with expand syntax, i.e. `scp user:remote~/\{foo.txt,bar.txt\} .`
+
+### Credit
+
+(cite: via [hypexr.org](http://www.hypexr.org/linux_scp_help.php))
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: wiki/ssh, wiki/rsync

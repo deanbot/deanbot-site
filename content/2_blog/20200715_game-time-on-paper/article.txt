@@ -12,17 +12,17 @@ Headline:
 
 Text:
 
-Game Time is a simple gaming-themed rewards & habit tracking system. In Game Time, progress on goals has the added benefit of rewarding gaming time.
+Game Time is a simple gaming-themed rewards & habit tracking system. In Game Time, progress on goals has the added benefit of rewarding you gaming time.
 
 I [mused earlier](https://www.spiritedrefactor.net/blog/untangling-guilt-from-gaming) about nagging guilty feelings I tend to feel when playing games instead of progressing on my goals. One approach is to use gaming as a reward:
 
 > Allowing myself to play games after completing meaningful goals-oriented work can actually enhance the gaming experience. Sanctioned gaming time helps with the guilt, but more than that, if I'm deliberate about gaming it becomes more meaningful.
 
-That said, it would be hard to see consistent results without being systematic about the practice. What counts as goals-oriented work? How much gaming time does a task reward? Game Time attempts to answer these questions without taking the fun out of a leisure activity. 
+That said, it would be hard to see consistent results without being systematic about the practice. What counts as goals-oriented work? How much gaming time does a task reward? Game Time attempts to answer these questions without taking the fun out of a leisure activity.
 
 ## Nuts and bolts
 
-I’ve worked the Game Time idea into a points system simple enough to record on a notebook page. Points are earned by taking small steps in the life-direction you choose - I call these jobs. Accumulated points can be redeemed for gaming time. Completing a small job might not render very much gaming time, but bank enough of these and you can extend your session. 
+I’ve worked the Game Time idea into a points system simple enough to record on a notebook page. Points are earned by taking small steps in the life-direction you choose - I call these jobs. Accumulated points can be redeemed for gaming time. Completing a small job might not render very much gaming time, but bank enough of these and you can extend your session.
 
 To take the gaming theme further, I divide jobs into 3 types: Quest, Daily, and Rare. Quests are repeatable and comprise the bread and butter of the task system. Dailies are jobs completable only once per day. Finally, Rare jobs can be completed just once.
 
@@ -35,7 +35,7 @@ Daily jobs
 Rare jobs
 : Goal milestones that deserve celebration.
 
-As far as the rewards for each job go, experimentation is key. If you find that you’re accumulating a bulk of game time too easily, lower the rewards. Instead of full point per each completion try .25 points. 
+As far as the rewards for each job go, experimentation is key. If you find that you’re accumulating a bulk of game time too easily, lower the rewards. Instead of full point per each completion try .25 points.
 
 I set a game time point to equal 20 minutes. I.e., if I had 3 points I could spend all 3 to game for an hour. Only whole points can be spent.
 
@@ -45,11 +45,11 @@ An early (link: https://help.bulletjournal.com/article/23-modules text: bullet j
 
 (image: 1bf07939-3572-49be-a576-21fd87378dbb.jpeg)
 
-The layout worked but I’d love to see a more minimal, less line-heavy, iteration. Additionally, the layout is confused by a different notation for minor points vs major points. The original intention of minor points was to mimic something like an experience bar in an RPG game, however I have yet to identify a minimal interpretation. Using a single unit type and earning fractional values when appropriate would reduce the complexity of the layout. 
+The layout worked but I’d love to see a more minimal, less line-heavy, iteration. Additionally, the layout is confused by a different notation for minor points vs major points. The original intention of minor points was to mimic something like an experience bar in an RPG game, however I have yet to identify a minimal interpretation. Using a single unit type and earning fractional values when appropriate would reduce the complexity of the layout.
 
 ## Narrow your focus
 
-I’ve learned through experience that it’s best to narrow the scope of what I track with Game Time. 
+I’ve learned through experience that it’s best to narrow the scope of what I track with Game Time.
 
 If I try to focus on too many things at once, nothing is ever focused on. For this reason, I’d recommend determining a **focal point goal** which informs the jobs you create in Game Time. Quests and Rare jobs should represent concrete steps towards achieving this goal, while Daily jobs should be able to answer the question: “What should a person who can achieve this focal point goal do regularly?”
 
@@ -69,7 +69,7 @@ Dateupdated:
 
 ----
 
-Category: Life hacks
+Category: Projects
 
 ----
 
@@ -89,3 +89,11 @@ Imageattribution: ["Reloj invasor"](https://www.flickr.com/photos/16892505@N04/3
 ----
 
 Metaimage: 
+
+----
+
+Noindex: false
+
+----
+
+Excludefromxmlsitemap: false

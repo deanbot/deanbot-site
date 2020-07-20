@@ -4,3 +4,9 @@
 [submodule "site/plugins/meta-tags"]
 	path = site/plugins/meta-tags
 	url = git@github.com:deanbot/kirby-meta-tags.git
+[submodule "site/plugins/kirby3-robots-txt"]
+	path = site/plugins/kirby3-robots-txt
+	url = https://github.com/bnomei/kirby3-robots-txt.git
+[submodule "site/plugins/kirby3-xmlsitemap"]
+	path = site/plugins/kirby3-xmlsitemap
+	url = https://github.com/omz13/kirby3-xmlsitemap.git

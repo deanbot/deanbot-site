@@ -121,12 +121,16 @@ return [
     $twitter['title'] = $pageTitle;
     $og['description'] = $description;
     $twitter['description'] = $description;
+    $meta = [
+      'description' => $description
+    ];
+    if ($page->noIndex()) {
+      $meta['robots'] = 'noindex';
+    }
 
     return [
       'title' => $htmlTitle,
-      'meta' => [
-        'description' => $description
-      ],
+      'meta' => $meta,
       'link' => [
         'canonical' => $url
       ],

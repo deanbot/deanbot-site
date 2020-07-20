@@ -1,0 +1,257 @@
+Title: Add browser storage to your js or ts service
+
+----
+
+Description: mini-stash is a lightweight npm package responsible for streamlining local and session storage. Read on to learn how to implement browser caching in your project.
+
+----
+
+Headline: 
+
+----
+
+Text:
+
+**mini-stash** is a lightweight npm package responsible for streamlining local and session storage. The [package page](https://www.npmjs.com/package/mini-stash) has all the information and examples needed to get up and running quickly. Read on if you'd like a better understand of how caching is implemented in a JavaScript or TypeScript project.
+
+## Local and session storage in a nutshell
+
+When it comes to browser storage (excluding cookies) there are 3 routine actions: saving, retrieving, and clearing. Within these actions we have 4 basic considerations.
+
+#### Session or local storage
+
+We choose between local or session storage depending on the nature, lifespan, and sensitivity of data.
+
+**Local Storage**
+: maintained between sessions (i.e. it stays after you close the browser)
+
+**Session Storage**
+: cleared automatically between sessions (i.e. when you close the browser)
+
+#### Choosing a storage key
+
+Data is saved into browser storage with an associated key or string so it can be retrieved later. Since there's nothing to stop another feature on the site from using the same key, we should make ours as specific as possible. 
+
+good key: `myapp-footer-primary-links`
+bad key: `links`
+
+#### Storing complex data
+
+Saving primitive data to the browser like numbers and strings just works, but you'll run into issues when storing or retrieving objects. To get around this, saving should incorporate `JSON.stringify` and retrieving should incorporate `JSON.parse`.
+
+#### Expiration
+
+Unlike cookies, local and session storage don't incorporate any expiration logic out of the box. To work-in expiration we also need to save a date timestamp. The timestamp could be paired directly with the save-data (i.e. saving an object with date and data properties) or it could be saved as a separate entry with a standardized naming convention (i.e. if 'myData' stores the data 'myData_date' will store the date). I prefer the latter option in order to keep data agnostic from the retrieval method.
+
+## High level example
+
+This is a simplified example that shows the high level concept for each action: save, retrieve, and clear. Later examples show full working code.  Note: adding the `+` operator to date object will convert it to number.
+
+#### Saving to local or session storage
+
+Saving is fairly straightforward. The key consideration is to `JSON.stringify` data before saving in order to support objects. Additionally, we save the date of storage separately with a standardized naming convention. 
+
+I consider local storage the more frequent use case so the `useSession` boolean parameter is optional.
+
+```js
+function save(key, data, useSession) {
+  // json stringify data
+  const saveData = JSON.stringify(data);
+
+  // save to local or session storage
+  if (useSesson) {
+    sessionStorage.setItem(key, saveData);
+
+    // store date
+    sessionStorage.setItem(key + '_date', +(new Date());
+  } else {
+    localStorage.setItem(key, saveData);
+
+    // store date
+    localStorage.setItem(key + '_date', +(new Date());
+  }
+}
+```
+
+#### Retrieving from local or session storage
+
+Note, if data is retrieved we need to `JSON.parse` it since we saved a json string. 
+
+The `expirationMinutes` parameter indicates the number of minutes from time of storage before data is considered expired. If data is expired or if I can't find an associated date I like to tidy up by clearing the data from storage.
+
+```js
+function retrieve(key, expirationMinutes, useSession) {
+  let data, date;
+
+  if (useSession) {
+    data = sessionStorage.getItem(key);
+    date = sessionStorage.getItem(key + '_date');
+  } else {
+    data = localStorage.getItem(key);
+    date = localStorage.getItem(key + '_date');
+  }
+
+  // parse json data
+  data = JSON.parse(data);
+
+  // return data if no expiration
+  if (!expirationDate || expirationDate <= 0) {
+    return date;
+  }
+
+  // determine if expired 
+  const expired = false; // ... see example later on
+  
+  // clear expired data
+  if (expired || !date) {
+    data = null;
+    clear(key, useSession);
+  } else {
+    return data;
+  }
+}
+```
+
+#### Clearing data from local or session storage
+
+Clearing local or session storage utilizes the `delete` operator. Since we store the date separately, we should clear this as well as the primary data.
+
+```js
+function clear(key, useSession) {
+  if (useSession) {
+    delete sessionStorage[key];
+    delete sessionStorage[key + '_date'];
+  } else {
+    delete localStorage[key];
+    delete localStroage[key + '_date'];
+  }
+}
+```
+
+## Using caching in a service
+
+There's a basic pattern to follow for implementing caching in a service. 
+
+1. Check for the presence of cache data, indicating any expiration details.
+2. If the data isn't retrieved or if it has expired, get the data the normal way.
+3. Before using the newly retrieved data, save a copy to storage.
+
+For reuse, you could save these utilities to a separate file and import them in services as needed. Another technique I've used frequently is to create a base class which includes all caching functionality. Service classes can extend this class in order to standardize caching for services in an app.
+
+Note: here's a full implementation for checking expiration (written in TypeScript).
+
+**ApiStorageBase.ts**:
+```ts
+export interface IStorage {
+  getItem(key:string):any;
+  setItem(key:string, data:any):void;
+}
+
+export default class ApiStorageBase {
+  protected save = (key:string, data: any, useSessionStorage: boolean = false):void => {
+    const storage = this.getStorage(useSessionStorage);
+    const time = Math.floor(new Date().getTime() / 1000);
+
+    // store data as json string
+    storage.setItem(key, JSON.stringify(data));
+
+    // store unix date string for expiration check
+    storage.setItem(this.getDateKey(key), time.toString());
+  }
+
+  protected retrieve = (
+    key: string, 
+    expirationMinutes: number,
+    useSessionStorage: boolean = false
+  ): any => {
+    const storage = this.getStorage(useSessionStorage);
+    const storageDate = +storage.getItem(this.getDateKey(key));
+    let data = storage.getItem(key);
+
+    if (!!data) {
+
+      // check if expired
+      const expires = minutesToExpiration > 0;
+      let expired;
+      if (expires && !!storageDate) {
+        const nowMs = +(new Date());
+        const storageMs = +(new Date(storageDate)) * 1000;
+        const minutesOld = Math.ceil(
+          nowMs - storageMs / 1000 / 60
+        );
+        expired = minutesOld > minutesToExpiration;
+      }
+
+      if (expires && (!storageDate || expired)) {
+
+        // discard if expired or missing date
+        this.clear(storageKey, useSessionStorage);
+        data = null;
+      } else {
+
+        // parse json
+        try {
+          data = JSON.parse(data);
+        } catch (e) {
+          // raw data will be retrieved if problem parsing
+        }
+      }
+    }
+    return data;
+  }
+  
+  protected clear = (key: string, useSessionStorage: boolean = false): void => {
+    const storage = this.getStorage(useSessionStorage);
+
+    // delete the data and the storage date
+    delete storage[key];
+    delete storage[getDateKey(key)];
+  }
+  
+  private getStorage = (useSessionStorage: boolean = false):IStorage => !useSessionStorage 
+    ? localStorage 
+    : sessionStorage;
+
+  private getDateKey = (key: string):string => `${key}_date}`;
+}
+```
+
+It might seem tempting to require a storage key in the constructor of ApiStorageBase. This would make save and retrieve even more streamlined, however, the moment a service adds a second data point, the usage will become confused.
+
+You might note that moment.js’s (link: https://momentjs.com/docs/#/query text: query methods target: _blank) can simply the expiration check. While true, adding moment would significantly increase the overall size of our bundled code. (link: https://github.com/you-dont-need/You-Dont-Need-Momentjs text: You don’t need MomentJs target: _blank).
+
+## Local and session storage npm package
+
+The base class method above is an easy way to standardize services, but one-off utilities are more versatile. A small-scale npm package would be an even better approach for packaging these utilities since this would avoid code duplication and better handle updates between projects.
+
+`mini-stash` is a package I created for this purpose. The [source code](https://github.com/deanbot/mini-stash/blob/master/src/index.ts) is nearly identical to the above examples.
+
+Check out [the example in the project's readme](https://github.com/deanbot/mini-stash#example) for more info.
+
+----
+
+Date: 2020-07-15
+
+----
+
+Dateupdated: 
+
+----
+
+Category: Purely Technical
+
+----
+
+Tags: TypeScript, Releases, API, JavaScript, Caching
+
+----
+
+Bannerimage: 
+
+----
+
+Imageattribution: 
+
+----
+
+Metaimage: 

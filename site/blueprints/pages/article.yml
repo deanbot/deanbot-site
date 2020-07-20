@@ -71,3 +71,13 @@ columns:
             type: files
             multiple: false
             layout: cards
+          noIndex:
+            type: toggle
+            label: No Index
+          excludefromxmlsitemap:
+            label:     Exclude from sitemap.xml
+            type:      toggle
+            default:   off
+            text:
+              - include implicitly
+              - explicitly exclude

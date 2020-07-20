@@ -33,10 +33,7 @@ Categories:
   title: Deutsch Lernen
   description: ""
 - 
-  title: Releases
-  description: ""
-- 
-  title: Life hacks
+  title: Projects
   description: >
     Ideas, systems and software to help you
     at life.

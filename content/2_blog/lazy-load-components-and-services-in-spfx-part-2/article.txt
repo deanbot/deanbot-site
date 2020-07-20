@@ -1,0 +1,240 @@
+Title: Lazy-load components and services in SPFX (Part 2)
+
+----
+
+Description: 
+
+----
+
+Headline: 
+
+----
+
+Text:
+
+In our [previous post](#) we laid the groundwork for our lazy-loading demo in SharePoint Framework. This article builds on our previous work to dynamically import React components.
+
+## Optimizing our web part by dynamically importing components
+
+We support different types of widgets in our WidgetsDisplay web part. That said, we may not display every type of widget in a given instance of our web part. The different widget components i.e. WeatherWidget, or ChatBotWidget, each involve different packages that are imported. With each import we increase the size of the bundled code a user must load before they can see and interact with our web parts. 
+
+Our previous post illustrated how to lazy-load a service that isn’t required until user interaction. We’ll optimize our web part even further by lazy-loading only the React components that are actually required for a given instance of our web part.
+
+## Rendering each widget component
+
+First, we'll pick up where we left off in our WidgetDisplay.tsx file. Our updated render method will show the correct React component for the widget’s type. 
+
+In order for the updated code to build we’ll need to import each React component in the usual fashion (at the top of the file). We’ll replace these static imports with dynamic imports soon.
+
+**WidgetDisplay.tsx**
+
+New imports: 
+```tsx
+import { IChatBotWidget, ITextWidget, IWeatherWidget, IWidget, WidgetTypes } from ‘./IWidgets.ts’;
+
+// static imports of react components to be replaced by dynamic imports
+import TextWidget from ‘./TextWidget’;
+import ChatBotWidget from ‘./ChatBotWidget’;
+import WeatherWidget from ‘./WeatherWidget’;
+```
+
+Updated render method:
+```tsx
+public render(): React.ReactElement<IWidgetsDisplayProps> {
+  const { widgets } = this.props;
+  return (
+    <div>
+      {widgets.map(widget => this.getWidgetEl)}
+    </div>
+  );
+}
+
+public getWidgetEl = (widget:IWidget) => {
+  let el;
+  switch (widget.type) {
+    case WidgetType.weather:
+      el = <WeatherWidget {...widget as IWeatherWidget} />;
+      break;
+    case WidgetType:botChat:
+      el = <BotChatWidget {...widget as IBotChatWidget} />;
+      break;
+    case WidgetType.text:
+      el = <TextWidget {...widget as ITextWidget} />;
+      break;
+    default:
+      el = (
+        <div>
+          <h3>{widget.heading}</h3>
+        </div>
+      ); 
+  }
+  return el;
+}
+```
+
+[double check]
+A base class of IWidget is handy here for allowing us to loop through all widget objects even though they may be of different classes. Casting informs the TypeScript compiler that our objects match the required shape of each component.
+
+## Dynamically importing React components
+
+We’ll trigger the lazy-load of React components in our `componentDidMount` method. We’ll check for whether a given widget type is included before loading the associated component. If we were loading our widgets from a service method, we would wait till then to implement this logic, as this is the point that we’d know which widgets are needed to display.
+
+Note, we need to remove our static imports of our widget components (leaving this in will show a ‘shadowed variable’ warning in build logs). In their place we add private variables within our class to hold each component.
+
+**WidgetDisplay.tsx**:
+```tsx
+export interface IWidgetDisplayState {
+  isInitialized?: boolean;
+  isLoading?: boolean;
+}
+export default class WidgetDisplay extends React.Component<IWidgetDisplayProps, IWidgetDisplayState> {
+  private ChatBotWidget;
+  private TextWidget;
+  private WeatherWidget
+  constructor(props) {
+    this.state = {
+      isInitialized: false,
+      isLoading: false,
+    };
+  }
+
+  public componentDidMount() {
+    if (this.props.widgets.length) {
+      this.loadWidgetComponents();
+    }
+  }
+
+  public render():React.ReactElement<IWidgetDisplayProps> {
+    const { widgets } = this.props,
+      { 
+        isInitialized,
+        isLoading 
+      } = this.state;
+    return (
+      <div>
+        {isLoading && <p>...</p>}
+        {isInitialized && widgets.map(widget => this.getWidgetEl)}
+      </div>
+    );
+  }
+
+  // ...
+}
+```
+
+It’s important that we don’t reach code that would try and reference our widget components before they’re loaded. For that reason we introduce the isInitialized flag which effectively waits for the ‘all clear’ before rendering widgets.
+
+The loadWidgetComponents method handles the dynamic import of the components.
+
+```tsx
+private loadWidgetComponents = async () => {
+  const { widgets } = this.props,
+    hasTextWidget = widgets.some(({ type }) => type == WidgetType.TextWidget),
+    hasWeatherWidget = widgets.some(({ type }) => type == WidgetType.WeatherWidget),
+    hasBotChatWidget = widgets.some(({ type }) => type == WidgetTyep.BotChatWidget);
+    
+  await Promise.all([
+    // load text widget
+    hasTextWidget
+      ? import(‘./TextWdget.tsx’).then(imported => { 
+         this.TextWidget = imported.default; 
+        })
+      : Promise.resolve(),
+
+    // load weather widget
+    hasWeatherWidget
+      ? import(‘./WeatherWidget.tsx’).then(imported => { 
+           this.WeatherWidget = imported.default;
+         });
+      : Promise.resolve()
+
+    // load chat bot widget
+    hasBotChatWidget
+      ? import(‘./ChatBotWidget.tsx’).then(imported => {
+           this.ChatBotWidget = imported.default;
+         })
+      : Promise.resolve()
+  ]);
+  this.setState({
+    isInitialized: true,
+    isLoading: false,
+  });
+}
+```
+
+The es6 array method `some` allows us to check if the expression evaluates to true for any item in the array — if so, it returns true immediately. Using `Promise.all` allows our dynamic imports to run in parallel. As we saw in the previous post, the `default` property holds the imported result that we’re after.
+
+The final step is to update our getWidgetEl method to use our dynamically imported components.
+
+```tsx
+public getWidgetEl = (widget:IWidget) => {
+  const {
+    ChatBotWidget,
+    TextWidget,
+    WeatherWidget,
+  } = this;
+  let el;
+  switch (widget.type) {
+    case WidgetType.weather:
+      el = <WeatherWidget {...widget as IWeatherWidget} />;
+      break;
+    case WidgetType:botChat:
+      el = <BotChatWidget {...widget as IBotChatWidget} />;
+      break;
+    case WidgetType.text:
+      el = <TextWidget {...widget as ITextWidget} />;
+      break;
+    default:
+      el = (
+        <div>
+          <h3>{widget.heading}</h3>
+        </div>
+      ); 
+  }
+  return el;
+}
+```
+
+By dynamically importing our React components we’ve split out the code required four our widgets into separate bundle files which get loaded on demand as needed.
+
+## The importance of responsive user interfaces
+
+Lazy-loading is great for the end user, but all of our our efforts might be thwarted without the proper execution. Case in point, without showing that work is happening when we’ve triggered an asynchronous load of a service or component, our interface might appear unresponsive or non-functional. The user has no idea that we’ve had their back this whole time by saving precious milliseconds of load time. Instead they’re frustrated by a ‘broken’ feature. 
+
+Make sure you indicate to the user that loading is taking place, i.e. with a fluent ui component such as the [Spinner](https://developer.microsoft.com/en-us/fluentui#/controls/web/spinner) or [Shimmer](https://developer.microsoft.com/en-us/fluentui#/controls/web/shimmer). Some thought should go into this interaction design. A sophisticated interface may even artificially slow down a dynamic import to better fit a user’s expectations or to show a polished animation sequence.
+
+----
+
+Date: 2020-07-18
+
+----
+
+Dateupdated: 
+
+----
+
+Category: 
+
+----
+
+Tags: 
+
+----
+
+Bannerimage: 
+
+----
+
+Imageattribution: 
+
+----
+
+Metaimage: 
+
+----
+
+Noindex: true
+
+----
+
+Excludefromxmlsitemap: true

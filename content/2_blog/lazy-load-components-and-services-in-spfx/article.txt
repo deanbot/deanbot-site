@@ -1,0 +1,335 @@
+Title: Lazy-load components and services in SPFX
+
+----
+
+Description: 
+
+----
+
+Headline: Don't punish users for resources they're not using.
+
+----
+
+Text:
+
+When you build collaboration tools that can be reused and configured for different needs, chances are there are going to be bells and whistles that aren't used in every instance. Along a similar line, resources may be required in an editing context, but not in a reading context. Does it make sense for end users to wait for code to load that they never get a chance to use? Intelligent lazy-loading provides a mechanism to load-in components or services on demand and only when necessary.
+
+Not unique to SharePoint — in the greater sphere of modern JS development on-demand loading is called (link: https://webpack.js.org/guides/code-splitting text: code splitting target: _blank). The technique we utilize is called a (link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_Imports text: dynamic import target: _blank).
+
+This last link to MDN docs on dynamic imports is really the gist of the technique. Read on for real-life examples of lazy-loading React components and services. With any luck this will inspire you to implement the feature in your apps, improving the quality of products you ship to your clients.
+
+## Laying the groundwork
+
+Normally, there would be tooling pre-requisites (webpack/babel config, etc...) to consider. Thankfully, SharePoint manages the build-stack for us, so we can jump right to the code. Also, if you're reading this, chances are you already know how to spin up a new SharePoint Web Part or Site Extension with the [SPFX yeoman generator](https://pnp.github.io/generator-spfx/). Therefore, I'll omit that boilerplate and jump straight to a scenario involving React components. 
+
+#### Define widget interfaces
+
+For our demo purposes, our web part displays rows of widgets. A basic widget shows text content and a link. Our web part, however, is fancy, and allows a content editor to add additional widget types such as ‘current weather’ and ‘bot chat’.
+
+First, we'll define interfaces to represent the required properties of each widget. A type enum will simplify type-checking later on.
+
+**IWidgets.ts**: 
+```ts
+export enum WidgetType {
+  text,
+  weather,
+  botChat
+};
+
+export interface IWidget {
+  heading: string;
+  type: WidgetType;
+}
+export interface ITextWidget extends IWidget {
+  content: string;
+  url: string;
+}
+export interface IWeatherWidget extends IWidget {
+   apiKey: string;
+}
+export interface IBotChatWidget extends IWidget {
+  odataConfiguration: any; 
+}
+```
+
+#### Provide widgets directly to React component
+
+An example set of widgets:
+
+```ts
+const widgets = [
+  {
+    heading: ‘Get Involved’,
+    type: WidgetType.text,
+    content: ‘Discover how you can become more engaged with WidgetCo.’,
+    url: ‘//#get-involved,
+  },
+  {
+    heading: ‘Current Weather’,
+    type: WidgetType.weather,
+    apiKey: ‘1234-abcd’,
+  },
+  {
+    heading: ‘Chat’,
+    type: WidgetType.botChat, 
+    odataConfiguration: {
+      address: ‘bot.chat/endpoint’,
+      // [...]
+    }
+  }    
+];
+```
+
+Our example would be applicable when widgets are loaded in from a list, but for brevity’s sake, we’ll show widgets passed directly to the main React component as if defined in the property pane. The render function shows a beginning which we'll update later to display each type of widget uniquely. 
+
+**WidgetsDisplay.tsx**:
+```tsx
+import * as React from 'react';
+import { IWidget } from './IWidgets.ts';
+
+export interface IWidgetsDisplayProps {
+  widgets: IWidget[];
+}
+
+export default class WidgetsDisplay extends React.Component<IWidgetsDisplayProps, {}> {
+  public render(): React.ReactElement<IWidgetsDisplayProps> {
+    const { widgets } = this.props;
+    return (
+      <div>
+        {/* show each widget */}
+        {widgets.map(item => (
+          <div>
+            <h3>{widget.heading}</h3>
+          </div>
+        )}
+      </div>
+    );
+  } 
+}
+```
+
+#### Defining widget components
+
+It's a standard convention to use separate files for different components, but it's especially important here since we plan to dynamically import these later on. Additionally, any interfaces that describe the component properties should be separated from the component files. That way, a client can use strongly-typed properties without loading the components themselves.
+
+Our text widget is a standard functional or state-less component.
+
+**TextWidget.tsx**:
+```tsx
+import * as React from ‘react’;
+import { ITextWidget } from './IWidgets.ts';
+export const TextWidget = ({
+  heading,
+  content,
+  url,
+}) => {
+  return (
+    <div>
+        <h3>{heading}</h3>
+        <p>{content}</p>
+        <a href={url}>Read more</a>
+    </div>
+  );
+};
+
+export default TextWidget;
+```
+
+Our weather widget will load in weather data when mounted. It’s important to note that so far we’ve avoided external libraries, however, in WeatherWidget we import a component from [fluent ui](https://developer.microsoft.com/en-us/fluentui#/). Without asynchronous loading, code we import into a component (i.e. a fluent ui package) would be included in the code bundle which is loaded by the end user.
+
+**WeatherWidget.tsx**:
+```tsx
+import * as React from ‘react’;
+import { Icon } from ‘@fluentui/react/lib/Icon’;
+import { IWeatherWidget }  from './IWidgets.ts';
+export interface IWeatherWidgetState {
+  isLoading?: boolean;
+  weatherData?: {
+    temp: number;
+    icon: string;
+  }
+}
+
+export default class WeatherWidget extends React.Component<IWeatherWidget, IWeatherWidgetState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: false,
+      weatherData: null
+    };
+  }
+
+  public componentDidMount() {
+    this.setState({ isLoading: true });
+
+    // load data from weather api
+    const { apiKey } = this.props;
+    setTimeout(() => { 
+      this.setState({
+        isLoading: false,
+        weatherData: {
+          temp: 77,
+          icon: cloudy-sun
+        }
+      });
+    }, 2000);
+  } 
+
+  public render(): React.ReactElement<IWeatherWidget> {
+    const {
+        heading,
+      } = this.props,
+      { 
+        weatherData,
+        isLoading
+      } = this.state;
+    return (
+      <div>
+         <h3>{heading}</h3>
+         {isLoading && <p>Loading...</p>}
+         {!!weatherData && (
+           <div>
+             <Icon iconName={icon} />
+             <strong>{temp}°</strong>
+           </div>
+        )}
+      </div>
+    );
+  }
+}
+```
+
+#### Lazy-loading a service into a component
+
+Our chat bot will incorporate a slightly different scenario. We’ll imagine that the service that powers our chat bot is rather bulky. Since we don’t technically need it until the user interacts with the widget, we’ll wait till then to asynchronously load the service.
+
+Defining an interface for our api allows us to program to an interface instead of an instance — crucial for maintaining strongly-typed code when using dynamic imports.
+
+**IChatBotService.ts**:
+```ts
+export default interface IChatBotService {
+  odataConfiguration: any;
+  postMessage(message:string) => Promise<string>;
+}
+```
+
+**ChatBotService**:
+```ts
+Import IChatBotService from ‘./IChatBotService’;
+export class ChatBotService implements IChatBotService {
+  constructor(public odataConfiguration: any) {}
+  postMessage(message:string): Promise<string> {
+    return new Promise((resolve)=> {
+      setTimeout(() => { 
+        resolve(‘Ask again later.’);
+      }, 2000);    
+    });
+  }
+}
+```
+
+A true bot chat implementation would be more lengthy, but it gets the idea across.
+
+**ChatBotWidget.tsx**:
+```tsx
+import * as React from ‘react’;
+import { IChatBotWidget } from './IChatBotWidget.ts';
+import { DefaultButton } from ‘@fluentui/react/lib/Button’;
+export interface IChatBotWidgetState {
+  isLoading?: boolean; 
+  message?: string;
+  visible?: boolean;
+}
+
+export default class ChatBotWidget extends React.Component<IChatBotWidget, IChatBotWidgetState> {
+  private ChatBotService:IChatBotService;
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: false,
+      message: ‘’,
+      visible: false,
+    };
+  }
+
+  public render(): React.ReactElement<IChatBotWidget> {
+    const {
+      isLoading,
+      message,
+      visible,
+    } = this.state;
+    return (
+      <div>
+        <h3>{heading}</h3> 
+        <DefaultButton onClick={this.toggleDialog}>{!visible ? ‘Ask a question’ : ‘Cancel’}</DefaultButton>
+        {isLoading && <p>...</p>}
+        {visible && (
+          <div>
+            <TextField 
+              onChange={(ev, newValue) => { this.setState({ message: newValue }); }
+              value={message}
+            />
+            <DefaultButton onClick={this.postMessage} />
+          </div>
+        })
+      </div>
+    );
+  }
+  
+  private toggleDialog = async () => {
+    if (!this.ChatBotService) {
+      const { odataConfiguration } = this.props;
+      const imported = await import(‘./ChatBotService.ts’);
+      this.ChatBotService = new imported.default(odataConfiguration);
+    }
+    this.setState({ visible: !this.state.visible });
+  }
+  
+  private postMessage = async () => {
+    const response = await this.ChatBotService.postMessage(this.state.message);
+    alert(response);
+  }
+}
+```
+
+You may have missed the dynamic import as it’s only a few lines of code. We waited until the appropriate interaction, aka clicking the ‘Ask a question’ button. At that point we checked for the presence for our service (useful if the user may repeat this interaction). If not initialized, we use the the `await import(‘name’)` syntax to lazy-load our service. It’s important to refer to `.default` of our imported results — this shape will be consistent for any dynamically imported module.
+
+A service that’s only required after user interaction is a great candidate for lazy-loading. By importing our ChatBotService dynamically we’ve split our code into separate bundle files: one for the ChatBotService and one for everything else. When we publish our sppkg file to SharePoint each bundle file will be uploaded, however the bundle associated with our service will be loaded on demand.
+
+Move onto our [follow-up post](#) where we’ll implement lazy-loading for React components.
+
+----
+
+Date: 2020-07-17
+
+----
+
+Dateupdated: 
+
+----
+
+Category: Purely Technical
+
+----
+
+Tags: SharePoint, TypeScript, SPFX, async, React
+
+----
+
+Bannerimage: 
+
+----
+
+Imageattribution: 
+
+----
+
+Metaimage: 
+
+----
+
+Noindex: true
+
+----
+
+Excludefromxmlsitemap: true

@@ -6,7 +6,7 @@ Pagetitle:
 
 ----
 
-Description: Hello, I'm Dean Verleger, a full stack tinkerer and lifelong learner. I leverage cloud services to build apps and collaboration tools.
+Description: Hello, I'm Dean Verleger, a full stack engineer and lifelong learner. I leverage cloud services to build apps and collaboration tools.
 
 ----
 
