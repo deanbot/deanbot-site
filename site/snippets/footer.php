@@ -1,18 +1,12 @@
-    <?php
-    /*
-    !-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-      ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
-    */
-    ?>
-    <?php echo js('assets/builds/bundle.js') ?>
     <footer class="footer container">
-      <div class="anchor">
+      <!-- <div class="anchor">
         <hr class="long"/>
+      </div> -->
+
+      <div class="anchor-brand">
+        <img src="/assets/frog.png" alt="Robot frog"/>
       </div>
+
       <div class="meta">
         <div>
           <?php
@@ -37,7 +31,20 @@
         <a href="<?= $social->url() ?>" target="_blank" title="<?= $social->title() ?>"><i class="ri-<?= $social->icon() ?>"></i></a>
         <?php endforeach ?>
       </nav>
+
     </footer>
   </div>
+
+  <?php
+    /*
+    !-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+      ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    */
+  ?>
+  <?php echo liveJs('/assets/builds', 'main.js') ?>
 </body>
 </html>

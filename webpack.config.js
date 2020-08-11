@@ -11,28 +11,18 @@ module.exports = {
   devtool: dev
     ? 'cheap-module-eval-source-map'
     : 'source-map',
-  entry: dev
-    ? {
-      'assets/builds/bundle.js': [
+  entry: {
+    'main':
+      [
+        (dev ? 'webpack-hot-middleware/client?reload=true' : ''),
         './src/index.js',
-        'webpack-hot-middleware/client?reload=true'
-      ],
-      'assets/builds/bundle.css': [
-        './src/scss/site.scss',
-        'webpack-hot-middleware/client?reload=true'
-      ]
-    }
-    : {
-      'assets/builds/bundle': [
-        './src/index.js',
-        './src/scss/site.scss'
-      ]
-    },
+      ].filter(_ => !!_),
+  },
   output: {
     publicPath: '/',
-    path: path.resolve(__dirname),
-    filename: dev ? '[name]' : '[name].js',
-    // chunkFilename: '[name].[id].chunk.js'
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'assets', 'builds'),
+    // filename: dev ? '[name]' : '[name].js',
   },
   plugins: dev
     ? [
@@ -41,7 +31,7 @@ module.exports = {
     ]
     : [
       new MiniCssExtractPlugin({
-        filename: '[name].css'
+        filename: '[name].css',
       }),
     ],
   module: {
@@ -62,7 +52,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              url: !!dev,
+              url: false,
               sourceMap: true
             }
           },
@@ -94,8 +84,14 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              // public
+              name: dev
+                ? 'images/[name].[ext]'
+                : 'images/[name].[ext]',
+              esModule: false,
+              // publicPath: 'images'
+              //   dev
+              //     ? '/'
+              //     : '/',
             }
           }
         ]

@@ -27,7 +27,7 @@ html {
 main {
   margin-top: $header-height-sm + 50px;
   @include small-breakpoint {
-    margin-top: $header-height-lg + 10px;
+    margin-top: $header-height-lg + 30px;
   }
   // > .container {
   //   margin-top: 25px

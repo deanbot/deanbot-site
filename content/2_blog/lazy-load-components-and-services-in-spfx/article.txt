@@ -24,7 +24,7 @@ Normally, there would be tooling pre-requisites (webpack/babel config, etc...) t
 
 #### Define widget interfaces
 
-For our demo purposes, our web part displays rows of widgets. A basic widget shows text content and a link. Our web part, however, is fancy, and allows a content editor to add additional widget types such as ‘current weather’ and ‘bot chat’.
+For our demo purposes, our web part displays rows of widgets. A basic widget shows text content and a link. Our web part, however, is fancy, and allows a content editor to add additional widget types such as 'current weather' and 'bot chat'.
 
 First, we'll define interfaces to represent the required properties of each widget. A type enum will simplify type-checking later on.
 
@@ -65,9 +65,9 @@ const widgets = [
     url: ‘//#get-involved,
   },
   {
-    heading: ‘Current Weather’,
+    heading: 'Current Weather',
     type: WidgetType.weather,
-    apiKey: ‘1234-abcd’,
+    apiKey: '1234-abcd',
   },
   {
     heading: ‘Chat’,

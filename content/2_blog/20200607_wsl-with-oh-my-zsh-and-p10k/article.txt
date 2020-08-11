@@ -2,7 +2,7 @@ Title: WSL with Oh My Zsh and P10k
 
 ----
 
-Description:
+Description: 
 
 ----
 
@@ -47,21 +47,13 @@ First let's set about installing [WSL](https://docs.microsoft.com/en-us/windows/
 1. Run Windows PowerShell as administrator
 2. Install WSL via: `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
 
-(image: activate-features.png)
+Microsoft note: "WSL 2 is only available in Windows 10, Version 2004, Build 19041 or higher. You may need to [update your Windows version](ms-settings:windowsupdate)."
 
-[Updating to WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2) is more involved. WSL 2 requires Windows **Build 19041**. For the time being, the most straight-forward method of updating to this build is to [join Windows Insider](https://insider.windows.com/insidersigninboth/).
-
-To verify which Windows build you are running, open **Settings** and select **System** then scroll to **Windows specifications** and note the value for **OS build**.
-
-(image: os-build.png)
-
-If you meet the requirements:
-
+To upgrade to WSL 2:
 1. Enable the required feature via: `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
 2. Restart your machine.
-3. Open Windows PowerShell and run the command: `wsl --set-default-version 2`
-
-_I decided to put off enabling WSL 2 until the build is distributed via Windows Update._
+3. Download and install the [WSL 2 Linux kernel update](https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel#download-the-linux-kernel-update-package).
+4. Open Windows PowerShell and run the command: `wsl --set-default-version 2`
 
 ### Install Ubuntu {#Install-Ubuntu}
 
@@ -134,8 +126,9 @@ Note: See [settings.json](https://raw.githubusercontent.com/deanbot/easy-wsl-oh-
     },
     ```
 
-    Leave fontFace commented until you [install the font](#nstall-fonts) in a following section.
+    Leave fontFace commented until you [install the font](#Install-fonts) in a following section.
 2. Hide irrelevant profiles by setting the `hidden` property to `true`.
+3. To start in linux home instead of windows user profile directory, add `"startingDirectory"` property to the Ubuntu profile and set it to `"//wsl$/Ubuntu/home/<username>"`, replacing 'Ubuntu' with the name of the distribution you installed and and '<username>' with your Ubuntu username, i.e. if you installed 'Ubuntu 20.0.4 LTS', use `"startingDirectory": "//wsl$/Ubuntu-20.0.4/home/<username>"`.
 
 ## Zsh and Oh My Zsh {#Zsh-and-Oh-My-Zsh}
 
@@ -225,7 +218,7 @@ Most plugins are installed automatically with Oh My Zsh by editting `plugins` in
 
 The following suggested plugins have minimal installation steps:
 
-* [zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) - fish shell style autosuggestion based on history and completions.
+* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) - fish shell style autosuggestion based on history and completions.
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) - color coding in the terminal to let you know if a command you're about to enter is valid.
 
 To install [zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh):
@@ -246,7 +239,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
     ```
 
 3. Edit `.zshrc` via your preferred editor be it nano, [micro](https://micro-editor.github.io/), VSCode, etc (i.e. for VSCode `code ~/.zshrc`).
-4. update the `plugins` line to: `plugins=(git zsh-autosuggestion zsh-syntax-highlighting)` and save.
+4. update the `plugins` line to: `plugins=(git z zsh-autosuggestions zsh-syntax-highlighting)` and save.
 
  (image: plugins.png)
 
@@ -274,7 +267,7 @@ Date: 2020-06-07
 
 ----
 
-Dateupdated:
+Dateupdated: 2020-08-04
 
 ----
 
@@ -292,8 +285,16 @@ Bannerimage:
 
 ----
 
-Imageattribution:
+Imageattribution: 
 
 ----
 
-Metaimage:
+Metaimage: 
+
+----
+
+Noindex: false
+
+----
+
+Excludefromxmlsitemap: false

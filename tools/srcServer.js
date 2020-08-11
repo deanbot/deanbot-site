@@ -26,15 +26,15 @@ browserSync({
         publicPath: '/',
 
         // These settings suppress noisy webpack output so only errors are displayed to the console.
-        noInfo: true,
+        noInfo: false,
         quiet: false,
         stats: {
-          assets: false,
+          assets: true,
           colors: true,
           version: false,
           hash: false,
           timings: false,
-          chunks: true,
+          chunks: false,
           chunkModules: false
         }
         // for other settings see

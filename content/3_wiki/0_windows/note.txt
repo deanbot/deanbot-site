@@ -1,0 +1,43 @@
+Title: Windows
+
+----
+
+Pagetitle: 
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+## Turn off annoying Windows system sounds
+I haven't had good luck turning off specific system sounds. Instead, I turn them all off. 
+1. Navigate to: **Control Panel** > **Hardware and Sound** > **Change system sound** > **Sounds (Tab)**
+or via the **Settings (app) ** > select the **Sound Control Panel** and then change to the **Sounds (Tab)**
+2. Under **Sound Scheme**, select **No Sounds** and then select **Apply**.
+
+## Turn off Windows notifications
+I don't know what I'm supposed to do with these notifications. I find them annoying. So to turn them off...
+1. Open the **Settings (app)** then navigate to **System** > **Notifications & actions**.
+2. Toggle off **Get notifications from apps** and uncheck the remaining checkboxes.
+
+## Log in with pin, fingerprint, or face
+1. Open the **Settings (app)** then navigate to **Accounts** > **Sign-in options**. 
+2. Select the login option, i.e. **Windows Hello Pin** and then **Set up**.
+
+## Windows Edge
+The default Edge that comes installed on Windows is outdated. Search for and download [new Microsoft Edge](https://www.microsoft.com/en-us/edge).
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: 

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./tools/srcServer.js",
+    "prebuild": "rm -rf ./assets/builds",
     "build": "cross-env NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

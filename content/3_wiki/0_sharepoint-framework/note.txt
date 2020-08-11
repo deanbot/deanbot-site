@@ -1,0 +1,44 @@
+Title: SharePoint Framework
+
+----
+
+Pagetitle: 
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+## Spfx dev cert with WSL
+
+To trust dev cert in Ubuntu note the location of the `.cer` file noted in the error message of `gulp trust-dev-cert`. 
+
+Copy this file to the Windows filesystem somewhere, and import it to Trusted Root Certificate Authorities using the process listed below ([see reference](https://www.thewindowsclub.com/manage-trusted-root-certificates-windows/)).
+
+1. Open **Run** and enter mmc.
+2. **File** > **Add/Remove Snap In** > under **Available snap-ins** select **Certificates** and then select **Add**.
+3. Select **Computer Account**, **Next**, **Current User**, **Local computer**, and then **Finish**.
+4. Select **OK**.
+5. Back in mmc, in Console Root tree select **Certificates**, right-click **Trusted Root Certificate Authorities** and select **All Tasks** > **Import**
+6. Select **Next**, browse for `.cer` file, **Next**, **Next**, **Finish**, **OK**.
+
+For extensions you may need to manually do the following: 
+
+Note the line in terminal, `To load your scripts, use this query string: ?debug=true&noredir=true&debugManifestsFile=https://localhost:4321/temp/manifests.js`.
+
+Open this file in your browser: https://localhost:4321/temp/manifests.js and accept warnings.
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: wiki/wsl, wiki/sharepoint

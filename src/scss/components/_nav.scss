@@ -1,6 +1,7 @@
 .bar {
   height: 10px;
-  background-image: linear-gradient(90deg,$color-theme-darker 0,$color-theme-primary 35%,$color-theme-lighter);
+  // background-image: linear-gradient(90deg,$color-theme-darker 0,$color-theme-primary 35%,$color-theme-lighter);
+  background-color: $color-theme-darker;
 }
 .no-js {
   .main-nav {
@@ -18,79 +19,253 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
+  background-color: $color-background;
+  box-shadow: 1px 2px 18px rgba(0,0,0,.1);
+  @include small-breakpoint {
+    box-shadow: none;
+  }
   &.scroll {
     z-index: 3;
     background: $color-background;
     box-shadow: 1px 2px 18px rgba(0,0,0,.1);
+    &.expanded {
+      box-shadow: none;
+    }
     .container {
       transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
       height: $header-height-sm;
+    }
+    .brand {
+      a {
+        @include medium-breakpoint {
+          width: 225px;
+          height: 43px;
+          background-position: 0 -106px;
+        }
+        @include large-breakpoint {
+          width: 225px;
+          height: 43px;
+          background-position: 0 -106px;
+        }
+      }
     }
   }
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
     height: $header-height-sm;
     @include small-breakpoint {
       height: $header-height-lg;
     }
   }
   .brand {
+    position: relative;
+    z-index: 1;
     display: flex;
-    justify-content: center;
-    a:before {
-      content: 'SR';
-      font-weight: bold;
-      padding: .35rem 0;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    width: 80%;
+    img {
+      width: 100%;
+    }
+    @media (min-width: 350px) {
+      width: auto;
+      height: 60px;
+      img {
+        width: auto;
+        display: none;
+      }
     }
     span {
       display: none;
     }
     @include small-breakpoint {
       display: block;
-      a:before {
-        content: '';
-      }
-      span {
-        display: inline;
-      }
+      height: auto;
     }
     a {
+      display: block;
+      background-repeat: no-repeat;
       text-decoration: none;
-      font-size: 1.3rem;
+      width: 100%;
+      font-size: 0;
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+      @media (min-width: 350px) {
+        font-size: 1.3rem;
+        background-image: url('/images/logo-sprites.png');
+        width: 225px;
+        height: 43px;
+        background-position: 0 -106px;
+      }
+      @media (min-width: 700px) {
+        width: 250px;
+        height: 48px;
+        background-position: 0 -58px;
+      }
+      @include medium-breakpoint {
+        width: 300px;
+        height: 58px;
+        background-position: 0 0;
+      }
+    }
+  }
+  .menu-toggle {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    color: #5e6e78;
+    width: 20%;
+    justify-content: flex-end;
+    margin-right: -5px;
+    @media (min-width: 350px) {
+      font-size: 2rem;
+      justify-content: flex-start;
+      text-align: left;
+      width: auto;
+    }
+    &:focus {
+      background: transparent;
+      outline: none;
+    }
+    &:hover,
+    ::selection {
+      // background-color: $color-link-background-hover;
+      color: $color-link;
+      text-decoration:none;
+    }
+    @include small-breakpoint {
+      display: none;
+    }
+  }
+  &.expanded {
+    .menu-wrapper {
+      display: block;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+      .links {
+        padding: 0 1.5rem;
+      }
+      .shadow {
+        display: block;
+      }
+    }
+    @include small-breakpoint {
+      .menu-wrapper {
+        margin: 0;
+        .links {
+          padding: 0;
+        }
+        .shadow {
+          display: none;
+        }
+      }
+    }
+  }
+  .menu-wrapper {
+    flex-grow: 1;
+    width: 100%;
+    background-color: $color-background;
+    display: none;
+    position: absolute;
+    top: 70px;
+    z-index: 0;
+    border-top: 3px solid #043E40;
+    border-bottom: 3px solid #043E40;
+    padding: 10px 0;
+    @include small-breakpoint {
+      top: 0;
+      position: relative;
+      box-shadow: none;
+      width: auto;
+      display: block;
+      flex-grow: 0;
+      padding: 0;
+      border: none;
+    }
+    .shadow {
+      display: none;
+      background: $color-background;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      height: 10px;
+      left: 0;
+      bottom: 0;
+      box-shadow: 1px 2px 18px rgba(0,0,0,.1);
     }
   }
   .links {
+    background: $color-background;
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     flex-wrap: wrap;
     flex-grow: 1;
     margin-left: -.2rem;
     margin-right: -.2rem;
     @include small-breakpoint {
+      flex-grow: 0;
+      display: flex;
       justify-content: flex-end;
       margin-left: 0;
       margin-right: 0;
     }
+    div {
+      width: 100%;
+      &:last-child {
+        a {
+          border-bottom: none;
+        }
+      }
+      @include small-breakpoint {
+        width: auto;
+      }
+    }
     a {
       text-decoration: none;
       margin: 0 .2rem;
-      padding: .35rem;
+      padding: .5rem;
+      display: block;
+      border-bottom: 1px solid $color-border;
+      font-weight: 600;
       @include small-breakpoint {
+        font-weight: 500;
+        border-bottom: none;
+        width: auto;
         margin: 0 .5rem;
-        padding: 1rem;
+        padding: .4rem;
+        font-size: 1.1rem;
+      }
+      @media (min-width: 700px) {
+        font-size: 1.15rem;
+        padding: .75rem;
+      }
+      @include medium-breakpoint {
         font-size: 1.2rem;
+        padding: .8rem;
       }
     }
   }
   a {
-    color: $color-body;
+    color: $color-link;
+    @include small-breakpoint {
+      color: $color-body;
+    }
     &:hover,
     &:focus {
       color: $color-link-hover;
     }
   }
+
 }

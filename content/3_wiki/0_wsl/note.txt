@@ -1,0 +1,34 @@
+Title: WSL
+
+----
+
+Pagetitle: 
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+## Windows Filesystem
+
+To edit files (git repos) on windows machine with WSL:
+
+```sh
+sudo umount /mnt/c
+sudo mount -t drvfs C: /mnt/c -o metadata
+```
+
+----
+
+Topic: wiki/windows
+
+----
+
+Related: wiki/sharepoint-framework
