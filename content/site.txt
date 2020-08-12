@@ -1,14 +1,12 @@
-Title: Spirited Refactor
+Title: Dean Verleger
 
 ----
 
-Homelinktitle: spiritedrefactor.net
+Homelinktitle: Deanbot
 
 ----
 
-Defaultimage:
-
-- 6955b6536e74e17a9418a80bba8b4327.png
+Defaultimage: - 6955b6536e74e17a9418a80bba8b4327.png
 
 ----
 
@@ -16,9 +14,7 @@ Twitterhandle: deanbot
 
 ----
 
-Primaryauthor:
-
-- AYy6axgX
+Primaryauthor: - mrdZ0vTD
 
 ----
 
@@ -34,7 +30,7 @@ Licenseurl: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 ----
 
-Sourceurl: https://github.com/deanbot/spiritedrefactor-site
+Sourceurl: https://github.com/deanbot/deanbot-site
 
 ----
 
@@ -50,7 +46,7 @@ Social:
   icon: twitter-line
 - 
   title: RSS
-  url: https://spiritedrefactor.net/feed.xml
+  url: https://deanbot.dev/feed.xml
   icon: rss-line
 
 ----

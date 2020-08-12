@@ -6,7 +6,7 @@ return [
     $blogPage = page('blog');
     $siteUrl = site()->url();
     $options = [
-      'title'       => 'Spirited Refactor',
+      'title'       => 'Deanbot',
       'description' => $blogPage->description()->value(),
       'link'        => $siteUrl . '/blog',
       'mime'        => 'xml',

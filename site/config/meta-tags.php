@@ -3,7 +3,7 @@ return [
   'pedroborges.meta-tags.default' => function ($page, $site, $kirby) {
     // defaults
     $htmlTitle = $page->isHomePage()
-      ? $site->title()->html()
+      ? sprintf('deanbot is %s', $site->title()->html())
       : sprintf(
         '%s | %s',
         $page->title()->html(),

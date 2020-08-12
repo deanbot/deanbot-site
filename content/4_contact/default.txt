@@ -10,8 +10,12 @@ Description: Contact Dean Verleger
 
 ----
 
+Metaimage: 
+
+----
+
 Text:
 
-If you'd like to speak with me, email me at **hello at spiritedrefactor dot net** ([pgp info](/pgp.txt)).
+If you'd like to speak with me, email me at **hello at deanbot dot dev** ([pgp info](/pgp.txt)).
 
 I'm active on (link: https://github.com/deanbot text: github target: _blank), (link: https://twitter.com/deanbot88 text: twitter target: _blank) and (link: https://github.com/deanbot text: linkedin target: _blank). I also keep a [twtxt feed](/twtxt.txt).

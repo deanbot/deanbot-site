@@ -31,7 +31,7 @@ return function($kirby, $page, $site) {
             'template' => 'email',
 
             // todo get domain from kirby
-            'from'     => 'form@spiritedrefactor.net',
+            'from'     => 'form@deanbot.dev',
             'to'       => $site->primaryAuthor()->toUser()->email(),
             'subject'  => 'Someone sent you a blog comment',
             'data'     => [

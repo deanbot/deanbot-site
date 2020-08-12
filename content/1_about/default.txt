@@ -10,12 +10,16 @@ Description: Dean Verleger is a full stack developer and this is their website.
 
 ----
 
+Metaimage: 
+
+----
+
 Text:
 
 I'm Dean Verleger, a **full stack developer** who loves to (link: https://github.com/deanbot text: open source target: _blank). I leverage cloud services to build apps and collaboration tools. I'm currently building .NET & React apps and maintaining large TypeScript, SharePoint Framework, codebases with (link: https://rushjs.io/ text: rush target: _blank) ((link: https://www.envistacorp.com/ text:@ EnVista target: _blank)). I love to learn, and I strive to maintain a good work/life balance.
 
 ### About the site
-I named this site, *Spirited Refactor*, in tribute of the inspired feeling one gets when they're well-rested and improving code with a sweeping code change. Functionally, this site is part blog and part wiki. The (link: https://github.com/deanbot/spiritedrefactor-site text: source code target: _blank) is freely available on github.
+Functionally, this site is part blog and part wiki. The (link: https://github.com/deanbot/deanbot-site text: source code target: _blank) is freely available on github.
 
 ## Currently
 - Living in Wisconsin with my amazing wife Krista and our dreamy dog Knödel.
