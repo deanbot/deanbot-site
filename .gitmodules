@@ -10,3 +10,6 @@
 [submodule "site/plugins/kirby3-xmlsitemap"]
 	path = site/plugins/kirby3-xmlsitemap
 	url = https://github.com/omz13/kirby3-xmlsitemap.git
+[submodule "kirby"]
+	path = kirby
+	url = https://github.com/getkirby/kirby.git
