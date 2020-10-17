@@ -7,8 +7,12 @@ const config = {
   class: {
     scroll: 'scroll',
     expanded: 'expanded',
+    moving: 'moving',
   },
-  offsetY: 25
+  offsetY: 25,
+  timeout: {
+    moving: 200,
+  },
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -25,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // toggle mobile nav
   _this.menuToggle.addEventListener('click', function () {
     _this.navEl.classList.toggle(config.class.expanded);
+    _this.navEl.classList.add(config.class.moving);
+    setTimeout(() => {
+      _this.navEl.classList.remove(config.class.moving)
+    }, config.timeout.moving);
   });
 
   function updateFixedNav() {

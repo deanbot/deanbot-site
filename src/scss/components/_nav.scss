@@ -161,6 +161,7 @@
   }
   &.expanded {
     .menu-wrapper {
+      top: 70px;
       display: block;
       // margin-left: -1.5rem;
       // margin-right: -1.5rem;
@@ -176,6 +177,7 @@
     @include small-breakpoint {
       .menu-wrapper {
         margin: 0;
+        top: 0px;
         .links {
           padding: 0;
         }
@@ -185,21 +187,30 @@
       }
     }
   }
+  &.moving {
+    .menu-wrapper {
+      top: 70px;
+      @include small-breakpoint {
+        top: 0;
+      }
+    }
+  }
   .menu-wrapper {
     opacity: 0;
     left: -100%;
-    transition: left .3s ease,
-      opacity .3s ease;
+    transition: left .2s ease,
+      opacity .2s ease;
     flex-grow: 1;
     width: 100%;
     background-color: $color-background;
     position: absolute;
-    top: 70px;
+    top: -999px;
     z-index: 0;
     border-top: 3px solid #043E40;
     border-bottom: 3px solid #043E40;
     padding: 10px 0;
     @include small-breakpoint {
+      transition: none;
       opacity: 1;
       left: 0;
       top: 0;
