@@ -82,22 +82,7 @@
         </div>
 
         <?php if ($articles->isNotEmpty() && !$isFilteredArchive) : ?>
-        <div class="sub"><?/*
-          <aside>
-            <h4>Subscribe via <a href="/feed.xml">RSS</a></h4>
-          </aside>
-          <aside>
-            <h3>Categories</h3>
-            <ul class="categories">
-              <?php foreach($categories as $category): ?>
-              <li>
-                <a href="<?= $blogUrl . '/' . urlencode($category) ?>">
-                  <?= html($category) ?>
-                </a>
-              </li>
-              <?php endforeach ?>
-            </ul>
-          </aside>
+        <div class="sub">
           <aside>
             <h4>Tags</h4>
             <ul class="tags">
@@ -105,6 +90,19 @@
               <li>
                 <a href="<?= $blogUrl . '/' . urlencode($tag) ?>">
                   <?= html($tag) ?>
+                </a>
+              </li>
+              <?php endforeach ?>
+            </ul>
+          </aside>
+        <?/*
+          <aside>
+            <h3>Categories</h3>
+            <ul class="categories">
+              <?php foreach($categories as $category): ?>
+              <li>
+                <a href="<?= $blogUrl . '/' . urlencode($category) ?>">
+                  <?= html($category) ?>
                 </a>
               </li>
               <?php endforeach ?>

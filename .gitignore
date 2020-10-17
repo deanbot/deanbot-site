@@ -62,3 +62,6 @@ node_modules
 purgeCache.sh
 start.sh
 end.sh
+
+# phpinfo
+info.php

@@ -37,12 +37,18 @@
 }
 .tags {
   padding: 0;
-  margin: 1rem 0 -1rem 0;
-  font-size: .9rem;
   list-style: none;
+  font-size: .8rem;
+  margin: 1rem 0 -1rem 0;
+  @include medium-breakpoint {
+    font-size: .9rem;
+    li {
+      margin: 0 1rem 1rem 0;
+    }
+  }
   li {
     padding: 0;
-    margin: 0 1rem 1rem 0;
+    margin: 0 .5rem 1rem 0;
     display: inline-block;
   }
   a {

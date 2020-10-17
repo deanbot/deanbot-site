@@ -8,9 +8,21 @@
     position: inherit;
     .container {
       transition: none;
+      height: auto;
       @include small-breakpoint {
         height: 60px;
       }
+    }
+    .menu-toggle {
+      display: none;
+    }
+    .menu-wrapper {
+      border: 0;
+      top: 0;
+      position: relative;
+      opacity: 1;
+      left: 0;
+      margin: 0 0 5px 0;
     }
   }
 }
@@ -38,11 +50,11 @@
     }
     .brand {
       a {
-        @include medium-breakpoint {
-          width: 225px;
-          height: 43px;
-          background-position: 0 -106px;
-        }
+        // @include medium-breakpoint {
+        //   width: 225px;
+        //   height: 43px;
+        //   background-position: 0 -106px;
+        // }
         @include large-breakpoint {
           width: 225px;
           height: 43px;
@@ -150,8 +162,10 @@
   &.expanded {
     .menu-wrapper {
       display: block;
-      margin-left: -1.5rem;
-      margin-right: -1.5rem;
+      // margin-left: -1.5rem;
+      // margin-right: -1.5rem;
+      left: 0%;
+      opacity: 1;
       .links {
         padding: 0 1.5rem;
       }
@@ -172,10 +186,13 @@
     }
   }
   .menu-wrapper {
+    opacity: 0;
+    left: -100%;
+    transition: all .3s ease;
     flex-grow: 1;
     width: 100%;
     background-color: $color-background;
-    display: none;
+    // display: none;
     position: absolute;
     top: 70px;
     z-index: 0;

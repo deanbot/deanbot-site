@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
-    flex-direction: column-reverse;
+    // flex-direction: column-reverse;
     @include small-breakpoint {
       flex-direction: row;
     }

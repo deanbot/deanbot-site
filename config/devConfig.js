@@ -1,6 +1,6 @@
 module.exports = {
   // url of site hosted via xampp/lampp/mamp/etc
-  proxyUrl: 'spiritedrefactor.localhost',
+  proxyUrl: 'deanbot.localhost',
 
   port: 3000,
   uiPort: 3001,
