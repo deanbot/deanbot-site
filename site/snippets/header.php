@@ -18,6 +18,12 @@
   <?php echo prodCSS('/assets/builds/main.css'); ?>
   <?php echo css('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'); ?>
   <?php /* <!-- <meta name="theme-color" content="#fafafa"> --> */ ?>
+  <script type="text/javascript">
+    // remove no-js from body
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('html').classList.remove('no-js');
+    });
+  </script>
 </head>
 <body>
   <div>

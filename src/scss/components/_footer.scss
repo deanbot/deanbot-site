@@ -19,6 +19,13 @@
   .anchor-brand {
     text-align: center;
     margin-bottom: 40px;
+    a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
     img {
       margin: auto;
       width: 150px;

@@ -4,7 +4,7 @@
       </div> -->
 
       <div class="anchor-brand">
-        <img src="/assets/frog.png" alt="Robot frog"/>
+        <a href="#"><img src="/assets/frog.png" alt="Robot frog"/></a>
       </div>
 
       <div class="meta">

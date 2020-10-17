@@ -188,11 +188,11 @@
   .menu-wrapper {
     opacity: 0;
     left: -100%;
-    transition: all .3s ease;
+    transition: left .3s ease,
+      opacity .3s ease;
     flex-grow: 1;
     width: 100%;
     background-color: $color-background;
-    // display: none;
     position: absolute;
     top: 70px;
     z-index: 0;
@@ -200,6 +200,8 @@
     border-bottom: 3px solid #043E40;
     padding: 10px 0;
     @include small-breakpoint {
+      opacity: 1;
+      left: 0;
       top: 0;
       position: relative;
       box-shadow: none;
