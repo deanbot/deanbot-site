@@ -31,16 +31,33 @@ $color-neutral-dark: #5e6e78;
 $color-neutral-light: #dedede;
 $color-neutral-lighter: #DCDCDC;
 
+
+
 $color-white: #FBFBFF;
 $color-black: #111; //#040F16; #020912;
+
+// Light
 
 $color-body: $color-black;
 $color-heading: $color-black;
 $color-background: $color-white;
 $color-background-alt: $color-neutral-lighter;
 $color-link: $color-theme-primary;
-$color-link-hover: $color-theme-lighter; //$color-white;
+$color-link-hover: $color-theme-lighter;
 $color-link-background-hover: $color-theme-darker;
 $color-border: $color-neutral-light;
 $color-text-subdued: lighten( $color-black, 20% );
 $color-text-warning: $color-theme-accent;
+
+// Dark
+
+$color-body-dark: $color-white;
+$color-heading-dark: $color-white;
+$color-background-dark: $color-black;
+$color-background-alt-dark: $color-neutral-lighter;
+$color-link-dark: $color-theme-primary;
+$color-link-hover-dark: $color-theme-lighter;
+$color-link-background-hover-dark: $color-theme-darker;
+$color-border-dark: $color-neutral-light;
+$color-text-subdued-dark: lighten( $color-black, 20% );
+$color-text-warning-dark: $color-theme-accent;

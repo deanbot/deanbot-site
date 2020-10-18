@@ -33,6 +33,7 @@
   left: 0;
   z-index: 1;
   background-color: $color-background;
+  background-color: var(--color-background);
   box-shadow: 1px 2px 18px rgba(0,0,0,.1);
   @include small-breakpoint {
     box-shadow: none;
@@ -40,6 +41,7 @@
   &.scroll {
     z-index: 3;
     background: $color-background;
+    background: var(--color-background);
     box-shadow: 1px 2px 18px rgba(0,0,0,.1);
     &.expanded {
       box-shadow: none;
@@ -68,7 +70,9 @@
     align-items: center;
     flex-wrap: wrap;
     height: $header-height-sm;
+    justify-content: space-between;
     @include small-breakpoint {
+      justify-content: flex-start;
       height: $header-height-lg;
     }
   }
@@ -78,8 +82,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-grow: 1;
-    width: 80%;
+    min-width: 130px;
+    width: 75%;
     img {
       width: 100%;
     }
@@ -95,6 +99,7 @@
       display: none;
     }
     @include small-breakpoint {
+      flex-grow: 1;
       display: block;
       height: auto;
     }
@@ -110,20 +115,23 @@
       }
       @media (min-width: 350px) {
         font-size: 1.3rem;
-        background-image: url('/assets/builds/images/logo-sprites.png');
+        background-image: url('/assets/builds/images/logo-sprites-dark.png');
         width: 225px;
         height: 43px;
         background-position: 0 -106px;
+        background-position: var(--x-offset-logo) -106px;
       }
       @media (min-width: 700px) {
         width: 250px;
         height: 48px;
         background-position: 0 -58px;
+        background-position: var(--x-offset-logo) -58px;
       }
       @include medium-breakpoint {
         width: 300px;
         height: 58px;
         background-position: 0 0;
+        background-position: var(--x-offset-logo) 0;
       }
     }
   }
@@ -153,7 +161,8 @@
     ::selection {
       // background-color: $color-link-background-hover;
       color: $color-link;
-      text-decoration:none;
+      color: var(--color-link);
+      text-decoration: none;
     }
     @include small-breakpoint {
       display: none;
@@ -199,16 +208,17 @@
     opacity: 0;
     left: -100%;
     transition: left .2s ease,
-      opacity .2s ease;
-    flex-grow: 1;
+    opacity .2s ease;
     width: 100%;
     background-color: $color-background;
+    background-color: var(--color-background);
     position: absolute;
     top: -999px;
     z-index: 0;
     border-top: 3px solid #043E40;
     border-bottom: 3px solid #043E40;
     padding: 10px 0;
+    flex-grow: 1;
     @include small-breakpoint {
       transition: none;
       opacity: 1;
@@ -225,6 +235,7 @@
     .shadow {
       display: none;
       background: $color-background;
+      background: var(--color-background);
       width: 100%;
       position: absolute;
       z-index: -1;
@@ -236,6 +247,7 @@
   }
   .links {
     background: $color-background;
+    background: var(--color-background);
     position: relative;
     z-index: 2;
     display: flex;
@@ -267,7 +279,10 @@
       margin: 0 .2rem;
       padding: .5rem;
       display: block;
-      border-bottom: 1px solid $color-border;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: $color-border;
+      border-bottom-color: var(--color-border);
       font-weight: 600;
       @include small-breakpoint {
         font-weight: 500;
@@ -289,12 +304,15 @@
   }
   a {
     color: $color-link;
+    color: var(--color-link);
     @include small-breakpoint {
       color: $color-body;
+      color: var(--color-body);
     }
     &:hover,
     &:focus {
       color: $color-link-hover;
+      color: var(--color-link-hover);
     }
   }
 

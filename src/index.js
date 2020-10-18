@@ -4,3 +4,4 @@ require('./scss/site.scss');
 require('./fixedNav');
 require('./scrollTop');
 require('./images/logo-sprites.png');
+require('./images/logo-sprites-dark.png');

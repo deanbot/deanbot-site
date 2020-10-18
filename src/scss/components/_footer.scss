@@ -51,9 +51,11 @@
   }
   a {
     color: $color-body;
+    color: var(--color-body);
     &:hover,
     &:focus {
       color: $color-link-hover;
+      color: var(--color-link-hover);
     }
   }
   .links {
