@@ -34,7 +34,8 @@
   z-index: 1;
   background-color: $color-background;
   background-color: var(--color-background);
-  box-shadow: 1px 2px 18px rgba(0,0,0,.1);
+  box-shadow: 1px 2px 18px rgba(0, 0, 0, .1);
+  box-shadow: 1px 2px 18px var(--color-nav-shadow);
   @include small-breakpoint {
     box-shadow: none;
   }
@@ -42,7 +43,8 @@
     z-index: 3;
     background: $color-background;
     background: var(--color-background);
-    box-shadow: 1px 2px 18px rgba(0,0,0,.1);
+    box-shadow: 1px 2px 18px rgba(0, 0, 0, .1);
+    box-shadow: 1px 2px 18px var(--color-nav-shadow);
     &.expanded {
       box-shadow: none;
     }
@@ -61,6 +63,7 @@
           width: 225px;
           height: 43px;
           background-position: 0 -106px;
+          background-position: var(--x-offset-logo) -106px;
         }
       }
     }

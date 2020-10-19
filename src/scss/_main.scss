@@ -10,6 +10,7 @@
   --color-text-subdued: #{$color-text-subdued};
   --color-text-warning: #{$color-text-warning};
   --x-offset-logo: 0;
+  --color-nav-shadow: rgba(0, 0, 0, .1);
 }
 
 html.dark {
@@ -24,6 +25,7 @@ html.dark {
   --color-text-subdued: #{$color-text-subdued-dark};
   --color-text-warning: #{$color-text-warning-dark};
   --x-offset-logo: -300px;
+  --color-nav-shadow: rgba(251, 251, 255, .1);
 }
 
 html {

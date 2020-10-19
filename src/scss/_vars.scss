@@ -22,6 +22,7 @@ $header-height-sm: 60px;
 $header-height-lg: 180px;
 
 // colors
+$color-theme-darker2: #1e2323;
 $color-theme-darker: #043E40;
 $color-theme-primary: #01677D;
 $color-theme-lighter: #6BC4D8;
@@ -30,7 +31,6 @@ $color-theme-tertiary: #fff4ce;
 $color-neutral-dark: #5e6e78;
 $color-neutral-light: #dedede;
 $color-neutral-lighter: #DCDCDC;
-
 
 
 $color-white: #FBFBFF;
@@ -54,10 +54,10 @@ $color-text-warning: $color-theme-accent;
 $color-body-dark: $color-white;
 $color-heading-dark: $color-white;
 $color-background-dark: $color-black;
-$color-background-alt-dark: $color-neutral-lighter;
+$color-background-alt-dark: lighten( $color-black, 5% ); //$color-neutral-lighter;
 $color-link-dark: $color-theme-primary;
 $color-link-hover-dark: $color-theme-lighter;
 $color-link-background-hover-dark: $color-theme-darker;
-$color-border-dark: $color-neutral-light;
+$color-border-dark: lighten($color-black, 20%); //$color-neutral-light;
 $color-text-subdued-dark: lighten( $color-black, 20% );
 $color-text-warning-dark: $color-theme-accent;
