@@ -36,7 +36,11 @@
             : $site->title();
         ?>
         <a class="logo" href="<?= $site->url() ?>" title="<?= $homeTitle ?>">
-          <img src="/assets/builds/images/logo.png" alt="Deanbot logo: developer of apps and automations" class="sm"/>
+          <?php
+            // Todo get from site settings $site->logoUrl()
+            $logoImageSrc = '/assets/builds/images/logo.svg'
+          ?>
+          <img src="<?= $logoImageSrc; ?>" alt="Deanbot logo: developer of apps and automations" class="sm"/>
         </a>
       </div>
 

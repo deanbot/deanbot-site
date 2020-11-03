@@ -31,7 +31,6 @@ $color-theme-tertiary: #fff4ce;
 $color-neutral-dark: #5e6e78;
 $color-neutral-light: #dedede;
 $color-neutral-lighter: #DCDCDC;
-
 $color-white: #FBFBFF;
 $color-black: #111; //#040F16; #020912;
 
@@ -49,7 +48,10 @@ $color-border: $color-neutral-light;
 $color-text-subdued: lighten( $color-black, 20% );
 $color-text-warning: $color-theme-accent;
 $color-nav-shadow: 0, 0, 0; // .1
-$color-nav-overlay: red($color-background), green($color-background), blue($color-background); //.5
+$color-nav-border: #9fb9c6ff;
+$color-nav-overlay: red($color-background), green($color-background), blue($color-background);
+$url-logo: url(/assets/builds/images/logo.svg);
+$url-frog: url(/assets/builds/images/frog.png);
 
 // Dark
 $color-body-dark: $color-white;
@@ -65,4 +67,7 @@ $color-border-dark: lighten($color-black, 20%); //$color-neutral-light;
 $color-text-subdued-dark: lighten( $color-black, 20% );
 $color-text-warning-dark: $color-theme-accent;
 $color-nav-shadow-dark: 251, 251, 255;
-$color-nav-overlay-dark: red($color-background-dark), green($color-background-dark), blue($color-background-dark);//.5
+$color-nav-overlay-dark: red($color-background-dark), green($color-background-dark), blue($color-background-dark);
+$color-nav-border-dark: $color-theme-darker;
+$url-logo-dark: url(/assets/builds/images/logo-dark.svg);
+$url-frog-dark: url(/assets/builds/images/frog-dark.png);

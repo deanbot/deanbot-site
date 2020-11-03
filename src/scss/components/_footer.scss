@@ -25,20 +25,18 @@
     a {
       display: block;
       // bug: flicker when url is css var
-      background-image: url(/assets/builds/images/frog.png);
       // background-image: var(--url-frog-small);
+      background-image: $url-frog;
       @media (prefers-color-scheme: dark) {
-        background-image: url(/assets/builds/images/frog-dark.png);
+        background-image: $url-frog-dark;
       }
       background-size: contain;
       background-repeat: no-repeat;
+      width: 100%;
+      max-width: 150px;
       @include small-breakpoint {
         width: 150px;
         height: 142px;
-        background-size: auto;
-        background-position: 0 0;
-        background-position: var(--x-offset-frog) 0;
-        background-image: url(/assets/builds/images/frog-sprites.png);
       }
       &,
       &:hover,

@@ -106,13 +106,14 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                   limit: 10000,
-                  mimetype: 'image/svg+xml'
+                  mimetype: 'image/svg+xml',
+                  name: 'images/[name].[ext]'
                 }
               }
               : {
                 limit: 10000,
                 mimetype: 'image/svg+xml',
-                name: '[name].[ext]'
+                name: 'images/[name].[ext]'
               }
           }
         ]
@@ -157,7 +158,8 @@ module.exports = {
         ]
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        // possibly select icon font via name or directory
+        test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader'
       },
     ]

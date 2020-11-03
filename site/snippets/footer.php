@@ -1,10 +1,10 @@
   <footer class="footer container">
-    <!-- <div class="anchor">
-      <hr class="long"/>
-    </div> -->
-
     <div class="anchor-brand">
-      <a href="#"><img src="/assets/builds/images/frog.png" alt="Robot frog"/></a>
+      <?php
+        // todo get from siteSettings
+        $footerLogoImageSrc = '/assets/builds/images/frog.png';
+      ?>
+      <a href="#"><img src="<?= $footerLogoImageSrc; ?>" alt="Robot frog"/></a>
     </div>
 
     <div class="meta">

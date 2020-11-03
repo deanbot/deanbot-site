@@ -13,10 +13,9 @@
   --color-text-warning: #{$color-text-warning};
   --color-nav-shadow: #{$color-nav-shadow};
   --color-nav-overlay: #{$color-nav-overlay};
-  --url-logo-small: url(/assets/builds/images/logo.png);
-  --url-frog-small: url(/assets/builds/images/frog.png);
-  --x-offset-logo: 0;
-  --x-offset-frog: 0;
+  --color-nav-border: #{$color-nav-border};
+  --url-logo: #{$url-logo};
+  --url-frog: #{$url-frog};
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -34,10 +33,9 @@
     --color-text-subdued: #{$color-text-subdued-dark};
     --color-text-warning: #{$color-text-warning-dark};
     --color-nav-shadow: #{$color-nav-shadow-dark};
-    --url-logo-small: url(/assets/builds/images/logo-dark.png);
-    --url-frog-small: url(/assets/builds/images/frog-dark.png);
-    --x-offset-logo: -300px;
-    --x-offset-frog: -150px;
+    --color-nav-border: #{$color-nav-border-dark};
+    --url-logo: #{$url-logo-dark};
+    --url-frog: #{$url-frog-dark};
   }
 }
 

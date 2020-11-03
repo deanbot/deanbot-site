@@ -25,6 +25,9 @@ tabs:
               homeLinkTitle:
                 label: Home Link Title
                 type: text
+              logoUrl:
+                label: Logo Url
+                type: image
       metaSettings:
         width: 1/2
         sections:
@@ -68,6 +71,9 @@ tabs:
               footerSettings:
                 label: Footer Settings
                 type: headline
+              footerLogoUrl:
+                label: Footer Logo Url
+                type: image
               license:
                 width: 1/2
                 label: License

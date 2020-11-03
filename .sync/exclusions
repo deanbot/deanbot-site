@@ -22,3 +22,4 @@ media/*
 .vscode
 cache
 kirby
+info.php
