@@ -32,32 +32,37 @@ $color-neutral-dark: #5e6e78;
 $color-neutral-light: #dedede;
 $color-neutral-lighter: #DCDCDC;
 
-
 $color-white: #FBFBFF;
 $color-black: #111; //#040F16; #020912;
 
 // Light
-
 $color-body: $color-black;
 $color-heading: $color-black;
 $color-background: $color-white;
 $color-background-alt: $color-neutral-lighter;
+$color-nav-link: $color-theme-primary;
+$color-nav-link-hover: lighten($color-theme-primary, 20%);
 $color-link: $color-theme-primary;
 $color-link-hover: $color-theme-lighter;
 $color-link-background-hover: $color-theme-darker;
 $color-border: $color-neutral-light;
 $color-text-subdued: lighten( $color-black, 20% );
 $color-text-warning: $color-theme-accent;
+$color-nav-shadow: 0, 0, 0; // .1
+$color-nav-overlay: red($color-background), green($color-background), blue($color-background); //.5
 
 // Dark
-
 $color-body-dark: $color-white;
 $color-heading-dark: $color-white;
 $color-background-dark: $color-black;
 $color-background-alt-dark: lighten( $color-black, 5% ); //$color-neutral-lighter;
+$color-nav-link-dark: $color-theme-primary;
+$color-nav-link-hover-dark: $color-theme-lighter;
 $color-link-dark: $color-theme-primary;
 $color-link-hover-dark: $color-theme-lighter;
 $color-link-background-hover-dark: $color-theme-darker;
 $color-border-dark: lighten($color-black, 20%); //$color-neutral-light;
 $color-text-subdued-dark: lighten( $color-black, 20% );
 $color-text-warning-dark: $color-theme-accent;
+$color-nav-shadow-dark: 251, 251, 255;
+$color-nav-overlay-dark: red($color-background-dark), green($color-background-dark), blue($color-background-dark);//.5

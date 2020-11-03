@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js dark">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <?= $page->metaTags() ?>
@@ -26,31 +26,30 @@
   </script>
 </head>
 <body>
-  <div>
-    <nav class="main-nav nav">
-      <div class="bar"></div>
-      <div class="container">
-        <div class="brand">
-          <?php
-            $homeTitle = $site->homeLinkTitle() && !$site->homeLinkTitle()->isEmpty()
-              ? $site->homeLinkTitle()->html()
-              : $site->title();
-          ?>
-          <a class="logo" href="<?= $site->url() ?>" title="<?= $homeTitle ?>">
-            <img src="/assets/sm.png" alt="Deanbot logo: developer of apps and automations" class="sm"/>
-          </a>
-        </div>
-
-        <button class="menu-toggle"><i class="ri-menu-line"></i></button>
-
-        <div class="menu-wrapper">
-          <div class="links">
-            <?php
-            foreach ($site->children()->listed() as $item): ?>
-            <div><?= $item->title()->link() ?></div>
-            <?php endforeach; ?>
-          </div>
-          <div class="shadow"></div>
-        </div>
+  <nav class="main-nav nav">
+    <div class="bar"></div>
+    <div class="container">
+      <div class="brand">
+        <?php
+          $homeTitle = $site->homeLinkTitle() && !$site->homeLinkTitle()->isEmpty()
+            ? $site->homeLinkTitle()->html()
+            : $site->title();
+        ?>
+        <a class="logo" href="<?= $site->url() ?>" title="<?= $homeTitle ?>">
+          <img src="/assets/builds/images/logo.png" alt="Deanbot logo: developer of apps and automations" class="sm"/>
+        </a>
       </div>
-    </nav>
+
+      <button class="menu-toggle"><i class="ri-menu-line"></i></button>
+
+      <div class="menu-wrapper">
+        <div class="links">
+          <?php
+          foreach ($site->children()->listed() as $item): ?>
+          <div><?= $item->title()->link() ?></div>
+          <?php endforeach; ?>
+        </div>
+        <div class="shadow"></div>
+      </div>
+    </div>
+  </nav>

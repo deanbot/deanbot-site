@@ -32,11 +32,13 @@
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: $color-background;
-  background-color: var(--color-background);
+  transition: background-color .2s ease;
+  background-color: rgba(red($color-background), green($color-background), blue($color-background), 1);
+  background-color: rgba(var(--color-background), 1);
   box-shadow: 1px 2px 18px rgba(0, 0, 0, .1);
-  box-shadow: 1px 2px 18px var(--color-nav-shadow);
+  box-shadow: 1px 2px 18px rgba(var(--color-nav-shadow), .1);
   @include small-breakpoint {
+    transition: none;
     box-shadow: none;
   }
   &.scroll {
@@ -44,7 +46,7 @@
     background: $color-background;
     background: var(--color-background);
     box-shadow: 1px 2px 18px rgba(0, 0, 0, .1);
-    box-shadow: 1px 2px 18px var(--color-nav-shadow);
+    box-shadow: 1px 2px 18px rgba(var(--color-nav-shadow), .1);
     &.expanded {
       box-shadow: none;
     }
@@ -54,12 +56,7 @@
     }
     .brand {
       a {
-        // @include medium-breakpoint {
-        //   width: 225px;
-        //   height: 43px;
-        //   background-position: 0 -106px;
-        // }
-        @include large-breakpoint {
+        @include small-breakpoint {
           width: 225px;
           height: 43px;
           background-position: 0 -106px;
@@ -68,110 +65,16 @@
       }
     }
   }
-  .container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    height: $header-height-sm;
-    justify-content: space-between;
+  &.expanded {
+    height: 100%;
+    background-color: rgba(red($color-background), green($color-background), blue($color-background), .5);
+    background-color: rgba(var(--color-nav-overlay), .5);
     @include small-breakpoint {
-      justify-content: flex-start;
-      height: $header-height-lg;
-    }
-  }
-  .brand {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    min-width: 130px;
-    width: 75%;
-    img {
-      width: 100%;
-    }
-    @media (min-width: 350px) {
-      width: auto;
-      height: 60px;
-      img {
-        width: auto;
-        display: none;
-      }
-    }
-    span {
-      display: none;
-    }
-    @include small-breakpoint {
-      flex-grow: 1;
-      display: block;
+      background-color: $color-background;
+      background-color: var(--color-background);
       height: auto;
     }
-    a {
-      display: block;
-      background-repeat: no-repeat;
-      text-decoration: none;
-      width: 100%;
-      font-size: 0;
-      &:hover,
-      &:focus {
-        background-color: transparent;
-      }
-      @media (min-width: 350px) {
-        font-size: 1.3rem;
-        background-image: url('/assets/builds/images/logo-sprites-dark.png');
-        width: 225px;
-        height: 43px;
-        background-position: 0 -106px;
-        background-position: var(--x-offset-logo) -106px;
-      }
-      @media (min-width: 700px) {
-        width: 250px;
-        height: 48px;
-        background-position: 0 -58px;
-        background-position: var(--x-offset-logo) -58px;
-      }
-      @include medium-breakpoint {
-        width: 300px;
-        height: 58px;
-        background-position: 0 0;
-        background-position: var(--x-offset-logo) 0;
-      }
-    }
-  }
-  .menu-toggle {
-    position: relative;
-    z-index: 1;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    color: #5e6e78;
-    width: 20%;
-    justify-content: flex-end;
-    margin-right: -5px;
-    @media (min-width: 350px) {
-      font-size: 2rem;
-      justify-content: flex-start;
-      text-align: left;
-      width: auto;
-    }
-    &:focus {
-      background: transparent;
-      outline: none;
-    }
-    &:hover,
-    ::selection {
-      // background-color: $color-link-background-hover;
-      color: $color-link;
-      color: var(--color-link);
-      text-decoration: none;
-    }
-    @include small-breakpoint {
-      display: none;
-    }
-  }
-  &.expanded {
+
     .menu-wrapper {
       top: 70px;
       display: block;
@@ -205,6 +108,116 @@
       @include small-breakpoint {
         top: 0;
       }
+    }
+  }
+  .container {
+    background-color: $color-background;
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: $header-height-sm;
+    justify-content: space-between;
+    @include small-breakpoint {
+      justify-content: flex-start;
+      height: $header-height-lg;
+    }
+  }
+  .brand {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 130px;
+    width: 75%;
+    img {
+      width: 100%;
+      visibility: hidden;
+    }
+    @media (min-width: 350px) {
+      width: auto;
+      height: 60px;
+      img {
+        width: auto;
+        display: none;
+      }
+    }
+    span {
+      display: none;
+    }
+    @include small-breakpoint {
+      flex-grow: 1;
+      display: block;
+      height: auto;
+    }
+    a {
+      display: block;
+      background-repeat: no-repeat;
+      text-decoration: none;
+      width: 100%;
+      font-size: 0;
+      background-image: url(/assets/builds/images/logo.png);
+      background-image: var(--url-logo-small);
+      background-size: contain;
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+      @media (min-width: 350px) {
+        font-size: 1.3rem;
+        background-size: inherit;
+        background-image: url(/assets/builds/images/logo-sprites.png);
+        width: 225px;
+        height: 43px;
+        background-position: 0 -106px;
+        background-position: var(--x-offset-logo) -106px;
+      }
+      @media (min-width: 700px) {
+        width: 250px;
+        height: 48px;
+        background-position: 0 -58px;
+        background-position: var(--x-offset-logo) -58px;
+      }
+      @include medium-breakpoint {
+        width: 300px;
+        height: 58px;
+        background-position: 0 0;
+        background-position: var(--x-offset-logo) 0;
+      }
+    }
+  }
+  .menu-toggle {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    width: 20%;
+    justify-content: flex-end;
+    margin-right: -5px;
+    color: $color-nav-link;
+    color: var(--color-nav-link);
+    @media (min-width: 350px) {
+      font-size: 2rem;
+      justify-content: flex-start;
+      text-align: left;
+      width: auto;
+    }
+    &:focus {
+      background: transparent;
+      outline: none;
+    }
+    &:hover,
+    ::selection {
+      color: $color-nav-link-hover;
+      color: var(--color-nav-link-hover);
+      text-decoration: none;
+    }
+    @include small-breakpoint {
+      display: none;
     }
   }
   .menu-wrapper {
@@ -245,7 +258,9 @@
       height: 10px;
       left: 0;
       bottom: 0;
-      box-shadow: 1px 2px 18px rgba(0,0,0,.1);
+      bottom: 0;
+      box-shadow: 1px 2px 18px rgba(0, 0, 0, .2);
+      box-shadow: 1px 2px 18px rgba(var(--color-nav-shadow), .2);
     }
   }
   .links {
@@ -306,17 +321,22 @@
     }
   }
   a {
-    color: $color-link;
-    color: var(--color-link);
+    color: $color-nav-link;
+    color: var(--color-nav-link);
+    background-color: transparent;
     @include small-breakpoint {
       color: $color-body;
       color: var(--color-body);
+      &:hover,
+      &:focus {
+        background-color: $color-link-background-hover;
+        background-color: var(--color-link-background-hover);
+      }
     }
     &:hover,
     &:focus {
-      color: $color-link-hover;
-      color: var(--color-link-hover);
+      color: $color-nav-link-hover;
+      color: var(--color-nav-link-hover);
     }
   }
-
 }

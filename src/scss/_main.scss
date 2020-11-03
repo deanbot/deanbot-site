@@ -3,29 +3,42 @@
   --color-heading: #{$color-heading};
   --color-background: #{$color-background};
   --color-background-alt: #{$color-background-alt};
+  --color-nav-link: #{$color-nav-link};
+  --color-nav-link-hover: #{$color-nav-link-hover};
   --color-link: #{$color-link};
   --color-link-hover: #{$color-link-hover};
   --color-link-background-hover: #{$color-link-background-hover};
   --color-border: #{$color-border};
   --color-text-subdued: #{$color-text-subdued};
   --color-text-warning: #{$color-text-warning};
+  --color-nav-shadow: #{$color-nav-shadow};
+  --color-nav-overlay: #{$color-nav-overlay};
+  --url-logo-small: url(/assets/builds/images/logo.png);
+  --url-frog-small: url(/assets/builds/images/frog.png);
   --x-offset-logo: 0;
-  --color-nav-shadow: rgba(0, 0, 0, .1);
+  --x-offset-frog: 0;
 }
-
-html.dark {
-  --color-body: #{$color-body-dark};
-  --color-heading: #{$color-heading-dark};
-  --color-background: #{$color-background-dark};
-  --color-background-alt: #{$color-background-alt-dark};
-  --color-link: #{$color-link-dark};
-  --color-link-hover: #{$color-link-hover-dark};
-  --color-link-background-hover: #{$color-link-background-hover-dark};
-  --color-border: #{$color-border-dark};
-  --color-text-subdued: #{$color-text-subdued-dark};
-  --color-text-warning: #{$color-text-warning-dark};
-  --x-offset-logo: -300px;
-  --color-nav-shadow: rgba(251, 251, 255, .1);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-body: #{$color-body-dark};
+    --color-heading: #{$color-heading-dark};
+    --color-background: #{$color-background-dark};
+    --color-background-alt: #{$color-background-alt-dark};
+    --color-nav-overlay: #{$color-nav-overlay-dark};
+    --color-nav-link: #{$color-nav-link-dark};
+    --color-nav-link-hover: #{$color-nav-link-hover-dark};
+    --color-link: #{$color-link-dark};
+    --color-link-hover: #{$color-link-hover-dark};
+    --color-link-background-hover: #{$color-link-background-hover-dark};
+    --color-border: #{$color-border-dark};
+    --color-text-subdued: #{$color-text-subdued-dark};
+    --color-text-warning: #{$color-text-warning-dark};
+    --color-nav-shadow: #{$color-nav-shadow-dark};
+    --url-logo-small: url(/assets/builds/images/logo-dark.png);
+    --url-frog-small: url(/assets/builds/images/frog-dark.png);
+    --x-offset-logo: -300px;
+    --x-offset-frog: -150px;
+  }
 }
 
 html {

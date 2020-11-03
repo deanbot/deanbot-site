@@ -1,39 +1,38 @@
-    <footer class="footer container">
-      <!-- <div class="anchor">
-        <hr class="long"/>
-      </div> -->
+  <footer class="footer container">
+    <!-- <div class="anchor">
+      <hr class="long"/>
+    </div> -->
 
-      <div class="anchor-brand">
-        <a href="#"><img src="/assets/frog.png" alt="Robot frog"/></a>
+    <div class="anchor-brand">
+      <a href="#"><img src="/assets/builds/images/frog.png" alt="Robot frog"/></a>
+    </div>
+
+    <div class="meta">
+      <div>
+        <?php
+        $copyrightTitle = $site->primaryAuthor() && !$site->primaryAuthor()->isEmpty()
+          ? $site->primaryAuthor()->toUser()->name()
+          : $site->title()->html();
+        ?>
+        <a class="self" href="<?= $site->url() ?>"><?= $copyrightTitle ?></a> © <?= Date('Y') ?>
       </div>
-
-      <div class="meta">
-        <div>
-          <?php
-          $copyrightTitle = $site->primaryAuthor() && !$site->primaryAuthor()->isEmpty()
-            ? $site->primaryAuthor()->toUser()->name()
-            : $site->title()->html();
-          ?>
-          <a class="self" href="<?= $site->url() ?>"><?= $copyrightTitle ?></a> © <?= Date('Y') ?>
-        </div>
-        <span> - </span>
-        <div>
-          <a href="<?= $site->licenseUrl()->html() ?>" target="_blank"><?= $site->license()->html() ?></a>
-        </div>
-        <span> - </span>
-        <div>
-          <a href="<?= $site->sourceUrl()->html() ?>">Source Code</a>
-        </div>
+      <span> - </span>
+      <div>
+        <a href="<?= $site->licenseUrl()->html() ?>" target="_blank"><?= $site->license()->html() ?></a>
       </div>
+      <span> - </span>
+      <div>
+        <a href="<?= $site->sourceUrl()->html() ?>">Source Code</a>
+      </div>
+    </div>
 
-      <nav class="links">
-        <?php foreach ($site->social()->toStructure() as $social): ?>
-        <a href="<?= $social->url() ?>" target="_blank" title="<?= $social->title() ?>"><i class="ri-<?= $social->icon() ?>"></i></a>
-        <?php endforeach ?>
-      </nav>
+    <nav class="links">
+      <?php foreach ($site->social()->toStructure() as $social): ?>
+      <a href="<?= $social->url() ?>" target="_blank" title="<?= $social->title() ?>"><i class="ri-<?= $social->icon() ?>"></i></a>
+      <?php endforeach ?>
+    </nav>
 
-    </footer>
-  </div>
+  </footer>
 
   <?php
     /*
