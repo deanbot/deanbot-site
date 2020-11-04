@@ -6,7 +6,93 @@ Pagetitle:
 
 ----
 
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
 Text:
+
+## branching and merging
+
+(see also: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+
+**checkout new branch**
+
+Any unstaged files will be brought along.
+
+`git checkout -b <branchName>`
+
+short for: 
+
+```
+git branch <branchName>
+git checkout <branchName>
+```
+
+**merge target branch**
+
+`git merge <branchName>`
+
+Example:
+
+```sh
+# Ensure changes are committed.
+git commit -am "message"
+
+# Checkout main branch (branch that target branch will be merged into)
+git checkout master
+
+# merge branch
+git merge iss59
+```
+
+**delete target branch**
+
+`git branch -d <branchName>`
+
+Hint: tab complete branch name.
+
+## git config / aliases
+
+To set git aliases (i.e., `git br` instead of `git branch`) configure `[alias]` section of `~/.gitconfig`.
+
+Example:
+
+```
+[user]
+  name = <My Name>
+  email = <My Email Address>
+
+[core]
+  excludesfile = ~/.gitignore-global
+  ignorecase = false
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+```
+
+## use specific ssh identify file for github
+
+Configure in ssh config, i.e. in `~/.ssh/config` where `<keyFile>` is a private key file:
+
+```
+# ...
+
+Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/<keyFIle>
+```
 
 ## swap out submodule with fork
 
@@ -26,4 +112,4 @@ Topic: wiki/reference
 
 ----
 
-Related: 
+Related: wiki/ssh

@@ -54,14 +54,15 @@ pgp.txt
 
 # sync module config
 .sync/config*
-setOwner.sh
 
 # node modules
 node_modules
 
+# scripts
 purgeCache.sh
 start.sh
 end.sh
+setOwner.sh
 
 # phpinfo
 info.php

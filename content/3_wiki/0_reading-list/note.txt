@@ -6,10 +6,19 @@ Pagetitle:
 
 ----
 
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
 Text:
 
 ## Reading List 2020 
 
+- **The Way of Kings**: Brandon Sanderson
 - **Romantic Outlaws**: Charlotte Gordon
 - **The Last Wish**: Andrzej Sapkowski
 - **The Sword of Shannara**: Terry Brooks

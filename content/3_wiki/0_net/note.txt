@@ -1,0 +1,35 @@
+Title: .NET
+
+----
+
+Pagetitle: 
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+## Reinstall packages with nuget
+
+In Package Manager Console run:
+
+`Update-Package -reinstall`
+
+or
+
+`Update-Package -reinstall -Project ProjectName`
+
+----
+
+Topic: wiki/microsoft
+
+----
+
+Related: 

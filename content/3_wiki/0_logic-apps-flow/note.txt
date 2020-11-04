@@ -1,0 +1,32 @@
+Title: Logic Apps and Flow
+
+----
+
+Pagetitle: 
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+## Expressions
+
+### Newline characters 
+
+Logic Apps/Flow will escape the backslash used with newline characters like `\r` or `\n` when entered into a string. To avoid this, use the json workaround, aka stick the newline string in a json object and retrieve it: `json('{"NL":"\n"}')?['NL']`
+<span>-</span> *(link: https://powerusers.microsoft.com/t5/Building-Flows/How-can-you-enter-a-Newline-into-a-string/m-p/102473/highlight/true#M10030 text: source)*
+
+----
+
+Topic: wiki/microsoft
+
+----
+
+Related: wiki/odata

@@ -1,0 +1,178 @@
+Title: Get single taxonomy field labels using PnPjs
+
+----
+
+Description: 
+
+----
+
+Headline: 
+
+----
+
+Text:
+
+There is an (link: https://sharepoint.uservoice.com/forums/329220-sharepoint-dev-platform/suggestions/10503294-fix-the-rest-api-to-return-the-value-and-not-the-i text: annoying bug) in the SharePoint REST API (as interfaced with by (link: https://pnp.github.io/pnpjs/ text: PnPjs)) where single taxonomy columns in list item results have unusable labels. The value for the label property of a single taxonomy column is a seemingly useless number instead of the actual term label one might want. Multi-select managed metadata fields don't have this issue.
+
+## Example 
+
+See also: (link: https://pnp.github.io/pnpjs/sp/items/ text: PnPjs List Items)
+
+```ts
+const results = await sp.web.lists.getByTitle('My List').select('ID','Title','MyTaxonomyField').get();
+console.log(results);
+/* example output: [
+  {
+    MyTaxonomyField:
+      Label: "7",
+      TermGuid: "29d2df75-1253-495b-9b20-7c5b4e0ff933",
+      WssId: 7
+    },
+    ID: 1,
+    Title: "Test Item"
+  }
+]
+*/
+```
+
+Even if the label for MyTaxonomyField is "News", it comes back as a string representation of a number. Thankfully, there are two solutions available.
+
+## Select and retrieve matching note fields from rest api list items query
+
+First, we need to identify the internal name of the matching (hidden) note field which corresponds to any taxonomy field in a list. To do this we will retrieve and analyze fields in the list. This `list.fields` query provides a host of information about the fields in a SharePoint list.
+
+Within list *field* results, the most reliable way i've found to locate the internal name of the note field is to use locate the taxonomy field by its `InternalName`, and then use that resulting record's `TextField` to locate the note field by its `Id`. Finally, we can use the `InternalName` on that note field.
+
+Once we have this property we include it along with our other desired fields from the list. Its value in list *items* results needs minor modification since it comes back in `<term label>|<term guid>` format. 
+
+```ts
+// get list fields
+const fields = await sp.web.lists.getByTitle('My List').fields.get();
+
+// get taxonomy note field
+const taxonomyFieldName = 'MyTaxonomyField',
+  // get taxonomy field by internal name
+  taxonomyField = fields.find(({ InternalName }) => InternalName == taxonomyFieldName),
+  // get taxonomy note field by id
+  taxonomyNoteField = (taxonomyField && taxonomyField.TextField) 
+    ? fields.find(({ Id }) => Id == taxonomyField.TextField) 
+    : '',
+  taxonomyNoteFieldName = taxonomyNoteField 
+    ? taxonomyNoteField.InternalName 
+    : '';
+console.log(taxonomyNoteFieldName);
+// example outputs: "e57ec8a0d78f4c2b9f98820b10ec6dca"
+
+const results = await sp.web.lists.getByTitle('My List').select('ID', 'Title', taxonomyFieldName, taxonomyNoteFieldName).get();
+console.log(results);
+/* example outputs: [
+  {
+    MyTaxonomyField:
+      Label: "7"
+      TermGuid: "29d2df75-1253-495b-9b20-7c5b4e0ff933"
+      WssId: 7
+    },
+    e57ec8a0d78f4c2b9f98820b10ec6dca: "News|3e70122f-6558-4e8b-b1b9-b7de58bb857d",
+    ID: 1,
+    Title: "Test Item"
+  }
+]
+*/
+```
+
+Note, that the note field value is in `<label>|<guid>` format. We can easily splice or split this string to retrieve the portion before the `|`, i.e. `const label = resultItem[taxonomyNoteFieldName].split('|')[0];`.
+
+## Retrieve terms from TermStore and apply term labels by id
+
+The TermGuid property from our taxonomy field result value provides our means of matching a TermStore result retrieved via the managed metadata service (see example below) or the new (link: https://docs.microsoft.com/en-us/graph/api/resources/termstore-store?view=graph-rest-beta text: TermStore graph endpoint).
+
+The term set's items can be retrieved with the **Unique Identifier** of the term set which can be manually looked up in the TermStore . We can then use the `TermGuid` property in list item results to match the associated result in term set results, allowing us to retrieve the correct label for the taxonomy field.
+
+See also: (link: https://pnp.github.io/pnpjs/sp/taxonomy/ text: PnPjs Taxonomy)
+
+```ts
+// get list results
+const listResults = await sp.web.lists.getByTitle('My List').select('ID','Title','MyTaxonomyField').get() || [];
+
+// get termstore and then termset items
+const termSetId = 'df01a4fc-2279-481b-8db9-2ee3d6505df5';
+const termStoreName = await sp.taxonomy.getStores.get()[0].name;
+const termStore = sp.taxonomy.termStores.getByName(termStoreName);
+let termResults = await termStore.getTermSetById(termSetId).terms.get() || [];
+
+// map results to data objects and apply labels from term set
+termResults = termResults(termItem => {
+  // extract id from result forma i.e. "/Guid(<guid-here>)/"
+  const idRegex = /\/Guid\((.*)\)\//g,
+          idMatch = idRegex.exec(item.Id),
+          Id = idMatch && idMatch.length ? idMatch[1] : item.Id;
+  return {
+    Name: termItem.Name,
+    Id,
+  };
+});
+let finalResults = listResults.map(listItem => {
+  // get term result by id
+  const termGuid = listItem.MyTaxonomyField ? listItem.MyTaxonomyField.TermGuid : '';
+  const term = termsResults.find(({Id}) => Id == termGuid);
+
+  // create result item using term name as label
+  const termLabel = term 
+    ? term.Name 
+    : (listItem.MyTaxonomyField
+      ? listItem.MyTaxonomyField.Label
+      : '');
+  return {
+    id: listItem.ID,
+    title: listItem.Title,
+    termId,
+    termLabel,
+  };
+});
+console.log(finalResults);
+/* example output: [
+  {
+    id: 7,
+    title: "Test Item",
+    termId: "29d2df75-1253-495b-9b20-7c5b4e0ff933",
+    termLabel: "News"
+  }
+]
+*/
+```
+
+----
+
+Date: 2020-09-01
+
+----
+
+Dateupdated: 2020-09-01
+
+----
+
+Category: Purely Technical
+
+----
+
+Tags: SharePoint, SPFX
+
+----
+
+Bannerimage: 
+
+----
+
+Imageattribution: 
+
+----
+
+Metaimage: 
+
+----
+
+Noindex: false
+
+----
+
+Excludefromxmlsitemap: false

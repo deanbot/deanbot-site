@@ -6,7 +6,9 @@ Homelinktitle: Deanbot
 
 ----
 
-Defaultimage: - 6955b6536e74e17a9418a80bba8b4327.png
+Defaultimage:
+
+- deanbot-featured.png
 
 ----
 
@@ -14,7 +16,9 @@ Twitterhandle: deanbot
 
 ----
 
-Primaryauthor: - mrdZ0vTD
+Primaryauthor:
+
+- mrdZ0vTD
 
 ----
 

@@ -29,6 +29,26 @@ This can mean that you've recently added a package to your project. You likely s
 - To switch from loading debug manifests (site extensions) delete the `spfx-debug` session storage variable.
 - `?maintenancemode=true` - attach to url to see modern page debug information
 
+## PnP-Provisioning
+
+### Provisioning Keywords
+
+`{site}`
+: replaced with relative path to site, i.e. `/sites/MySite`
+
+`{hosturl}`
+: replaced with url of tenant, i.e. `https://www.contoso.sharepoint.com`
+
+## Search
+
+### Get search query with tokens expanded
+
+To see the final expanded search query that was parsed by SharePoint:
+
+1. Open Network tab of browser's dev tools and locate the relevant postquery request response (filter by postquery).
+2. Select the Preview tab of the request response and expand the following path `PrimaryQueryResult.RelevantResults.Properties`
+3. Expand the property with key "QueryModification". This holds the final expanded search query template.
+
 ## Site Columns
 
 **Default Date column value of "last day of previous month"**
@@ -69,7 +89,7 @@ const isMultiValue = field.AllowMultipleValues;
 
 ----
 
-Topic: wiki/reference
+Topic: wiki/microsoft
 
 ----
 

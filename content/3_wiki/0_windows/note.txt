@@ -36,7 +36,7 @@ The default Edge that comes installed on Windows is outdated. Search for and dow
 
 ----
 
-Topic: wiki/reference
+Topic: wiki/microsoft
 
 ----
 

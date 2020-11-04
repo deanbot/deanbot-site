@@ -34,8 +34,8 @@ Functionally, this site is part blog and part wiki. The (link: https://github.co
 ## Previously
 - Programmed the EnVista (link: https://www.envistacorp.com/ text: website target: _blank).
 - Worked for veggies at (link: https://bluemooncommunityfarm.com/ text: Blue Moon Community Farm target: _blank).
-- Made SharePoint Apps and WordPress sites at Apparatus/Virtusa until 2017.
+- Made Angular SharePoint Apps and WordPress sites at Apparatus/Virtusa until 2017.
 - Started keeping a bullet journal.
 - Hosted and created WordPress sites with (link: https://www.biancagarfias.com/ text: Bianca Garfias target: _blank) and (link: http://anyakom.com text: Anja Kominicki).
 - Cut my teeth making WordPress sites at (link: https://web.archive.org/web/20130906081002/http://silversquareinc.com/meet-the-squares/#dean text: Silver Square target: _blank) from 2010-2013.
-- Made Flash games in college with (link: https://jackiecrofts.com/ text: Jackie Crofts target: _blank) and (link: https://www.instagram.com/mushmuse/ text: Bekah Crowmer target: _blank).
+- Made [Flash games](https://deanbot.dev/wiki/dreamfed-games) in college.

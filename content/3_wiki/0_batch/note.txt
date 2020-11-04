@@ -1,0 +1,35 @@
+Title: batch
+
+----
+
+Pagetitle: reference for scripting batch files
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+### Get params in batch script
+
+Use `%<1 based index>`.
+
+```
+set arg1=%1
+set arg2=%2
+echo %arg1% %arg2%
+```
+
+----
+
+Topic: 
+
+----
+
+Related: 

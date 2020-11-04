@@ -2,7 +2,15 @@ Title: PHP
 
 ----
 
-Pagetitle: PHP notes
+Pagetitle: PHP language notes
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
 
 ----
 
@@ -59,4 +67,4 @@ Topic: wiki/reference
 
 ----
 
-Related:
+Related: 

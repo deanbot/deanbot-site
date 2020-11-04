@@ -1,0 +1,86 @@
+Title: PHP Ubuntu
+
+----
+
+Pagetitle: 
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+## Install PHP
+Install PHP and the apache2 php support extension
+```
+sudo apt install php libapache2-mod-php
+```
+
+Test:
+
+- `php -v`
+- save info.php to your webroot (i.e. /var/www/html):
+```php
+<?php
+phpinfo();
+```
+and visit http://localhost/info.php
+
+## Install Extensions
+
+In general:
+
+1. Install Extension, i.e.:
+```
+sudo apt-get install php-<foo>
+```
+2. **May not be necessary or trigger loading already loaded extensions.** Update php.ini (check location with `phpinfo()`), i.e.:
+```ini
+extension=<foo>
+```
+*(there is a section with many such lines, you may want to uncomment an existing line)*
+3. Test by opening up a page containing `phpinfo()` and locate a section for the module name.
+
+See examples (aka (link: https://getkirby.com/docs/guide/quickstart#requirements text: requirements to host kirby cms)):
+
+### mbstring
+1. Install module, i.e.:
+```
+sudo apt-get install php-mbstring
+```
+2. ~~Update `php.ini` to include extension: search for `;extension=mbstring` and remove the `;` to uncomment the line.~~ Extension may already be loaded.
+3. Reload apache, i.e. `sudo systemctl reload apache2`
+
+### curl
+1. Install module, i.e.:
+```
+sudo apt-get install php-curl
+```
+2. ~~Update `php.ini` to include extension: search for `;extension=curl` and remove the `;` to uncomment the line.~~ Extension may already be loaded.
+3. Reload apache, i.e. `sudo systemctl reload apache2`
+
+### gd
+1. Install module, i.e.:
+```
+sudo apt-get install php-gd
+```
+2. ~~Update `php.ini` to include extension: Add line including `extension=gd`.~~ Extension may already be loaded.
+3. Reload apache, i.e. `sudo systemctl reload apache2`
+
+## Locations
+
+- ini: `/etc/php/<version>/apache2/php.ini`
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: wiki/apache-ubuntu, wiki/php

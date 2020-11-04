@@ -1,0 +1,55 @@
+Title: Bash
+
+----
+
+Pagetitle: 
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+### Get Params in bash script or function
+
+**Get all parameters**
+
+Use `$@`.
+
+Example:
+```
+#!/bin/bash
+echo $@
+```
+
+**Get specific parameter**
+
+Use `$<1 based index>`.
+
+```
+#!/bin/bash
+PARAM1="$1"
+PARAM2="$2"
+PARAM3="$3"
+echo $PARAM1 $PARAM2 PARAM3
+
+foo() {
+    BAR="$1"
+    echo '$BAR'
+}
+echo ${foo 123)
+```
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: 

@@ -1,0 +1,121 @@
+Title: Apache Ubuntu
+
+----
+
+Pagetitle: 
+
+----
+
+Description: 
+
+----
+
+Metaimage: 
+
+----
+
+Text:
+
+## Apache Installation
+```
+sudo apt update
+sudo apt install apache2
+```
+
+Test: 
+- Visit http://localhost/
+- Check status: `sudo systemctl status apache2`
+
+## Managing Apache via CLI
+
+**Display Status**
+```sudo systemctl status apache2``` 
+*(type q to end)*
+
+**Stop Server**
+```sudo systemctl stop apache2```
+
+**Start Server**
+```sudo systemctl start apache2```
+
+**Restart Server** (stop then start)
+```sudo systemctl restart apache2```
+
+**Reload Sever** (apply config change without dropping connections)
+```sudo systemctl reload apache2```
+
+**Enable Apache start on boot**
+```sudo systemctl disable apache2```
+
+**Disable Apache start on boot**
+```sudo systemctl enable apache2```
+
+## Apache Setup
+
+**Set up web root**
+1. Create Directory in `/var/html/`, i.e.: 
+```
+sudo mkdir /var/html/mysite
+```
+2. Assign ownership of web directory, i.e.:
+```
+sudo chown -R $USER:$USER /var/www/mysite
+```
+
+**Configure vhosts config**
+1. Copy default vhosts config, i.e.:
+```
+cd /etc/apache2/sites-available
+sudo cp 000-default.config mysite.config
+```
+2. Update `DocumentRoot` directive to point to web root i.e.:
+```
+DocumentRoot /var/www/mysite/
+```
+3. Add `ServerName` directive to indicate url of site.
+```
+ServerName mysite.localhost
+```
+
+**Activate hosts file**
+1. Run command in vhosts config directory (`/etc/apache2/sites-available`), i.e. 
+```
+sudo a2ensite mysite.conf
+```
+2. Reload config
+```
+sudo systemctl reload apache2
+```
+
+Test: 
+- http://mysite.localhost/
+
+### Activate mod rewrite
+To enable rewrite URLs:
+
+1. Enable mod: 
+```
+sudo a2enmod rewrite
+```
+2. Allow htaccess overrides for vhost: Add Directory section to vhosts config, i.e.:
+```
+<Directory /var/www/mysite.localhost>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Require all granted
+</Directory>
+```
+3. Restart apache: `sudo systemctl restart apache2`
+
+## Locations
+
+- Vhosts config directory: `/etc/apache2/sites-available`
+- Webroot directory: `/var/www/`
+
+----
+
+Topic: wiki/reference
+
+----
+
+Related: wiki/php-ubuntu
