@@ -234,4 +234,9 @@ article {
       color: var(--color-black);
     }
   }
+  .content {
+    h2:first-child {
+      margin-top: 0;
+    }
+  }
 }

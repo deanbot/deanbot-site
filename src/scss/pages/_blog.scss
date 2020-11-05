@@ -26,10 +26,17 @@
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
       }
+
     }
   }
 
   aside {
     margin-bottom: 2rem;
+    h4 {
+      margin-top: 0;
+    }
+  }
+  .meta {
+    font-size: .95rem;
   }
 }

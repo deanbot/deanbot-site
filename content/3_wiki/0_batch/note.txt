@@ -28,8 +28,8 @@ echo %arg1% %arg2%
 
 ----
 
-Topic: 
+Topic: wiki/reference
 
 ----
 
-Related: 
+Related: wiki/microsoft
