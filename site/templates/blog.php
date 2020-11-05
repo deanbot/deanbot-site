@@ -53,7 +53,7 @@
               </h2>
               <div class="meta">
                 <time datetime="<?= $article->date()->toDate('c') ?>" pubdate="pubdate"><?=
-                  $article->date()->toDate('M j, Y')
+                  $article->date()->toDate('M. j, Y')
             ?></time><?php if (!$cat->isEmpty()): ?> / <a href="<?= $blogUrl . '/' . urlencode($cat);?>"><?= $cat; ?></a><?php endif; ?>
               </div>
             </article>
