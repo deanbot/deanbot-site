@@ -2,8 +2,9 @@
 
 require 'kirby/bootstrap.php';
 
-function getNoteLink($note, $class = '') {
+function getNoteLink($note, $class = '', $label = '') {
   $class = !empty($class) ? ' ' . $class : '';
+  $label = !empty($label) ? $label : $note->title();
   return sprintf(
     '<a href="%s" title="%s" class="note-link%s">'
       . '<i class="%s"></i>'
@@ -15,7 +16,7 @@ function getNoteLink($note, $class = '') {
     $note->hasChildren()
       ? 'ri-folder-2-line'
       : 'ri-article-line',
-    $note->title()
+    $label
   );
 }
 

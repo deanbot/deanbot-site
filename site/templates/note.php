@@ -68,7 +68,7 @@
       <hr/>
 
       <nav class="tree-nav">
-        <div>
+        <div class="trunk">
           <a href="/wiki" title="Wiki" class="note-link"><i class="ri-node-tree"></i> <span>Wiki Index</span></a>
           <?php
           if ($topicPage) {
@@ -77,18 +77,48 @@
           ?>
         </div>
 
-        <?php if ($topicPage):
-          $siblings = $page->siblings();
+        <?php
+        // inclusive
+        $maxCol = 6;
+        $maxNotes = $maxCol * 3;
+        if ($topicPage):
+          $siblings = $page->siblings()->limit(19);
           if ($siblings->count() > 0):
         ?>
-        <div>
+        <div class="branch<?php
+          printf(" count-%s",
+            (
+              $siblings->count() <= $maxCol
+                ? 'small'
+                : (
+                  $siblings->count() <= $maxCol * 2
+                    ? 'medium'
+                    : 'large'
+                )
+            )
+          );
+        ?>"">
+          <div>
           <?php
+
+          $numNotes = 0;
           $activeClass = 'active';
           foreach($siblings as $note) {
-            $isActive = $note->uri() == $page->uri();
-            echo getNoteLink($note, $isActive ? $activeClass : '');
+            $numNotes++;
+            if ($numNotes >= $maxNotes) {
+              if ($topicPage) {
+                echo getNoteLink($topicPage, '', '...');
+              } else {
+                ?><a href="/wiki" title="Wiki" class="note-link"><i class="ri-node-tree"></i> <span>...</span></a><?php
+              }
+              break;
+            } else {
+              $isActive = $note->uri() == $page->uri();
+              echo getNoteLink($note, $isActive ? $activeClass : '');
+            }
           }
           ?>
+          </div>
         </div>
         <?php endif; endif; ?>
       </nav>
