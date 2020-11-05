@@ -2,15 +2,15 @@ Title: Anya's Thai Beef w/ Coconut Rice
 
 ----
 
-Pagetitle: 
+Pagetitle:
 
 ----
 
-Description: 
+Description:
 
 ----
 
-Metaimage: 
+Metaimage:
 
 ----
 
@@ -22,7 +22,7 @@ Text:
 
 **DON'T FORGET THE LIME & FRESH BASIL**
 
-## Ingredients
+### Ingredients
 
 - 1.25 lb ground beef
 - 3 red chilies
@@ -41,7 +41,7 @@ See prep notes for quantities:
 - fish sauce
 - coconut oil
 
-## Prep work
+### Prep work
 
 - minced ginger
 - minced onion
@@ -54,11 +54,11 @@ In a small bowl or ramekin combine: two tablespoons plus one teaspoon, each, of 
 
 Roughly chop approx. 1 cup (or more, or just a heaping handful) of fresh basil; it would be difficult to have too much & set aside.
 
-## Start the rice
+### Start the rice
 
 Rinse rice in saucepan... add coconut milk, ¾ cup water, and 1 Tbsp coconut oil; bring to boil, cover & reduce to simmer etc. Stir often! Takes less time than normal rice (~10 min). Do not burn!
 
-## Cook the beef
+### Cook the beef
 
 Once the rice water is on its way, put skillet or wok on high heat...
 
@@ -70,14 +70,14 @@ Reduce the heat to med-low, add basil & stir until it wilts very slightly (20 se
 
 & done.
 
-## Serve
+### Serve
 
 Spoon into bowls with coconut rice.
 DO serve with lime wedges, essential final addition
 
 *Adapted from the age-old culture of Thailand, also Martha Stewart*
 
-## Variations
+### Variations
 
 - Use ground bison
 - Use black rice
@@ -88,4 +88,4 @@ Topic: wiki/recipes
 
 ----
 
-Related: 
+Related:

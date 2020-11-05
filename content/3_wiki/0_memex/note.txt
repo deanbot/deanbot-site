@@ -12,7 +12,7 @@ Since the concept of a memex or "Memory Index" predates the internet, any instan
 
 This wiki is a catalog of notes and references I've found useful to record. It's is a living system and as such it will always be incomplete - a work in progress... and *I'm okay with that*. The balance between personal and private, promotional and informal, informative and editorial create an interesting tension in this project. The challenges this creates I hope to find solutions for with design, standardization, and repetition.
 
-## References & Credits
+### References & Credits
 
 > Consider a future device, a sort of mechanized private library in which an individual stores all his books, records, and communications, and which may be consulted with exceeding speed and flexibility. It is an enlarged intimate supplement to his memory.
 (cite: Vannevar Bush, "As We May Think")

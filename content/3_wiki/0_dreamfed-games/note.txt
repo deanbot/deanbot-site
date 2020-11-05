@@ -2,7 +2,7 @@ Title: Dreamfed Games
 
 ----
 
-Pagetitle: 
+Pagetitle:
 
 ----
 
@@ -10,14 +10,14 @@ Text:
 
 Dreamfed Games was the moniker for an indie game development team formed to house the IP made by (link: http://jackiecrofts.com/ text: Jackie Crofts target: _blank) and Dean Verleger and any other collaborators we might work with. Dreamfed is inactive - the last development work happening circa 2013.
 
-## Links
+### Links
 
 (link: https://dreamfed.net/ text: Website target: _blank)
 
 ----
 
-Topic: 
+Topic:
 
 ----
 
-Related: 
+Related:

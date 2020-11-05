@@ -23,7 +23,6 @@
         </header>
 
         <div class="article-content">
-
           <div class="content-wrapper">
 
             <section class="content">
@@ -47,21 +46,22 @@
           </div>
 
           <?php if ($page->hasRelated()): ?>
-          <aside class="related-notes">
-            <div>
-              <h3>Related Notes</h3>
-              <nav>
-              <?php
-              $relatedNotes = $page->related()->toPages();
-              foreach($relatedNotes as $note) {
-                echo getNoteLink($note);
-              }
-              ?>
-              </nav>
-            </div>
-          </aside>
+          <div class="related-notes">
+            <aside>
+              <div>
+                <h3>Related Notes</h3>
+                <nav>
+                <?php
+                $relatedNotes = $page->related()->toPages();
+                foreach($relatedNotes as $note) {
+                  echo getNoteLink($note);
+                }
+                ?>
+                </nav>
+              </div>
+            </aside>
+          </div>
           <?php endif; ?>
-
         </div>
       </article>
 

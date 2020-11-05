@@ -156,7 +156,8 @@ article {
 .article-contact {
   margin: 3rem -1.5rem 0 -1.5rem;
   padding: 1.5rem;
-  background: $color-theme-tertiary;
+  background: $color-background-highlight;
+  background: var(--color-background-highlight);
   color: $color-text-subdued;
   color: var(--color-text-subdued);
   // ::selection {

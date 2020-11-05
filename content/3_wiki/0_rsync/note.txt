@@ -8,7 +8,7 @@ Pagetitle: rsync notes
 
 Text:
 
-## Copy files to remote machine
+### Copy files to remote machine
 
 `-a`
 : archive mode
@@ -30,17 +30,17 @@ Note:
 * can use wildcards in source i.e. `rsync src/*.js [dest]`
 * can show progress with --progress
 
-## Specify ssh configuration information
+### Specify ssh configuration information
 
 `-e 'ssh [options]'` allows you to customize ssh options such as port or path to ssh key.
 
 `rsync -azve 'ssh -i ~/.ssh/id_rsa' src user@hostname:dest/folder`
 
-## Copy files from remote machine to local machine
+### Copy files from remote machine to local machine
 
 `rsync [options] user@host:dest/folder local/folder`
 
-## Other Options
+### Other Options
 
 **delete extraneous files in destination**
 
@@ -54,7 +54,7 @@ or to keep exclusions in a separate file:
 
 `--exclude-from=<file>`
 
-i.e. with `--exclude-from=./exclusions` 
+i.e. with `--exclude-from=./exclusions`
 
 in file called exclusions:
 ```
@@ -71,4 +71,4 @@ Topic: wiki/reference
 
 ----
 
-Related: 
+Related:

@@ -6,17 +6,17 @@ Pagetitle: PHP language notes
 
 ----
 
-Description: 
+Description:
 
 ----
 
-Metaimage: 
+Metaimage:
 
 ----
 
 Text:
 
-## Search Multidimensional array
+## Search multidimensional array
 
 To get the the key/index of an array by a nested value combine `array_search` and `array_column`.
 
@@ -55,7 +55,7 @@ $result = ob_get_clean();
 ?>
 ```
 
-## operators
+## PHP operators
 
 *truthy OR*
 
@@ -67,4 +67,4 @@ Topic: wiki/reference
 
 ----
 
-Related: 
+Related:

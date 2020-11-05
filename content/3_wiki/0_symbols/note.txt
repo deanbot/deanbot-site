@@ -2,21 +2,21 @@ Title: Symbols
 
 ----
 
-Pagetitle: 
+Pagetitle:
 
 ----
 
-Description: 
+Description:
 
 ----
 
-Metaimage: 
+Metaimage:
 
 ----
 
 Text:
 
-## Links
+### Links
 
 - [Misc Symbols](https://en.wikipedia.org/wiki/Miscellaneous_Symbols)
 - [Misc Symbols & **Pictographs**](https://en.wikipedia.org/wiki/Miscellaneous_Symbols_and_Pictographs)
@@ -29,4 +29,4 @@ Topic: wiki/reference
 
 ----
 
-Related: 
+Related:

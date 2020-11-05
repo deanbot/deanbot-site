@@ -13,14 +13,14 @@ exclusions="$DIR/exclusionscontent"
 # dry run
 dryRun=$(y_or_n_val "Do you want to do a dry run [y/n]: " "y")
 if [[ $dryRun =~ ^([yY])$ ]]; then
-  sudo rsync --exclude-from=$exclusions -rvzne "ssh -i $_key" \
-    $_remote $_local
+  sudo rsync --exclude-from=$exclusions -avzne "ssh -i $_key" \
+    $_local $_remote
   echo
 fi
 
 # real thing
-res=$(y_or_n_val "Do you want to overwrite $_local? [y/n]: " "n")
+res=$(y_or_n_val "Do you want to overwrite $_remote? [y/n]: " "n")
 if [[ $res =~ ^([yY])$ ]]; then
-  sudo rsync --exclude-from=$exclusions --progress -rvze "ssh -i $_key" \
-    $_remote $_local
+  sudo rsync --exclude-from=$exclusions --progress -avze "ssh -i $_key" \
+    $_local $_remote
 fi

@@ -2,21 +2,21 @@ Title: Network Nightmares
 
 ----
 
-Pagetitle: 
+Pagetitle:
 
 ----
 
 Text:
 
-## About
+### About
 
 Network Nightmares was a game created as part of a research project in 2012 and submitted to [fdg2013](http://fdg2013.org/). Mastermined by [William Ryan](http://www.williamryanonline.net/), the game was part of a larger curriculum exploring network security. All artwork by [Jackie Crofts](http://jackiecrofts.com). Programming and sound design by [Dean Verleger](https://github.com/deanbot). Level theme music by Max.
 
 (image: admin.png)
 
-## Gameplay
+### Gameplay
 
-Played from the POV of a hacker, the gameplay includes slingshotting projectiles or "viruses" at targets, aka "network nodes". Hitting a node with a virus "infects" it, and alerts ai entities, aka "network admins". Network admins follow paths to infected nodes and work to recover them. Infecting a "hub" node infects all connected nodes at once. The goal of each level is to infect all nodes on a network before the network admins can recover them. 
+Played from the POV of a hacker, the gameplay includes slingshotting projectiles or "viruses" at targets, aka "network nodes". Hitting a node with a virus "infects" it, and alerts ai entities, aka "network admins". Network admins follow paths to infected nodes and work to recover them. Infecting a "hub" node infects all connected nodes at once. The goal of each level is to infect all nodes on a network before the network admins can recover them.
 
 (image: thumb.png)
 
@@ -24,7 +24,7 @@ A secondary mechanic deals with the "lives" or available viruses the player has.
 
 (image: gameplay.png)
 
-## Links
+### Links
 
 (link: http://fdg2013.org/program/festival/networknightmares.pdf text: Research paper target: _blank)
 (link: https://github.com/deanbot/network-nightmares text: Source target: _blank)
@@ -36,4 +36,4 @@ Topic: wiki/dreamfed-games
 
 ----
 
-Related: 
+Related:

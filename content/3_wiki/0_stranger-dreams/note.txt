@@ -10,13 +10,13 @@ Text:
 
 (image: logo.png)
 
-## About
+### About
 
 Stranger Dreams: The Watch was a game created in 2012 and presented during the 2012 IUPUI Media Arts & Sciences Capstones. All artworks and illustrations were created by Jackie Crofts. Programming and sound design by Dean Verleger. Stranger Dreams was co-written and produced by Jackie and Dean.
 
 The game was never developed past a small beta version including a tutorial and an opening chapter.
 
-## Links 
+### Links
 
 Source: (link: https://github.com/deanbot/stranger-dreams text: game target: _blank), (link: https://github.com/deanbot/stranger-dreams-site text: site target: _blank)
 (link: https://strangerdreams.dreamfed.net/ text: Website)
@@ -27,4 +27,4 @@ Topic: wiki/dreamfed-games
 
 ----
 
-Related: 
+Related:

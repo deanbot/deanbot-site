@@ -3,6 +3,7 @@
   --color-heading: #{$color-heading};
   --color-background: #{$color-background};
   --color-background-alt: #{$color-background-alt};
+  --color-background-highlight: #{$color-background-highlight};
   --color-nav-link: #{$color-nav-link};
   --color-nav-link-hover: #{$color-nav-link-hover};
   --color-link: #{$color-link};
@@ -23,6 +24,7 @@
     --color-heading: #{$color-heading-dark};
     --color-background: #{$color-background-dark};
     --color-background-alt: #{$color-background-alt-dark};
+    --color-background-highlight: #{$color-background-highlight-dark};
     --color-nav-overlay: #{$color-nav-overlay-dark};
     --color-nav-link: #{$color-nav-link-dark};
     --color-nav-link-hover: #{$color-nav-link-hover-dark};
@@ -144,7 +146,8 @@ body {
 
   // Highlight
   mark {
-    background: $color-theme-tertiary;
+    background: $color-background-highlight;
+    background: var(--color-background-highlight);
     padding: 0 0.2rem;
   }
 

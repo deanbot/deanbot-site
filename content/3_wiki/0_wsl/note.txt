@@ -2,21 +2,21 @@ Title: WSL
 
 ----
 
-Pagetitle: 
+Pagetitle:
 
 ----
 
-Description: 
+Description:
 
 ----
 
-Metaimage: 
+Metaimage:
 
 ----
 
 Text:
 
-## Windows Filesystem
+### Windows Filesystem
 
 To edit files (git repos) on windows machine with WSL:
 
