@@ -166,10 +166,13 @@
       margin: 0 0.5rem;
     }
     .content-wrapper {
-      flex: 999 0;
-      min-width: calc(60% - 1rem);
+      // flex: 999 0;
+      // min-width: calc(60% - 1rem);
+      width: 100%;
+      display: block;
     }
     .related-notes {
+      display: flex;
       flex: 1 30ch;
     }
   }

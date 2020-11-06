@@ -169,6 +169,7 @@ body {
   }
 }
 
+// anchor offset for fixed header
 :target::before {
   content: "";
   display: block;

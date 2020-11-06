@@ -112,6 +112,14 @@ sudo a2enmod rewrite
 - Vhosts config directory: `/etc/apache2/sites-available`
 - Webroot directory: `/var/www/`
 
+## Get user apache is running as
+
+`ps aux | egrep '([a|A]pache|[h|H]ttpd)' | awk '{ print $1}' | uniq | tail -1`
+
+## Get apache config
+
+`apachectl -S`
+
 ----
 
 Topic: wiki/reference
