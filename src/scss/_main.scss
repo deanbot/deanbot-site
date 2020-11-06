@@ -168,3 +168,10 @@ body {
     }
   }
 }
+
+:target::before {
+  content: "";
+  display: block;
+  height: $header-anchor-offset; /* fixed header height*/
+  margin: -#{$header-anchor-offset} 0 0; /* negative fixed header height */
+}

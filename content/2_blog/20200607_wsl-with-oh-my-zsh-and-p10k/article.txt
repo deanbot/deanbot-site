@@ -2,7 +2,7 @@ Title: WSL with Oh My Zsh and P10k
 
 ----
 
-Description: 
+Description:
 
 ----
 
@@ -285,11 +285,11 @@ Bannerimage:
 
 ----
 
-Imageattribution: 
+Imageattribution:
 
 ----
 
-Metaimage: 
+Metaimage:
 
 ----
 
