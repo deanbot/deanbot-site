@@ -66,6 +66,11 @@ columns:
           imageAttribution:
             label: Image Attribution
             type: text
+          related:
+            label: Related
+            type: pages
+            max: 5
+            query: page.siblings(false)
           metaImage:
             label: Meta Image
             type: files

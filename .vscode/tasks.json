@@ -14,7 +14,7 @@
       }
     },
     {
-      "label": "Start",
+      "label": "Start1",
       "type": "shell",
       "command": "pnpm run start",
       "problemMatcher": [

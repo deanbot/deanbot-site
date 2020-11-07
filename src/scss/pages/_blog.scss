@@ -39,3 +39,17 @@
     font-size: .95rem;
   }
 }
+.article {
+  .related-notes {
+    nav {
+      display: flex;
+      flex-direction: column;
+      @include small-breakpoint {
+        align-items: flex-start;
+      }
+      a {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
     $blogUrl = page('blog')->url();
     $cat = $page->category();
   ?>
-  <main id="content">
+  <main id="content" class="article">
     <div class="container">
       <article>
         <header class="page-header">
@@ -59,7 +59,28 @@
           ?>
           <p class="updated">Last updated <time datetime="<?= $updatedDate->toDate('c') ?>"><?= $updatedDate->toDate('M j, Y') ?></time></p>
         </footer>
+
       </article>
+
+      <?php
+      $related = $page->related();
+      if ($related->isNotEmpty()): ?>
+        <div class="related-notes">
+          <aside>
+            <div>
+              <h3>Related Posts</h3>
+              <nav>
+              <?php
+              $relatedNotes = $page->related()->toPages();
+              foreach($related->toPages() as $note) {
+                echo getNoteLink($note);
+              }
+              ?>
+              </nav>
+            </div>
+          </aside>
+        </div>
+      <?php endif; ?>
 
       <?php snippet('contactForm'); ?>
     </div>

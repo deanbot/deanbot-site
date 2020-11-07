@@ -2,7 +2,7 @@ Title: Lazy-load components and services in SPFX
 
 ----
 
-Description: 
+Description:
 
 ----
 
@@ -20,7 +20,7 @@ This last link to MDN docs on dynamic imports is really the gist of the techniqu
 
 ## Laying the groundwork
 
-Normally, there would be tooling pre-requisites (webpack/babel config, etc...) to consider. Thankfully, SharePoint manages the build-stack for us, so we can jump right to the code. Also, if you're reading this, chances are you already know how to spin up a new SharePoint Web Part or Site Extension with the [SPFX yeoman generator](https://pnp.github.io/generator-spfx/). Therefore, I'll omit that boilerplate and jump straight to a scenario involving React components. 
+Normally, there would be tooling pre-requisites (webpack/babel config, etc...) to consider. Thankfully, SharePoint manages the build-stack for us, so we can jump right to the code. Also, if you're reading this, chances are you already know how to spin up a new SharePoint Web Part or Site Extension with the [SPFX yeoman generator](https://pnp.github.io/generator-spfx/). Therefore, I'll omit that boilerplate and jump straight to a scenario involving React components.
 
 #### Define widget interfaces
 
@@ -28,7 +28,7 @@ For our demo purposes, our web part displays rows of widgets. A basic widget sho
 
 First, we'll define interfaces to represent the required properties of each widget. A type enum will simplify type-checking later on.
 
-**IWidgets.ts**: 
+**IWidgets.ts**:
 ```ts
 export enum WidgetType {
   text,
@@ -48,7 +48,7 @@ export interface IWeatherWidget extends IWidget {
    apiKey: string;
 }
 export interface IBotChatWidget extends IWidget {
-  odataConfiguration: any; 
+  odataConfiguration: any;
 }
 ```
 
@@ -71,16 +71,16 @@ const widgets = [
   },
   {
     heading: ‘Chat’,
-    type: WidgetType.botChat, 
+    type: WidgetType.botChat,
     odataConfiguration: {
       address: ‘bot.chat/endpoint’,
       // [...]
     }
-  }    
+  }
 ];
 ```
 
-Our example would be applicable when widgets are loaded in from a list, but for brevity’s sake, we’ll show widgets passed directly to the main React component as if defined in the property pane. The render function shows a beginning which we'll update later to display each type of widget uniquely. 
+Our example would be applicable when widgets are loaded in from a list, but for brevity’s sake, we’ll show widgets passed directly to the main React component as if defined in the property pane. The render function shows a beginning which we'll update later to display each type of widget uniquely.
 
 **WidgetsDisplay.tsx**:
 ```tsx
@@ -104,7 +104,7 @@ export default class WidgetsDisplay extends React.Component<IWidgetsDisplayProps
         )}
       </div>
     );
-  } 
+  }
 }
 ```
 
@@ -164,7 +164,7 @@ export default class WeatherWidget extends React.Component<IWeatherWidget, IWeat
 
     // load data from weather api
     const { apiKey } = this.props;
-    setTimeout(() => { 
+    setTimeout(() => {
       this.setState({
         isLoading: false,
         weatherData: {
@@ -173,13 +173,13 @@ export default class WeatherWidget extends React.Component<IWeatherWidget, IWeat
         }
       });
     }, 2000);
-  } 
+  }
 
   public render(): React.ReactElement<IWeatherWidget> {
     const {
         heading,
       } = this.props,
-      { 
+      {
         weatherData,
         isLoading
       } = this.state;
@@ -220,9 +220,9 @@ export class ChatBotService implements IChatBotService {
   constructor(public odataConfiguration: any) {}
   postMessage(message:string): Promise<string> {
     return new Promise((resolve)=> {
-      setTimeout(() => { 
+      setTimeout(() => {
         resolve(‘Ask again later.’);
-      }, 2000);    
+      }, 2000);
     });
   }
 }
@@ -236,7 +236,7 @@ import * as React from ‘react’;
 import { IChatBotWidget } from './IChatBotWidget.ts';
 import { DefaultButton } from ‘@fluentui/react/lib/Button’;
 export interface IChatBotWidgetState {
-  isLoading?: boolean; 
+  isLoading?: boolean;
   message?: string;
   visible?: boolean;
 }
@@ -260,12 +260,12 @@ export default class ChatBotWidget extends React.Component<IChatBotWidget, IChat
     } = this.state;
     return (
       <div>
-        <h3>{heading}</h3> 
+        <h3>{heading}</h3>
         <DefaultButton onClick={this.toggleDialog}>{!visible ? ‘Ask a question’ : ‘Cancel’}</DefaultButton>
         {isLoading && <p>...</p>}
         {visible && (
           <div>
-            <TextField 
+            <TextField
               onChange={(ev, newValue) => { this.setState({ message: newValue }); }
               value={message}
             />
@@ -275,7 +275,7 @@ export default class ChatBotWidget extends React.Component<IChatBotWidget, IChat
       </div>
     );
   }
-  
+
   private toggleDialog = async () => {
     if (!this.ChatBotService) {
       const { odataConfiguration } = this.props;
@@ -284,7 +284,7 @@ export default class ChatBotWidget extends React.Component<IChatBotWidget, IChat
     }
     this.setState({ visible: !this.state.visible });
   }
-  
+
   private postMessage = async () => {
     const response = await this.ChatBotService.postMessage(this.state.message);
     alert(response);
@@ -304,7 +304,7 @@ Date: 2020-07-17
 
 ----
 
-Dateupdated: 
+Dateupdated:
 
 ----
 
@@ -316,15 +316,22 @@ Tags: SharePoint, TypeScript, SPFX, async, React
 
 ----
 
-Bannerimage: 
+Bannerimage:
 
 ----
 
-Imageattribution: 
+Imageattribution:
 
 ----
 
-Metaimage: 
+Related:
+
+- blog/add-local-and-session-storage-support-to-a-service
+- blog/untangling-guilt-from-gaming
+
+----
+
+Metaimage:
 
 ----
 
