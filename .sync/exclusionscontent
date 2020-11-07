@@ -24,3 +24,6 @@ cache
 kirby
 site
 media
+/icon-*
+/favicon*
+/touch*
