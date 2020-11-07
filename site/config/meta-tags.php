@@ -17,6 +17,7 @@ return [
     $description = !$page->description()->isEmpty()
       ? $page->description()
       : $site->description();
+    $keywords = '';
     $og = [
       'type' => 'website',
       'site_name' => $siteTitle
@@ -124,6 +125,9 @@ return [
     $meta = [
       'description' => $description
     ];
+    if ($keywords != '') {
+      $meta['keywords'] = $keywords;
+    }
     if ($page->noIndex()) {
       $meta['robots'] = 'noindex';
     }

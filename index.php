@@ -2,6 +2,12 @@
 
 require 'kirby/bootstrap.php';
 
+// used in header meta tags
+$GLOBALS['themeColor'] = '#01677D';
+
+// used in web manifest
+$GLOBALS['backgroundColor'] = '#FBFBFF';
+
 function getNoteLink($note, $class = '', $label = '') {
   $class = !empty($class) ? ' ' . $class : '';
   $label = !empty($label) ? $label : $note->title();
