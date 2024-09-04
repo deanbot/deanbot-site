@@ -1,6 +1,6 @@
 module.exports = {
   // url of site hosted via xampp/lampp/mamp/etc
-  proxyUrl: 'deanbot.localhost',
+  proxyUrl: 'deanbot.local',
 
   port: 3000,
   uiPort: 3001,

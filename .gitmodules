@@ -1,15 +1,9 @@
 [submodule "site/plugins/kirby3-feed"]
 	path = site/plugins/kirby3-feed
 	url = https://github.com/bnomei/kirby3-feed.git
-[submodule "site/plugins/meta-tags"]
-	path = site/plugins/meta-tags
-	url = git@github.com:deanbot/kirby-meta-tags.git
-[submodule "site/plugins/kirby3-robots-txt"]
-	path = site/plugins/kirby3-robots-txt
-	url = https://github.com/bnomei/kirby3-robots-txt.git
-[submodule "site/plugins/kirby3-xmlsitemap"]
-	path = site/plugins/kirby3-xmlsitemap
-	url = https://github.com/omz13/kirby3-xmlsitemap.git
 [submodule "kirby"]
 	path = kirby
 	url = https://github.com/getkirby/kirby.git
+[submodule "site/plugins/seo"]
+	path = site/plugins/seo
+	url = https://github.com/tobimori/kirby-seo.git

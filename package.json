@@ -1,5 +1,5 @@
 {
-  "name": "spirited-refactor-dev",
+  "name": "deanbot-dev",
   "version": "1.0.0",
   "description": "dev tooling for spirited refactor site",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deanbot/spiritedrefactor-site.git"
+    "url": "git+https://github.com/deanbot/deanbot-site.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/deanbot/spiritedrefactor-site/issues"
+    "url": "https://github.com/deanbot/deanbot-site/issues"
   },
-  "homepage": "https://github.com/deanbot/spiritedrefactor-site#readme",
+  "homepage": "https://github.com/deanbot/deanbot-site#readme",
   "dependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",

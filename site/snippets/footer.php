@@ -10,8 +10,9 @@
     <div class="meta">
       <div>
         <?php
-        $copyrightTitle = $site->primaryAuthor() && !$site->primaryAuthor()->isEmpty()
-          ? $site->primaryAuthor()->toUser()->name()
+
+        $copyrightTitle = $user = $site->primaryAuthor()->toUser()
+          ? $user->name()
           : $site->title()->html();
         ?>
         <a class="self" href="<?= $site->url() ?>"><?= $copyrightTitle ?></a> © <?= Date('Y') ?>
@@ -28,7 +29,9 @@
 
     <nav class="links">
       <?php foreach ($site->social()->toStructure() as $social): ?>
-      <a href="<?= $social->url() ?>" target="_blank" title="<?= $social->title() ?>"><i class="ri-<?= $social->icon() ?>"></i></a>
+        <?php if($social->url()): ?>
+        <a href="<?= $social->url() ?>" target="_blank" title="<?= $social->title() ?>"><i class="ri-<?= $social->icon() ?>"></i></a>
+        <?php endif; ?>
       <?php endforeach ?>
     </nav>
 
@@ -45,5 +48,6 @@
     */
   ?>
   <?php echo liveJs('/assets/builds', 'main.js') ?>
+  <?php snippet('seo/schemas'); ?>
 </body>
 </html>

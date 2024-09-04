@@ -1,6 +1,3 @@
-# kirby update folder
-temp
-
 # ------------
 
 Icon
@@ -11,10 +8,18 @@ Icon
 
 /media/*
 !/media/index.html
+temp
 
 # Lock files
 # ---------------
 .lock
+
+# Editors
+# (sensitive workspace files)
+# ---------------------------
+*.sublime-workspace
+/.vscode
+/.idea
 
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
@@ -41,12 +46,6 @@ Icon
 # License
 # ---------------
 /site/config/.license
-
-# twtxt
-twtxt.txt
-
-# pgp
-pgp.txt
 
 # sync module config
 .sync/config*

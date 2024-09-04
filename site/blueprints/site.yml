@@ -22,12 +22,15 @@ tabs:
               headerSettings:
                 label: Header/Navigation
                 type: headline
+
               homeLinkTitle:
                 label: Home Link Title
                 type: text
+
               logoUrl:
                 label: Logo Url
                 type: image
+
       metaSettings:
         width: 1/2
         sections:
@@ -37,15 +40,18 @@ tabs:
               metaSettings:
                 label: Meta Settings
                 type: headline
+
               defaultImage:
                 label: Default Image
                 type: files
                 max: 1
                 layout: cards
                 help: 120px by 120px
+
               twitterHandle:
                 label: Twitter handle
                 type: text
+
       blogSettings:
         width: 1/2
         sections:
@@ -55,13 +61,16 @@ tabs:
               blogSettings:
                 label: Authoring Settings
                 type: headline
+
               primaryAuthor:
                 label: Author
                 type: users
                 multipe: false
+
               commentFormText:
                 label: Comment Form Text
                 type: textarea
+
       footerSettings:
         width: 3/3
         sections:
@@ -71,20 +80,25 @@ tabs:
               footerSettings:
                 label: Footer Settings
                 type: headline
+
               footerLogoUrl:
                 label: Footer Logo Url
                 type: image
+
               license:
                 width: 1/2
                 label: License
                 type: text
+
               licenseurl:
                 width: 1/2
                 label: License URL
                 type: url
+
               sourceurl:
                 label: Source URL
                 type: url
+
               social:
                 label: Social
                 type: structure
@@ -92,9 +106,13 @@ tabs:
                   title:
                     label: Title
                     type: text
+
                   url:
                     label: URL
                     type: url
+
                   icon:
                     label: Icon
                     type: text
+
+  seo: seo/site

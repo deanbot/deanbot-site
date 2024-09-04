@@ -1,6 +1,6 @@
 {
   "files.exclude": {
-    "kirby": true,
+    "kirby": false,
     "node_modules": true,
     "media": true,
   }
