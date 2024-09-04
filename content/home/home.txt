@@ -6,7 +6,7 @@ Pagetitle:
 
 ----
 
-Description: Hello, I'm Dean Verleger, a full stack engineer and lifelong learner. I leverage cloud services to build apps and collaboration tools.
+Description: Hello, I'm Dean Verleger, a software architect, team lead, and full stack engineer.
 
 ----
 
@@ -14,4 +14,8 @@ Metaimage:
 
 ----
 
-Text: Hello, I'm (link: /about text: Dean Verleger), a programmer specializing in modern JavaScript development. I leverage cloud services to build apps and collaboration tools. I come from a PHP/front-end background. Now I straddle something between dev-ops and developer. I keep a (link: /blog text: blog) where you can read about my projects, hobbies, and technical musings. You can also flip through notes I've written in the (link: /wiki text: wiki) &mdash; I'm continually adding more. Please stay and explore! ☕
+Text: Hello, I'm (link: /about text: Dean Verleger), a software architect, engineer, and team lead specializing in modern JavaScript development. I lead a team building web applications, web components, and testing tools. Every day I'm privilaged to collaborate with development & QA engineers, designers and technical writers. _I love a good cross-functional effort._
+
+During my career I've developed applications and tools for SharePoint, web and mobile targets using technologies such as React, Angular, Flutter, .NET and WordPress. 
+
+I keep a (link: /blog text: blog) where you can read about my projects, hobbies, and technical musings. You can also flip through notes I've written in the (link: /wiki text: wiki) &mdash; I'm continually adding more. Please stay and explore! ☕

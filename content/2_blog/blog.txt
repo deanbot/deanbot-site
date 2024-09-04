@@ -21,17 +21,11 @@ Metaimage:
 Categories:
 
 - 
-  title: Ephemera
-  description: Timely, transient, journals and musings.
-- 
   title: Hobby
-  description: ""
+  description: Exploring hobbies
 - 
-  title: Purely Technical
-  description: Technical articles and mini-articles.
-- 
-  title: Deutsch Lernen
-  description: ""
+  title: Technical
+  description: Development musings and technical articles
 - 
   title: Projects
   description: >

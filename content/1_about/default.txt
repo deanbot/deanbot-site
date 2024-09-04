@@ -6,7 +6,7 @@ Pagetitle: About me
 
 ----
 
-Description: Dean Verleger is a full stack developer and this is their website.
+Description:
 
 ----
 
@@ -16,26 +16,34 @@ Metaimage:
 
 Text:
 
-I'm Dean Verleger, a **full stack developer** who loves to (link: https://github.com/deanbot text: open source target: _blank). I leverage cloud services to build apps and collaboration tools. I'm currently building .NET & React apps and maintaining large TypeScript, SharePoint Framework, codebases with (link: https://rushjs.io/ text: rush target: _blank) ((link: https://www.envistacorp.com/ text:@ EnVista target: _blank)). I love to learn, and I strive to maintain a good work/life balance.
+I'm Dean Verleger, a **full stack engineer** living in Portland, Oregon.
+
+I lead a team and architect technical solutions, a lit & TypeScript web component library, CI/CD pipelines, rush stack monorepo build tooling, storybook documentation, vite web apps, and playwright and open-wc testing suites at (link: https://koerber-supplychain.com/ text:Körber Supplychain target: _blank).
+
+<!-- In my free time I like to build keyboards and explore Portland -->
 
 ### About the site
-Functionally, this site is part blog and part wiki. The (link: https://github.com/deanbot/deanbot-site text: source code target: _blank) is freely available on github.
+This is a blog and a wiki built with Kirby CMS. It includes a small amount of js tooling to build the mobile navitagion. The (link: https://github.com/deanbot/deanbot-site text: source code target: _blank) is freely available on github.
 
 ## Currently
-- Living in Wisconsin with my amazing wife Krista and our dreamy dog Knödel.
-- Enjoying socially distant activities like hiking and Table Top Simulator.
-- Making SPFX web parts, .NET React SPAs, Azure automations, and bash/PowerShell tooling at (link: https://www.envistacorp.com/ text: EnVista target: _blank).
-- Studying German with course books, flash cards, and short stories.
-- Learning to use my first Linux based PC.
-- Making a habit tracking console app.
-- [Currently Reading](/wiki/reading-list).
+- Living in Portland, Oregon with my amazing wife Krista and our dog Knödel.
+- A **Product Development Team Lead** at (link: https://koerber-supplychain.com/ text:Körber Supplychain target: _blank).
+  I write and maintain:
+  - CI/CD pipelines with Azure Dev Ops
+  - a library of web components with [lit](https://lit.dev/)
+  - web apps with [vite](https://vitejs.dev/)
+  - interactive documentation with [Storybook](https://storybook.js.org/)
+  - monorepo build tooling and configuration with the [Rush Stack](https://rushstack.io/)
+  - testing suites with [playwright](https://playwright.dev/) and [open-wc](https://open-wc.org/docs/testing/testing-package/).
+- Developing Kirby PHP websites (like [this one](https://deanbot.dev/) and [this one](https://bluemooncommunityfarm.com/)).
+- Building and [programming keyboards](https://github.com/deanbot/keymaps). I frequent the Portland Keyboard Club ([pdxkbc](https://pdxkbc.com/)) events where Portland area keyboard nerds mingle and show of their recent builds.
 - Practicing the art of tidying.
 
 ## Previously
-- Programmed the EnVista (link: https://www.envistacorp.com/ text: website target: _blank).
+- Flutter mobile app development at EnVista and Körber Supplychain.
+- SPFX web parts, .NET React SPAs, Azure automations, and bash/PowerShell tooling at (link: https://www.envistacorp.com/ text: EnVista target: _blank).
 - Worked for veggies at (link: https://bluemooncommunityfarm.com/ text: Blue Moon Community Farm target: _blank).
-- Made Angular SharePoint Apps and WordPress sites at Apparatus/Virtusa until 2017.
-- Started keeping a bullet journal.
-- Hosted and created WordPress sites with (link: https://www.biancagarfias.com/ text: Bianca Garfias target: _blank) and (link: http://anyakom.com text: Anja Kominicki).
-- Cut my teeth making WordPress sites at (link: https://web.archive.org/web/20130906081002/http://silversquareinc.com/meet-the-squares/#dean text: Silver Square target: _blank) from 2010-2013.
+- Created custom Angular SharePoint Apps and WordPress sites at Apparatus and at Virtusa until 2017.
+- I continued freelance WordPress development and hosting.
+- I created custom WordPress sites at (link: https://web.archive.org/web/20130906081002/http://silversquareinc.com/meet-the-squares/#dean text: Silver Square target: _blank) from 2010-2013.
 - Made [Flash games](https://deanbot.dev/wiki/dreamfed-games) in college.

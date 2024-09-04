@@ -52,10 +52,6 @@ If you include this file within a git project, make sure to exclude it with your
 
 To avoid this issue you could throw this into your `~/bin` instead (needs to be on your path).
 
-## And how?
-
-Here's the part where I try and get you to teach me some new tricks. How do you automate Cloudflare? How would you kick off the purge cache script?
-
 ----
 
 Date: 2020-06-09
@@ -66,7 +62,7 @@ Dateupdated:
 
 ----
 
-Category: Purely Technical
+Category: Technical
 
 ----
 

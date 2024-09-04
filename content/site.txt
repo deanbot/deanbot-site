@@ -18,8 +18,6 @@ Twitterhandle: deanbot
 
 Primaryauthor:
 
-- mrdZ0vTD
-
 ----
 
 Commentformtext: Have a comment? Fill out the form below to send me an email. No personal data will be saved. If you'd like a response, be sure to include your email address.
@@ -45,13 +43,14 @@ Social:
   url: https://github.com/deanbot
   icon: github-line
 - 
-  title: Twitter
-  url: https://twitter.com/deanbot88
-  icon: twitter-line
+  title: RSS
+  url: https://www.linkedin.com/in/deanverleger/
+  icon: linkedin-line
 - 
   title: RSS
   url: https://deanbot.dev/feed.xml
   icon: rss-line
+
 
 ----
 
@@ -59,7 +58,7 @@ Twitter: deanbot
 
 ----
 
-Description: Dean Verleger is a full stack tinkerer and lifelong learner.
+Description: Dean Verleger is a full stack engineer, lifelong learner, and keyboard nerd.
 
 ----
 

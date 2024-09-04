@@ -238,7 +238,7 @@ Dateupdated: 2020-07-22
 
 ----
 
-Category: Purely Technical
+Category: Technical
 
 ----
 
