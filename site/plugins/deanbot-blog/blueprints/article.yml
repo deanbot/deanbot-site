@@ -20,13 +20,16 @@ columns:
       description:
         label: Meta Description
         type: text
+
       headline:
         label: Headline
         type: text
+
       text:
         label: Text
         type: textarea
         size: large
+
   sidebar:
     width: 1/3
     sections:
@@ -38,10 +41,12 @@ columns:
             type: date
             default: now
             time: false
+
           dateUpdated:
             label: Updated On
             type: date
             time: false
+
           category:
             label: Category
             type: select
@@ -51,6 +56,7 @@ columns:
               fetch: site.find("blog").categories.toStructure
               text: "{{ structureItem.title }}"
               value: "{{ structureItem.title }}"
+
           tags:
             label: Tags
             type: tags
@@ -58,27 +64,33 @@ columns:
             options: query
             query:
               fetch: site.find("blog").childrenAndDrafts.pluck("tags", ",", true)
+
           bannerImage:
             label: Banner Image
             type: files
             multiple: false
             layout: cards
+
           imageAttribution:
             label: Image Attribution
             type: text
+
           related:
             label: Related
             type: pages
             max: 5
             query: page.siblings(false)
+
           metaImage:
             label: Meta Image
             type: files
             multiple: false
             layout: cards
+
           noIndex:
             type: toggle
             label: No Index
+
           excludefromxmlsitemap:
             label:     Exclude from sitemap.xml
             type:      toggle

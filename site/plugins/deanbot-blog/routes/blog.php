@@ -29,3 +29,9 @@ return [
     return page('error');
   }
 ];
+
+function renderWith($page, $key, $value) {
+  return $page->render([
+    $key => $value
+  ]);
+};

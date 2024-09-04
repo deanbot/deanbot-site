@@ -1,6 +1,0 @@
-type: pages
-headline: Notes
-info: "{{ page.date.toDate('m/d/Y') }}"
-template: note
-empty: No notes yet
-sortBy: modified desc

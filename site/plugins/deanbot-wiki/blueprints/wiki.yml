@@ -4,6 +4,7 @@ options:
   delete: false
   status: false
   url: false
+
 columns:
   left:
     width: 1/2
@@ -14,23 +15,37 @@ columns:
           text:
             label: Text
             type: textarea
+
           description:
             label: Meta Description
             type: text
+
       drafts:
-        extends: sections/notes
+        type: pages
         headline: Drafts
+        info: "{{ page.date.toDate('m/d/Y') }}"
+        template: note
+        empty: No notes yet
+        sortBy: modified desc
         status: draft
 
       unlisted:
-        extends: sections/notes
+        type: pages
         headline: Unlisted Notes
+        info: "{{ page.date.toDate('m/d/Y') }}"
+        template: note
+        empty: No notes yet
+        sortBy: modified desc
         status: unlisted
 
   right:
     width: 1/2
     sections:
       listed:
-        extends: sections/notes
+        type: pages
         headline: Published Notes
+        info: "{{ page.date.toDate('m/d/Y') }}"
+        template: note
+        empty: No notes yet
+        sortBy: modified desc
         status: listed

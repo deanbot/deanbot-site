@@ -1,4 +1,5 @@
 <?php
+// feed method provided by site/plugins/kirby3-feed
 return [
   'pattern' => 'feed.xml',
   'method' => 'GET',

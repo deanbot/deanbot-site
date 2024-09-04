@@ -3,7 +3,7 @@
 // faux parenting with 'topic' field
 
 class NotePage extends Page {
-  public function children() {
+  public function children(): Pages {
     return page('wiki')->children()->filterBy('topic', $this->uri());
   }
 

@@ -1,18 +1,28 @@
 <?php
-$config = [
+/*
+Deps:
+- https://github.com/tobimori/kirby-seo.git (submodule: site/plugins/seo)
+provides meta/search tags, sitemap and and robots
+*/
+return [
   'debug'  => true,
   'markdown' => [
     'extra' => true
   ],
-  'thumbs' => [
-    'presets' => [
-      'default' => ['width' => 1024, 'quality' => 80],
-      'twitter' => ['width' => 120, 'height' => 120, 'quality' => 80]
+  'smartypants' => true,
+
+  // via https://plugins.andkindness.com/seo/docs/get-started/installation-setup
+  'tobimori.seo.canonicalBase' => 'https://deanbot.dev',
+  'tobimori.seo.lang' => 'en_US',
+
+  // via https://plugins.andkindness.com/seo/docs/usage/robots
+  'tobimori.seo.robots' => [
+    'active' => true,
+    'content' => [
+      '*' => [
+        'Allow' => ['/'],
+        'Disallow' => ['/kirby', '/panel', '/content']
+      ]
     ]
-  ],
-  'routes' => require('routes.php')
+  ], 
 ];
-$metaTagsConfig = require('meta-tags.php');
-$sitemapConfig = require('sitemap.php');
-$robots = require('robots.php');
-return array_merge($config, $metaTagsConfig, $sitemapConfig, $robots);
