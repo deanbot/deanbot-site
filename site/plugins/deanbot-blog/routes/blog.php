@@ -14,13 +14,13 @@ return [
     $term = urldecode($uri);
 
     // render category archive if term is within category property in any blog pages
-    if (hasChildrenWithCategory($blogPage, $term)) {
+    if ($blogPage->hasChildrenWithCategory($term)) {
       // blog page object with category
       return renderWith($blogPage, 'category', $term);
     }
 
     // render tag archive if term is within tag property in any blog ages
-    if (hasChildrenWithTag($blogPage, $term) ) {
+    if ($blogPage->hasChildrenWithTag($term) ) {
       // blog page object with tag
       return renderWith($blogPage, 'tag', $term);
     }

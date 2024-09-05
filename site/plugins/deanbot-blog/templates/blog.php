@@ -60,8 +60,6 @@
 
             <?php endforeach; ?>
 
-          <?php else: ?>
-            <?php // don't show any message as we can use the kirbytext to explain why no results are shown and no results would be redundant ?>
           <?php endif; ?>
           </section>
 
@@ -83,7 +81,7 @@
 
         <?php if ($articles->isNotEmpty() && !$isFilteredArchive) : ?>
         <div class="sub">
-          <?/*
+          <?php if (count($categories) > 1): ?>
           <aside>
             <h3>Categories</h3>
             <ul class="categories">
@@ -96,7 +94,7 @@
               <?php endforeach ?>
             </ul>
           </aside>
-        */ ?>
+          <?php endif; ?>
           <aside>
             <h4>Tags</h4>
             <ul class="tags">

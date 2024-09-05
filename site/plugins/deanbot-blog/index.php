@@ -5,6 +5,10 @@ Deps:
 provides rss feed method
 */
 
+load([
+    'BlogPage' => 'models/BlogPage.php',
+], __DIR__);
+
 Kirby::plugin('deanbot/blog', [
     'routes' => [
         require 'routes/rss.php',
@@ -22,6 +26,9 @@ Kirby::plugin('deanbot/blog', [
         'blog' => __DIR__ . '/templates/blog.php',
         'article'=> __DIR__ . '/templates/article.php'
     ],
+    'pageModels' => [
+        'blog' => BlogPage::class
+    ],
     'thumbs' => [
         'presets' => [
         'default' => ['width' => 1024, 'quality' => 80],
@@ -29,21 +36,3 @@ Kirby::plugin('deanbot/blog', [
         ]
     ],
 ]);
-
-function hasChildrenWithCategory($page, $term) {
-    $pages = $page->children()->listed();
-    return count( $pages->filterBy('category', $term) ) > 0;
-}
-
-function hasChildrenWithTag($page, $term) {
-    $pages = $page->children()->listed();
-    return count( $pages->filterBy('tags', $term, ',') ) > 0;
-}
-  
-
-function getBlogCategoryDescription($page, $categoryTitle) {
-    $categoryObjects = $page->categories()->yaml();
-    $categoryIndex = array_search($categoryTitle, array_column($categoryObjects, 'title'));
-    $categoryDescription = $categoryObjects[$categoryIndex]['description'];
-    return $categoryDescription ?? '';
-  }
