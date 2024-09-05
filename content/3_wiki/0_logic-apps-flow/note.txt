@@ -2,15 +2,15 @@ Title: Logic Apps and Flow
 
 ----
 
-Pagetitle:
+Pagetitle: 
 
 ----
 
-Description:
+Description: 
 
 ----
 
-Metaimage:
+Metaimage: 
 
 ----
 
@@ -30,3 +30,7 @@ Topic: wiki/microsoft
 ----
 
 Related: wiki/odata
+
+----
+
+Uuid: VedbJsWis2okGMzL

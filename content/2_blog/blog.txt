@@ -6,11 +6,11 @@ Pagetitle:
 
 ----
 
-Text: An index of musings on my projects, passions and the dev puzzles/technical oddities I come across. There may be something here to interest the curious passerby.
+Text: An index of musings on my projects, passions and the dev puzzles I come across. There may be something here to interest the curious passerby.
 
 ----
 
-Description: An index of musings on my projects, passions and the dev puzzles/technical oddities I come across. There may be something here to interest the curious passerby.
+Description: An index of musings on my projects, passions and the dev puzzles I come across. There may be something here to interest the curious passerby.
 
 ----
 
@@ -25,9 +25,79 @@ Categories:
   description: Exploring hobbies
 - 
   title: Technical
-  description: Development musings and technical articles
+  description: >
+    Development musings and technical
+    articles
 - 
   title: Projects
   description: >
     Ideas, systems and software to help you
     at life.
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: An index of musings on my projects, passions and the dev puzzles/technical oddities I come across. There may be something here to interest the curious passerby.
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: default
+
+----
+
+Robotsfollow: default
+
+----
+
+Robotsarchive: default
+
+----
+
+Robotsimageindex: default
+
+----
+
+Robotssnippet: default
+
+----
+
+Metainherit: 
+
+----
+
+Uuid: kiTZFrM3tjtFEWOd

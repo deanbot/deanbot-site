@@ -14,8 +14,14 @@ Metaimage:
 
 ----
 
-Text: Hello, I'm (link: /about text: Dean Verleger), a software architect, engineer, and team lead specializing in modern JavaScript development. I lead a team building web applications, web components, and testing tools. Every day I'm privilaged to collaborate with development & QA engineers, designers and technical writers. _I love a good cross-functional effort._
+Text:
+
+Hello, I'm (link: /about text: Dean Verleger), a software architect, engineer, and team lead specializing in modern JavaScript development. I lead a team building web applications, web components, and testing tools. Every day I'm privilaged to collaborate with development & QA engineers, designers and technical writers. _I love a good cross-functional effort._
 
 During my career I've developed applications and tools for SharePoint, web and mobile targets using technologies such as React, Angular, Flutter, .NET and WordPress. 
 
 I keep a (link: /blog text: blog) where you can read about my projects, hobbies, and technical musings. You can also flip through notes I've written in the (link: /wiki text: wiki) &mdash; I'm continually adding more. Please stay and explore! ☕
+
+----
+
+Uuid: Z0KWyVVECSxNzHJh

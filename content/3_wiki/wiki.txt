@@ -6,4 +6,72 @@ Text: This wiki or (link: /wiki/memex text: memex) is a personal knowledge base 
 
 ----
 
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: A personal knowledge base storing digital notes.
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: default
+
+----
+
+Robotsfollow: default
+
+----
+
+Robotsarchive: default
+
+----
+
+Robotsimageindex: default
+
+----
+
+Robotssnippet: default
+
+----
+
+Metainherit: 
+
+----
+
 Description: A personal knowledge base used to store digital notes.
+
+----
+
+Uuid: v12PNPOHMK0BvRwN

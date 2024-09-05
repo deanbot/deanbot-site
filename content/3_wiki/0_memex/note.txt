@@ -21,3 +21,7 @@ This wiki is a catalog of notes and references I've found useful to record. It's
 (cite: Devine Lu Linvega, "XXIVV")
 
 Note: This site is heavily inspired by the website of Devine Lu Linvega. I encourage you to get lost in (link: https://wiki.xxiivv.com/ text: their website). In comparison mine is much more straightforward.
+
+----
+
+Uuid: 11WpUTYsxW2p5SZt

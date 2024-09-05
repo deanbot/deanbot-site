@@ -1,13 +1,20 @@
 <?php
 
+/*
+To add seo section to blueprints
+Deps:
+- https://github.com/tobimori/kirby-seo.git (submodule: site/plugins/seo)
+provides meta/search tags, sitemap and and robots
+*/
+
 load([
     'NotePage' => 'models/NotePage.php',
 ], __DIR__);
 
 Kirby::plugin('deanbot/wiki', [
     'blueprints' => [
-        'pages/note.yml' => __DIR__ . '/blueprints/note.yml',
-        'pages/wiki.yml' => __DIR__ . '/blueprints/wiki.yml'
+        'pages/note' => __DIR__ . '/blueprints/note.yml',
+        'pages/wiki' => __DIR__ . '/blueprints/wiki.yml'
     ],
     'pageModels' => [
         'note' => NotePage::class

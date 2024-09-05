@@ -1,8 +1,10 @@
 <?php
+
 /*
+To add seo section to blueprints
 Deps:
-- https://github.com/bnomei/kirby3-feed (submodule: site/plugins/kirby3-feed)
-provides rss feed method
+- https://github.com/tobimori/kirby-seo.git (submodule: site/plugins/seo)
+provides meta/search tags, sitemap and and robots
 */
 
 load([
@@ -15,8 +17,8 @@ Kirby::plugin('deanbot/blog', [
         require 'routes/blog.php'
     ],
     'blueprints' => [
-        'pages/article.yml' => __DIR__ . '/blueprints/article.yml',
-        'pages/blog.yml' => __DIR__ . '/blueprints/blog.yml'
+        'pages/article' => __DIR__ . '/blueprints/article.yml',
+        'pages/blog' => __DIR__ . '/blueprints/blog.yml'
     ],
     'controllers' => [
         'blog' => require 'controllers/blog.php',
@@ -31,8 +33,8 @@ Kirby::plugin('deanbot/blog', [
     ],
     'thumbs' => [
         'presets' => [
-        'default' => ['width' => 1024, 'quality' => 80],
-        'twitter' => ['width' => 120, 'height' => 120, 'quality' => 80]
+            'default' => ['width' => 1024, 'quality' => 80],
+            'twitter' => ['width' => 120, 'height' => 120, 'quality' => 80]
         ]
     ],
 ]);

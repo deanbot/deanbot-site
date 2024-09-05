@@ -9,6 +9,7 @@ tabs:
     unlisted:
       type: pages
       headline: Unlisted
+
   settings:
     label: 'Settings'
     icon: settings

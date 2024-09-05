@@ -6,7 +6,7 @@ Pagetitle: About me
 
 ----
 
-Description:
+Description: 
 
 ----
 
@@ -47,3 +47,7 @@ This is a blog and a wiki built with Kirby CMS. It includes a small amount of js
 - I continued freelance WordPress development and hosting.
 - I created custom WordPress sites at (link: https://web.archive.org/web/20130906081002/http://silversquareinc.com/meet-the-squares/#dean text: Silver Square target: _blank) from 2010-2013.
 - Made [Flash games](https://deanbot.dev/wiki/dreamfed-games) in college.
+
+----
+
+Uuid: u1NaSQTJibdRVXHo

@@ -6,54 +6,55 @@ status:
   draft:
     label: Draft
     text: The note is still in draft mode. It can only be seen by editors with panel access.
+
   unlisted:
     label: Unlisted
     text: The note is online and can be visited with the direct URL.
+
   listed:
     label: Published
     text: The note is online and listed in the wiki.
 
-columns:
-  main:
-    width: 2/3
-    fields:
-      pageTitle:
-        label: Page Title
-        type: text
-      description:
-        label: Meta Description
-        type: text
-      metaImage:
-        label: Meta Image
-        type: files
-        max: 1
-        layout: cards
-      text:
-        label: Text
-        type: textarea
-        size: large
-        autofocus: true
-  sidebar:
-    width: 1/3
-    sections:
-      metaFields:
-        type: fields
+tabs:
+  content:
+    columns:
+      main:
+        width: 2/3
         fields:
-          topic:
-            label: Topic
-            type: select
-            options: query
-            max: 1
-            query:
-              fetch: site.find("wiki").children.listed.not(page.uri)
-              text: "{{ page.title }}"
-              value: "{{ page.uri }}"
-          related:
-            label: Related
-            type: multiselect
-            options: query
-            max: 5
-            query:
-              fetch: site.index.filterBy('template', 'note').listed.not(page.uri)
-              text: "{{ page.title }}"
-              value: "{{ page.uri }}"
+          pageTitle:
+            label: Page Title
+            type: text
+
+          text:
+            label: Text
+            type: textarea
+            size: large
+            autofocus: true
+
+      sidebar:
+        width: 1/3
+        sections:
+          metaFields:
+            type: fields
+            fields:
+              topic:
+                label: Topic
+                type: select
+                options: query
+                max: 1
+                query:
+                  fetch: site.find("wiki").children.listed.not(page.uri)
+                  text: "{{ page.title }}"
+                  value: "{{ page.uri }}"
+
+              related:
+                label: Related
+                type: multiselect
+                options: query
+                max: 5
+                query:
+                  fetch: site.index.filterBy('template', 'note').listed.not(page.uri)
+                  text: "{{ page.title }}"
+                  value: "{{ page.uri }}"
+
+  seo: seo/page

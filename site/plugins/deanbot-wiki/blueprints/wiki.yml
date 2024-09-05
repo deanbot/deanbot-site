@@ -5,47 +5,57 @@ options:
   status: false
   url: false
 
-columns:
-  left:
-    width: 1/2
-    sections:
-      intro:
-        type: fields
-        fields:
-          text:
-            label: Text
-            type: textarea
+tabs:
+  posts:
+    label: Wiki notes
+    columns:
+      left:
+        width: 2/3
+        sections:
+          drafts:
+            type: pages
+            headline: Drafts
+            info: "{{ page.topic }}"
+            template: note
+            empty: No notes yet
+            sortBy: modified desc
+            status: draft
+            layout: cardlets
+            image:
+              cover: true
 
-          description:
-            label: Meta Description
-            type: text
+      right:
+        width: 1/3
+        sections:
+          unlisted:
+            type: pages
+            headline: Unlisted Notes
+            info: "{{ page.topic }}"
+            template: note
+            empty: No notes yet
+            sortBy: modified desc
+            status: unlisted
 
-      drafts:
-        type: pages
-        headline: Drafts
-        info: "{{ page.date.toDate('m/d/Y') }}"
-        template: note
-        empty: No notes yet
-        sortBy: modified desc
-        status: draft
+      bottom:
+        width: 1/1
+        sections:
+          listed:
+            type: pages
+            headline: Published Notes
+            info: "{{ page.topic }}"
+            template: note
+            empty: No notes yet
+            sortBy: modified desc
+            status: listed
+            layout: table
+            image:
+              cover: true
 
-      unlisted:
-        type: pages
-        headline: Unlisted Notes
-        info: "{{ page.date.toDate('m/d/Y') }}"
-        template: note
-        empty: No notes yet
-        sortBy: modified desc
-        status: unlisted
+  content:
+    label: Page content
+    fields:
+      text:
+        label: Text
+        type: textarea
 
-  right:
-    width: 1/2
-    sections:
-      listed:
-        type: pages
-        headline: Published Notes
-        info: "{{ page.date.toDate('m/d/Y') }}"
-        template: note
-        empty: No notes yet
-        sortBy: modified desc
-        status: listed
+  seo: seo/page

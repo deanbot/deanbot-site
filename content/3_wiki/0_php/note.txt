@@ -6,11 +6,11 @@ Pagetitle: PHP language notes
 
 ----
 
-Description:
+Description: 
 
 ----
 
-Metaimage:
+Metaimage: 
 
 ----
 
@@ -67,4 +67,8 @@ Topic: wiki/reference
 
 ----
 
-Related:
+Related: 
+
+----
+
+Uuid: kVcJgTywIHOeicVF

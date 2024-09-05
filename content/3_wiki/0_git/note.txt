@@ -2,15 +2,15 @@ Title: git
 
 ----
 
-Pagetitle:
+Pagetitle: 
 
 ----
 
-Description:
+Description: 
 
 ----
 
-Metaimage:
+Metaimage: 
 
 ----
 
@@ -113,3 +113,7 @@ Topic: wiki/reference
 ----
 
 Related: wiki/ssh
+
+----
+
+Uuid: OWaBtP0EbVYCUsWh
