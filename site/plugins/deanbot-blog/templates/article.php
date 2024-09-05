@@ -71,10 +71,10 @@
               <h3>Related Posts</h3>
               <nav>
               <?php
-              $relatedNotes = $page->related()->toPages();
-              foreach($related->toPages() as $note) {
-                echo getNoteLink($note);
-              }
+                $relatedNotes = $page->related()->toPages();
+                foreach($related->toPages() as $note) {
+                  echo $note->getRelatedLink();
+                }
               ?>
               </nav>
             </div>

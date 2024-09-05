@@ -19,7 +19,7 @@
           <nav>
             <?php
             foreach($notes as $note) {
-              echo getNoteLink($note);
+              echo $note->getRelatedLink();
             }
             ?>
           </nav>

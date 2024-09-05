@@ -36,7 +36,7 @@
               <?php
               $children = $page->children();
               foreach($children as $note) {
-                echo getNoteLink($note);
+                echo $note->getRelatedLink();
               }
               ?>
               </nav>
@@ -54,7 +54,7 @@
                 <?php
                 $relatedNotes = $page->related()->toPages();
                 foreach($relatedNotes as $note) {
-                  echo getNoteLink($note);
+                  echo $note->getRelatedLink();
                 }
                 ?>
                 </nav>
@@ -69,10 +69,10 @@
 
       <nav class="tree-nav">
         <div class="trunk">
-          <a href="/wiki" title="Wiki" class="note-link"><i class="ri-node-tree"></i> <span>Wiki Index</span></a>
+          <a href="/wiki" title="Wiki" class="related-link"><i class="ri-node-tree"></i> <span>Wiki Index</span></a>
           <?php
           if ($topicPage) {
-            echo getNoteLink($topicPage);
+            echo $topicPage->getRelatedLink();
           }
           ?>
         </div>
@@ -106,15 +106,15 @@
           foreach($siblings as $note) {
             $numNotes++;
             if ($numNotes >= $maxNotes) {
-              if ($topicPage) {
-                echo getNoteLink($topicPage, '', '...');
+              if ($topicPage) { 
+                echo $topicPage->getRelatedLink('', '...');
               } else {
-                ?><a href="/wiki" title="Wiki" class="note-link"><i class="ri-node-tree"></i> <span>...</span></a><?php
+                ?><a href="/wiki" title="Wiki" class="related-link"><i class="ri-node-tree"></i> <span>...</span></a><?php
               }
               break;
             } else {
               $isActive = $note->uri() == $page->uri();
-              echo getNoteLink($note, $isActive ? $activeClass : '');
+              echo $note->getRelatedLink($isActive ? $activeClass : '');
             }
           }
           ?>

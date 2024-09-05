@@ -21,21 +21,3 @@ Kirby::plugin('deanbot/wiki', [
         'wiki' => __DIR__ . '/templates/wiki.php'
     ]
 ]);
-
-function getNoteLink($note, $class = '', $label = '') {
-    $class = !empty($class) ? ' ' . $class : '';
-    $label = !empty($label) ? $label : $note->title();
-    return sprintf(
-      '<a href="%s" title="%s" class="note-link%s">'
-        . '<i class="%s"></i>'
-        . '<span>%s</span>'
-      . '</a>',
-      $note->url(),
-      $note->title(),
-      $class,
-      $note->hasChildren()
-        ? 'ri-folder-2-line'
-        : 'ri-article-line',
-      $label
-    );
-  }

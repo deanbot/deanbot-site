@@ -20,4 +20,19 @@ class BlogPage extends Page {
         $categoryDescription = $categoryObjects[$categoryIndex]['description'];
         return $categoryDescription ?? '';
     }
+
+    public function getRelatedLink() 
+    {
+        $url = parent::url();
+        $title = parent::title();
+        return sprintf(
+          '<a href="%s" title="%s" class="related-link%s">'
+            . '<i class="ri-article-line"></i>'
+            . '<span>%s</span>'
+          . '</a>',
+          $url,
+          $title,
+          $title
+        );
+    }
 }
