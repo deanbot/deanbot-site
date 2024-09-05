@@ -11,6 +11,8 @@ return [
   ],
   'smartypants' => true,
 
+  'deanbot.web-app-icons' => '#01677D',
+
   // via https://plugins.andkindness.com/seo/docs/get-started/installation-setup
   'tobimori.seo.canonicalBase' => 'https://deanbot.dev',
   'tobimori.seo.lang' => 'en_US',
