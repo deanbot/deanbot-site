@@ -1,21 +1,13 @@
 title: Default Page
-preset: page
 
 tabs:
   content:
-    type: fields
+    label: Page Content
     fields:
       pageTitle:
         label: Page Title
         type: text
-      description:
-        label: Meta Description
-        type: text
-      metaImage:
-        label: Meta Image
-        type: files
-        max: 1
-        layout: cards
+
       text:
         label: Text
         type: textarea

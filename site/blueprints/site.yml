@@ -30,7 +30,10 @@ tabs:
 
               logoUrl:
                 label: Logo Url
-                type: image
+                type: files
+                max: 1
+                image:
+                  cover: true
 
       metaSettings:
         width: 1/2
@@ -48,6 +51,8 @@ tabs:
                 max: 1
                 layout: cards
                 help: 120px by 120px
+                # image:
+                #   cover: contain
 
               twitterHandle:
                 label: Twitter handle
@@ -84,7 +89,10 @@ tabs:
 
               footerLogoUrl:
                 label: Footer Logo Url
-                type: image
+                type: files
+                max: 1
+                image:
+                  cover: true
 
               license:
                 width: 1/2

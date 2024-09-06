@@ -6,9 +6,11 @@ Homelinktitle: Deanbot
 
 ----
 
-Defaultimage:
+Logourl: 
 
-- deanbot-featured.png
+----
+
+Defaultimage: - file://emz2k8kiLgdGTi2R
 
 ----
 
@@ -16,11 +18,15 @@ Twitterhandle: deanbot
 
 ----
 
-Primaryauthor:
+Primaryauthor: 
 
 ----
 
 Commentformtext: Have a comment? Fill out the form below to send me an email. No personal data will be saved. If you'd like a response, be sure to include your email address.
+
+----
+
+Footerlogourl: 
 
 ----
 
@@ -43,14 +49,66 @@ Social:
   url: https://github.com/deanbot
   icon: github-line
 - 
-  title: RSS
-  url: https://www.linkedin.com/in/deanverleger/
+  title: LinkedIn
+  url: >
+    https://www.linkedin.com/in/deanverleger/
   icon: linkedin-line
 - 
   title: RSS
   url: https://deanbot.dev/feed.xml
   icon: rss-line
 
+----
+
+Metatemplate: 
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Ogdescription: 
+
+----
+
+Ogsitename: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: summary
+
+----
+
+Robotsindex: 
+
+----
+
+Robotsfollow: 
+
+----
+
+Robotsarchive: 
+
+----
+
+Robotsimageindex: 
+
+----
+
+Robotssnippet: 
+
+----
+
+Socialmediaaccounts: 
 
 ----
 

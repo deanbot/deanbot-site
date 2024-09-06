@@ -6,7 +6,7 @@ Pagetitle:
 
 ----
 
-Description: Hello, I'm Dean Verleger, a software architect, team lead, and full stack engineer.
+Description: 
 
 ----
 
@@ -21,6 +21,70 @@ Hello, I'm (link: /about text: Dean Verleger), a software architect, engineer, a
 During my career I've developed applications and tools for SharePoint, web and mobile targets using technologies such as React, Angular, Flutter, .NET and WordPress. 
 
 I keep a (link: /blog text: blog) where you can read about my projects, hobbies, and technical musings. You can also flip through notes I've written in the (link: /wiki text: wiki) &mdash; I'm continually adding more. Please stay and explore! ☕
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: Hello, I'm Dean Verleger, a software architect, team lead, and full stack engineer.
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: default
+
+----
+
+Robotsfollow: default
+
+----
+
+Robotsarchive: default
+
+----
+
+Robotsimageindex: default
+
+----
+
+Robotssnippet: default
+
+----
+
+Metainherit: 
 
 ----
 

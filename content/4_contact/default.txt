@@ -6,7 +6,7 @@ Pagetitle: Contact me
 
 ----
 
-Description: Contact Dean Verleger
+Description: 
 
 ----
 
@@ -21,6 +21,70 @@ Text:
 Active social:
 - (link: https://github.com/deanbot text: github target: _blank)
 - (link: https://github.com/deanbot text: linkedin target: _blank)
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: Contact Dean Verleger
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: default
+
+----
+
+Robotsfollow: default
+
+----
+
+Robotsarchive: default
+
+----
+
+Robotsimageindex: default
+
+----
+
+Robotssnippet: default
+
+----
+
+Metainherit: 
 
 ----
 
