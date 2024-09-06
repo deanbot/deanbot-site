@@ -8,6 +8,13 @@ Kirby ([v4](https://getkirby.com/docs/guide/updates/update-to-v4#:~:text=Kirby%2
 
 Dev tooling uses node v20.17.
 
+## Kirby Dependencies
+
+- [tobimori/kirby-seo.git](https://github.com/tobimori/kirby-seo.git): provides meta/search tags, sitemap and and robots
+- [bnomei/kirby3-feed](https://github.com/bnomei/kirby3-feed): generate RSS feed
+https://github.com/tobimori/kirby-seo.git (submodule: site/plugins/seo)
+provides meta/search tags, sitemap and and robots
+
 ## Develop
 
 Webpack tooling is set up for sass & js compiliation, but it assumes you're already serving the site via xampp/mamp/etc w/ a vhost address of spiritedrefactor.localhost.

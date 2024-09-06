@@ -5,6 +5,8 @@ To add seo section to blueprints
 Deps:
 - https://github.com/tobimori/kirby-seo.git (submodule: site/plugins/seo)
 provides meta/search tags, sitemap and and robots
+- https://github.com/bnomei/kirby3-feed (submodule: site/plugins/kirby3-feed)
+provides feed method for RSS
 */
 
 load([
