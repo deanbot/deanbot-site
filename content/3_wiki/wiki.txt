@@ -46,27 +46,27 @@ Twitterauthor:
 
 ----
 
-Robotsindex: default
+Robotsindex: true
 
 ----
 
-Robotsfollow: default
+Robotsfollow: true
 
 ----
 
-Robotsarchive: default
+Robotsarchive: true
 
 ----
 
-Robotsimageindex: default
+Robotsimageindex: true
 
 ----
 
-Robotssnippet: default
+Robotssnippet: true
 
 ----
 
-Metainherit: 
+Metainherit: robots, metaDescription
 
 ----
 

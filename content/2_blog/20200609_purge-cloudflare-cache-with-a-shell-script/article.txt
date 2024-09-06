@@ -2,6 +2,10 @@ Title: Purge Cloudflare cache in a shell script
 
 ----
 
+Headline: 
+
+----
+
 Text:
 
 If you develop sites which run through [Cloudflare](https://www.cloudflare.com/), you're probably used to the tedious task of logging into Cloudflare to purge cached files every time you publish an update. As I was doing this the umpteenth time I started to wonder whether an API existed so that this step could be automated... and there is one! 
@@ -67,6 +71,82 @@ Category: Technical
 ----
 
 Tags: Cloudflare, Shell, API
+
+----
+
+Bannerimage: 
+
+----
+
+Imageattribution: 
+
+----
+
+Related: 
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: true
+
+----
+
+Robotsfollow: true
+
+----
+
+Robotsarchive: true
+
+----
+
+Robotsimageindex: true
+
+----
+
+Robotssnippet: true
+
+----
+
+Metainherit: 
 
 ----
 

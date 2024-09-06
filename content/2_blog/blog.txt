@@ -10,10 +10,6 @@ Text: An index of musings on my projects, passions and the dev puzzles I come ac
 
 ----
 
-Description: An index of musings on my projects, passions and the dev puzzles I come across. There may be something here to interest the curious passerby.
-
-----
-
 Metaimage: 
 
 ----
@@ -48,7 +44,7 @@ Usetitletemplate: true
 
 ----
 
-Metadescription: An index of musings on my projects, passions and the dev puzzles/technical oddities I come across. There may be something here to interest the curious passerby.
+Metadescription: Musings on my projects, passions and the dev puzzles I come across. There may be something here to interest the curious passerby.
 
 ----
 
@@ -76,27 +72,31 @@ Twitterauthor:
 
 ----
 
-Robotsindex: default
+Robotsindex: true
 
 ----
 
-Robotsfollow: default
+Robotsfollow: true
 
 ----
 
-Robotsarchive: default
+Robotsarchive: true
 
 ----
 
-Robotsimageindex: default
+Robotsimageindex: true
 
 ----
 
-Robotssnippet: default
+Robotssnippet: true
 
 ----
 
-Metainherit: 
+Metainherit: robots
+
+----
+
+Description: An index of musings on my projects, passions and the dev puzzles I come across. There may be something here to interest the curious passerby.
 
 ----
 

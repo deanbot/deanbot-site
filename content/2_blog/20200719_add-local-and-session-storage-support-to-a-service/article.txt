@@ -2,10 +2,6 @@ Title: Add browser storage to your js or ts service
 
 ----
 
-Description: mini-stash is a lightweight npm package responsible for streamlining local and session storage. Read on to learn how to implement browser caching in your project.
-
-----
-
 Headline: 
 
 ----
@@ -251,6 +247,78 @@ Bannerimage:
 ----
 
 Imageattribution: 
+
+----
+
+Related: 
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: true
+
+----
+
+Robotsfollow: true
+
+----
+
+Robotsarchive: true
+
+----
+
+Robotsimageindex: true
+
+----
+
+Robotssnippet: true
+
+----
+
+Metainherit: 
+
+----
+
+Description: mini-stash is a lightweight npm package responsible for streamlining local and session storage. Read on to learn how to implement browser caching in your project.
 
 ----
 

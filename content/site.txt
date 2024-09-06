@@ -18,7 +18,7 @@ Twitterhandle: deanbot
 
 ----
 
-Primaryauthor: 
+Primaryauthor: - user://7rr2fjUS
 
 ----
 
@@ -80,7 +80,7 @@ Ogsitename:
 
 ----
 
-Ogimage: 
+Ogimage: - file://emz2k8kiLgdGTi2R
 
 ----
 
@@ -88,27 +88,34 @@ Twittercardtype: summary
 
 ----
 
-Robotsindex: 
+Robotsindex: false
 
 ----
 
-Robotsfollow: 
+Robotsfollow: true
 
 ----
 
-Robotsarchive: 
+Robotsarchive: true
 
 ----
 
-Robotsimageindex: 
+Robotsimageindex: true
 
 ----
 
-Robotssnippet: 
+Robotssnippet: true
 
 ----
 
-Socialmediaaccounts: 
+Socialmediaaccounts:
+
+twitter: https://x.com/deanbot88
+facebook: ""
+instagram: ""
+youtube: ""
+linkedin: >
+  https://www.linkedin.com/in/deanverleger/
 
 ----
 

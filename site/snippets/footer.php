@@ -10,10 +10,10 @@
     <div class="meta">
       <div>
         <?php
-
-        $copyrightTitle = $user = $site->primaryAuthor()->toUser()
-          ? $user->name()
-          : $site->title()->html();
+          $user = $site->primaryAuthor()->toUser();
+          $copyrightTitle = $user
+            ? $user->name()
+            : $site->title()->html();
         ?>
         <a class="self" href="<?= $site->url() ?>"><?= $copyrightTitle ?></a> © <?= Date('Y') ?>
       </div>
