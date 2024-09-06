@@ -1,4 +1,4 @@
-# Spirited Refactor
+# deanbot-site
 
 [Kirby](https://getkirby.com/docs/guide) blog and [memex](https://en.wikipedia.org/wiki/Memex).
 
@@ -52,6 +52,8 @@ Webpack tooling is set up for sass & js compiliation, but it assumes you're alre
 ```
 
 #### JS tooling
+
+__Warning__: JS tooling has vulnerabilities - do not install node packages until resolved.
 
 - Node
   - install/update [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
