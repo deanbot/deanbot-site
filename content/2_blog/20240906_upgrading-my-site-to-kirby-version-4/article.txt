@@ -1,0 +1,145 @@
+Title: Upgrading my site to Kirby version 4
+
+----
+
+Headline: 
+
+----
+
+Text:
+
+I just finished upgrading Kirby CMS for a client site and decided _to keep up momentum_ and upgrade my own site as well. The first upgrade project was from version 2 and rather involved. My site, the version 3 upgrade, fell together without much issue in comparison. That said, each project had its own learning experiences.
+
+## Converting kirby-builder to Blocks
+
+The biggest source of work on the v2 upgrade had to do with Kirby having introduced the [Blocks](https://getkirby.com/docs/guide/page-builder) system as a way to enable 'Page builder' with core functionality.
+
+A 'Page builder' experience is a common CMS feature typical of marketing sites. It's differentiated from a WYSIWYG or rich text editor by allowing content to be constructed as a series of distinct and specially formatted elements. These elements can vary in terms of semantic meaning or design representation and may rely on specific data points being indicated (i.e., URLs, options, or subheadings). As I implied, this feature is old news. WordPress added it as a core part of their CMS back in 2018 in their ["Gutenburg"](https://wordpress.org/gutenberg/) update (granted, it seems to be routinely ignored in favor of more feature-rich plugin alternatives like WPBakery).
+
+The Kirby v2 site used such a plugin, [kirby-builder](https://github.com/TimOetting/kirby-builder), to build its page-building content entry experience. The main difference between this and Blocks is the way editor previews are handled. Kirby Blocks use Vue templates for editor previews where the `kirby-builder` used php snippets. Thus, implementing Block previews requires some comfort with view logic and templating in Vue. 
+
+Kirby has 3 docs sites: Guide, Reference, or Cookbook. I was eventually able to find [reference on vue templating for kirby block](https://getkirby.com/docs/guide/page-builder/block-examples) in the Cookbook.
+
+## Plugin directory
+
+Just about every 3rd party plugin used on these sites were incompatible with Kirby 4. The silver lining is that Kirby has a healthy [plugin directory](https://plugins.getkirby.com/). Consistently, I was able to find some good option for one-off functionality: sitemaps, robots.txt, feed generation, SEO and meta tags, redirects, form submissions. Two favorites: [SEO](https://plugins.getkirby.com/tobimori/seo) and [Redirects](https://plugins.getkirby.com/bnomei/redirects).
+ 
+## Kirby plugins are great for site development
+
+I found that Kirby plugins are an intriguing way to organize development in general. It seems [all framework features can be implemented in a plugin](https://getkirby.com/docs/guide/plugins/plugin-types). Thus, all the code for a particular feature can be organized modularly and logically. 
+
+I.e., the blueprints, snippets, and previews for custom blocks can all be stored in the same plugin.
+
+```php
+<?php
+Kirby::plugin('cookbook/block-factory', [
+  'blueprints' => [
+    'blocks/awesomeblock' => __DIR__ . '/blueprints/blocks/awesomeblock.yml',
+    // more blueprints
+  ],
+  'snippets' => [
+    'blocks/awesomeblock' => __DIR__ . '/snippets/blocks/awesomeblock.php',
+    // more snippets
+  ],
+]);
+```
+
+The same goes for features involving [controllers](https://getkirby.com/docs/reference/plugins/extensions/controllers), [routes](https://getkirby.com/docs/guide/routing), [models](https://getkirby.com/docs/reference/plugins/extensions/page-models), and [templates](https://getkirby.com/docs/reference/plugins/extensions/templates). 
+
+For fun, I [split my wiki and blog functionality into plugins](https://github.com/deanbot/deanbot-site/commit/1e1ef5daa937b2cfa2aef70dfc11fcc1b0c1dddf). I'm curious what other open-source features are out there, ready to be dropped into a Kirby site.
+
+----
+
+Date: 2024-09-06
+
+----
+
+Dateupdated: 
+
+----
+
+Category: Technical
+
+----
+
+Tags: Kirby
+
+----
+
+Bannerimage: 
+
+----
+
+Imageattribution: 
+
+----
+
+Related: - page://AhMTjNJCu9I3m1w6
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: true
+
+----
+
+Robotsfollow: true
+
+----
+
+Robotsarchive: true
+
+----
+
+Robotsimageindex: true
+
+----
+
+Robotssnippet: true
+
+----
+
+Metainherit: 
+
+----
+
+Uuid: 00kZwziPN3cCNGt2
