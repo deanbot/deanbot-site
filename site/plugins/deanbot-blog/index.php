@@ -13,6 +13,10 @@ load([
     'BlogPage' => 'models/BlogPage.php',
 ], __DIR__);
 
+load([
+    'ArticlePage' => 'models/ArticlePage.php',
+], __DIR__);
+
 Kirby::plugin('deanbot/blog', [
     'routes' => [
         require 'routes/rss.php',
@@ -31,7 +35,8 @@ Kirby::plugin('deanbot/blog', [
         'article'=> __DIR__ . '/templates/article.php'
     ],
     'pageModels' => [
-        'blog' => BlogPage::class
+        'blog' => BlogPage::class,
+        'article' => ArticlePage::class
     ],
     'thumbs' => [
         'presets' => [

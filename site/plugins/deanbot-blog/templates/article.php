@@ -63,7 +63,7 @@
       </article>
 
       <?php
-      $related = $page->related();
+      $related = $page->related()->toPages();
       if ($related->isNotEmpty()): ?>
         <div class="related-notes">
           <aside>
@@ -71,9 +71,8 @@
               <h3>Related Posts</h3>
               <nav>
               <?php
-                $relatedNotes = $page->related()->toPages();
-                foreach($related->toPages() as $note) {
-                  echo $note->getRelatedLink();
+                foreach($related as $article) {
+                  echo $article->getRelatedLink();
                 }
               ?>
               </nav>

@@ -5,7 +5,7 @@ Deps:
 provides meta/search tags, sitemap and and robots
 */
 return [
-  'debug'  => false,
+  'debug'  => true,
   'markdown' => [
     'extra' => true
   ],
