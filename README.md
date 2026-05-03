@@ -17,13 +17,13 @@ provides meta/search tags, sitemap and and robots
 
 ## Develop
 
-Webpack tooling is set up for sass & js compiliation, but it assumes you're already serving the site via xampp/mamp/etc w/ a vhost address of spiritedrefactor.localhost.
+Vite is set up for sass & js compilation. Serve the site via XAMPP with a vhost pointing at this directory (`deanbot.local`).
 
 ### Setup
 
-#### Updating Kirby CMS and Plugins
+#### Kirby CMS and Plugins
 
-- install submodules: `git submodule update --init --recursive`
+- install: `composer install`
 - update kirby to latest: `./tools/update.sh`
 
 #### Web Server
@@ -60,8 +60,6 @@ Webpack tooling is set up for sass & js compiliation, but it assumes you're alre
 
 #### JS tooling
 
-__Warning__: JS tooling has vulnerabilities - do not install node packages until resolved.
-
 - Node
   - install/update [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
   - install latest lts `nvm install --lts` and use it `nvm use --lts`
@@ -71,7 +69,7 @@ __Warning__: JS tooling has vulnerabilities - do not install node packages until
 ### Scripts
 
 * `pnpm run build` - create prod build of css and js in `assets/builds`
-* `pnpm run start` - launch dev build with webpack + browser-sync
+* `pnpm run start` - launch Vite dev server with HMR
 
 ## Mentions
 
