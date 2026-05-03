@@ -1,11 +1,4 @@
-require('normalize.css');
-// import 'remixicon/fonts/remixicon.css';
-require('./scss/site.scss');
-require('./fixedNav');
-require('./scrollTop');
-require('./images/logo.svg');
-require('./images/logo-dark.svg');
-require('./images/frog.png');
-require('./images/frog-dark.png');
-require('./images/frog.svg');
-require('./images/frog-dark.svg');
+import 'normalize.css';
+import './scss/site.scss';
+import './fixedNav';
+import './scrollTop';
