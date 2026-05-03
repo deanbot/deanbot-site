@@ -52,8 +52,8 @@ $color-text-warning: $color-theme-accent;
 $color-nav-shadow: 0, 0, 0; // .1
 $color-nav-border: #9fb9c6ff;
 $color-nav-overlay: red($color-background), green($color-background), blue($color-background);
-$url-logo: url(/assets/builds/images/logo.svg);
-$url-frog: url(/assets/builds/images/frog.png);
+$url-logo: url(../images/logo.svg);
+$url-frog: url(../images/frog.png);
 
 // Dark
 $color-body-dark: $color-white;
@@ -72,5 +72,5 @@ $color-text-warning-dark: $color-theme-accent;
 $color-nav-shadow-dark: 251, 251, 255;
 $color-nav-overlay-dark: red($color-background-dark), green($color-background-dark), blue($color-background-dark);
 $color-nav-border-dark: $color-theme-darker;
-$url-logo-dark: url(/assets/builds/images/logo-dark.svg);
-$url-frog-dark: url(/assets/builds/images/frog-dark.png);
+$url-logo-dark: url(../images/logo-dark.svg);
+$url-frog-dark: url(../images/frog-dark.png);
