@@ -53,6 +53,9 @@ temp
 # node modules
 node_modules
 
+# composer
+vendor/
+
 # scripts
 purgeCache.sh
 start.sh
