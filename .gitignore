@@ -64,3 +64,7 @@ setOwner.sh
 
 # phpinfo
 info.php
+
+# Playwright
+test-results/
+playwright-report/
