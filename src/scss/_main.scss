@@ -1,48 +1,50 @@
+@use "vars";
+
 :root {
-  --color-body: #{$color-body};
-  --color-heading: #{$color-heading};
-  --color-background: #{$color-background};
-  --color-background-alt: #{$color-background-alt};
-  --color-background-highlight: #{$color-background-highlight};
-  --color-nav-link: #{$color-nav-link};
-  --color-nav-link-hover: #{$color-nav-link-hover};
-  --color-link: #{$color-link};
-  --color-link-hover: #{$color-link-hover};
-  --color-link-background-hover: #{$color-link-background-hover};
-  --color-border: #{$color-border};
-  --color-text-subdued: #{$color-text-subdued};
-  --color-text-warning: #{$color-text-warning};
-  --color-nav-shadow: #{$color-nav-shadow};
-  --color-nav-overlay: #{$color-nav-overlay};
-  --color-nav-border: #{$color-nav-border};
-  --url-logo: #{$url-logo};
-  --url-frog: #{$url-frog};
+  --color-body: #{vars.$color-body};
+  --color-heading: #{vars.$color-heading};
+  --color-background: #{vars.$color-background};
+  --color-background-alt: #{vars.$color-background-alt};
+  --color-background-highlight: #{vars.$color-background-highlight};
+  --color-nav-link: #{vars.$color-nav-link};
+  --color-nav-link-hover: #{vars.$color-nav-link-hover};
+  --color-link: #{vars.$color-link};
+  --color-link-hover: #{vars.$color-link-hover};
+  --color-link-background-hover: #{vars.$color-link-background-hover};
+  --color-border: #{vars.$color-border};
+  --color-text-subdued: #{vars.$color-text-subdued};
+  --color-text-warning: #{vars.$color-text-warning};
+  --color-nav-shadow: #{vars.$color-nav-shadow};
+  --color-nav-overlay: #{vars.$color-nav-overlay};
+  --color-nav-border: #{vars.$color-nav-border};
+  --url-logo: #{vars.$url-logo};
+  --url-frog: #{vars.$url-frog};
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-body: #{$color-body-dark};
-    --color-heading: #{$color-heading-dark};
-    --color-background: #{$color-background-dark};
-    --color-background-alt: #{$color-background-alt-dark};
-    --color-background-highlight: #{$color-background-highlight-dark};
-    --color-nav-overlay: #{$color-nav-overlay-dark};
-    --color-nav-link: #{$color-nav-link-dark};
-    --color-nav-link-hover: #{$color-nav-link-hover-dark};
-    --color-link: #{$color-link-dark};
-    --color-link-hover: #{$color-link-hover-dark};
-    --color-link-background-hover: #{$color-link-background-hover-dark};
-    --color-border: #{$color-border-dark};
-    --color-text-subdued: #{$color-text-subdued-dark};
-    --color-text-warning: #{$color-text-warning-dark};
-    --color-nav-shadow: #{$color-nav-shadow-dark};
-    --color-nav-border: #{$color-nav-border-dark};
-    --url-logo: #{$url-logo-dark};
-    --url-frog: #{$url-frog-dark};
+    --color-body: #{vars.$color-body-dark};
+    --color-heading: #{vars.$color-heading-dark};
+    --color-background: #{vars.$color-background-dark};
+    --color-background-alt: #{vars.$color-background-alt-dark};
+    --color-background-highlight: #{vars.$color-background-highlight-dark};
+    --color-nav-overlay: #{vars.$color-nav-overlay-dark};
+    --color-nav-link: #{vars.$color-nav-link-dark};
+    --color-nav-link-hover: #{vars.$color-nav-link-hover-dark};
+    --color-link: #{vars.$color-link-dark};
+    --color-link-hover: #{vars.$color-link-hover-dark};
+    --color-link-background-hover: #{vars.$color-link-background-hover-dark};
+    --color-border: #{vars.$color-border-dark};
+    --color-text-subdued: #{vars.$color-text-subdued-dark};
+    --color-text-warning: #{vars.$color-text-warning-dark};
+    --color-nav-shadow: #{vars.$color-nav-shadow-dark};
+    --color-nav-border: #{vars.$color-nav-border-dark};
+    --url-logo: #{vars.$url-logo-dark};
+    --url-frog: #{vars.$url-frog-dark};
   }
 }
 
 html {
-  background-color: $color-background;
+  background-color: vars.$color-background;
   background-color: var(--color-background);
 }
 
@@ -68,7 +70,7 @@ blockquote {
   margin: 0 0 1.5rem 0;
   border-left-width: 12px;
   border-left-style: solid;
-  border-left-color: $color-border;
+  border-left-color: vars.$color-border;
   border-left-color: var(--color-border);
   padding: 0 1.5rem;
   font-size: 1.2rem;
@@ -87,29 +89,29 @@ body {
     border-radius: 4px;
     padding: 1rem;
     tab-size: 2;
-    background: $color-background-alt;
+    background: vars.$color-background-alt;
     background: var(--color-background-alt);
-    color: $color-body;
+    color: vars.$color-body;
     color: var(--color-body);
-    font-family: $font-mono;
+    font-family: vars.$font-mono;
     font-size: 14px;
     margin: 0 0 1.5rem 0;
     overflow: auto;
     code {
-      font-family: $font-mono;
+      font-family: vars.$font-mono;
       line-height: 1.2;
     }
   }
 
   :not(pre) > code {
-    color: $color-theme-accent;
+    color: vars.$color-theme-accent;
     background: transparent;
-    font-family: $font-mono;
+    font-family: vars.$font-mono;
     // font-size: 14px;
     padding: 0 0.2rem;
     border-width: 1px;
     border-style: solid;
-    border-color: $color-border;
+    border-color: vars.$color-border;
     border-color: var(--color-border);
     border-radius: 4px;
     -ms-word-break: break-all;
@@ -126,17 +128,17 @@ body {
 
   kbd {
     display: inline-block;
-    background-color: $color-background-alt;
+    background-color: vars.$color-background-alt;
     background-color: var(--color-background-alt);
     border-width: 1px;
     border-style: solid;
-    border-color: $color-border;
+    border-color: vars.$color-border;
     border-color: var(--color-border);
     border-radius: 3px;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-    color: $color-body;
+    color: vars.$color-body;
     color: var(--color-body);
-    font-family: $font-mono;
+    font-family: vars.$font-mono;
     // font-size: 13px;
     // line-height: 1.4;
     margin: 0 0.1em;
@@ -146,7 +148,7 @@ body {
 
   // Highlight
   mark {
-    background: $color-background-highlight;
+    background: vars.$color-background-highlight;
     background: var(--color-background-highlight);
     padding: 0 0.2rem;
   }
@@ -158,7 +160,7 @@ body {
     border: 0;
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: $color-border;
+    border-bottom-color: vars.$color-border;
     border-bottom-color: var(--color-border);
     margin: 3rem 0;
     width: 9rem;
@@ -173,6 +175,6 @@ body {
 :target::before {
   content: "";
   display: block;
-  height: $header-anchor-offset; /* fixed header height*/
-  margin: -#{$header-anchor-offset} 0 0; /* negative fixed header height */
+  height: vars.$header-anchor-offset; /* fixed header height*/
+  margin: -#{vars.$header-anchor-offset} 0 0; /* negative fixed header height */
 }

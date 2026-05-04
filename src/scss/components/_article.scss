@@ -1,6 +1,9 @@
+@use "../mixins";
+@use "../vars";
+
 .page-header {
   margin-bottom: 2rem;
-  @include small-breakpoint {
+  @include mixins.small-breakpoint {
     margin-bottom: 3rem;
   }
   h1 {
@@ -40,7 +43,7 @@
   list-style: none;
   font-size: .8rem;
   margin: 1rem 0 -1rem 0;
-  @include medium-breakpoint {
+  @include mixins.medium-breakpoint {
     font-size: .9rem;
     li {
       margin: 0 1rem 1rem 0;
@@ -52,7 +55,7 @@
     display: inline-block;
   }
   a {
-    background-color: $color-background-alt;
+    background-color: vars.$color-background-alt;
     background-color: var(--color-background-alt);
     border-radius: 4px;
     display: inline-block;
@@ -65,14 +68,14 @@
 }
 .header-wrapper {
   margin-bottom: 1.5rem;
-  @include small-breakpoint {
+  @include mixins.small-breakpoint {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .page-header {
     margin-bottom: 1rem;
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       margin-bottom: 0;
     }
   }
@@ -89,7 +92,7 @@
     padding-bottom: 1rem;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: $color-border;
+    border-bottom-color: vars.$color-border;
     border-bottom-color: var(--color-border);
     &:last-child {
       border-bottom: 0;
@@ -126,9 +129,9 @@ article {
       &:hover,
       &:focus,
       ::selection {
-        background-color: $color-link-background-hover;
+        background-color: vars.$color-link-background-hover;
         background-color: var(--color-link-background-hover);
-        color: $color-link-hover;
+        color: vars.$color-link-hover;
         color: var(--color-link-hover);
         text-decoration:none;
       }
@@ -156,19 +159,19 @@ article {
 .article-contact {
   margin: 3rem -1.5rem 0 -1.5rem;
   padding: 1.5rem;
-  background: $color-background-highlight;
+  background: vars.$color-background-highlight;
   background: var(--color-background-highlight);
-  color: $color-text-subdued;
+  color: vars.$color-text-subdued;
   color: var(--color-text-subdued);
   // ::selection {
     // }
-  @include small-breakpoint {
+  @include mixins.small-breakpoint {
     border-radius: 15px;
   }
   .alert {
     &.error {
       p {
-        color: $color-text-warning;
+        color: vars.$color-text-warning;
         color: var(--color-text-warning);
       }
     }
@@ -186,14 +189,14 @@ article {
     display: block;
     border-width: 1px;
     border-style: solid;
-    border-color: $color-border;
+    border-color: vars.$color-border;
     border-color: var(--color-border);
     border-radius: 4px;
     padding: 0.75rem;
     outline: none;
-    background: $color-white;
+    background: vars.$color-white;
     background: var(--color-white);
-    color: $color-text-subdued;
+    color: vars.$color-text-subdued;
     color: var(--color-text-subdued);
     font-size: 1rem;
     width: 100%;
@@ -211,9 +214,9 @@ article {
     background: transparent;
     font-style: italic;
     border: 0;
-    color: $color-text-subdued;
+    color: vars.$color-text-subdued;
     color: var(--color-text-subdued);
-    font-family: $font-body;
+    font-family: vars.$font-body;
     font-size: 1rem;
     text-transform: none;
     padding: 0;
@@ -227,11 +230,11 @@ article {
     &:focus {
       outline: 0;
       margin: .1rem 0 .1rem 0;
-      color: $color-body;
+      color: vars.$color-body;
       color: var(--color-black);
     }
     &:hover {
-      color: $color-black;
+      color: vars.$color-black;
       color: var(--color-black);
     }
   }

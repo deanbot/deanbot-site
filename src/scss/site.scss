@@ -1,15 +1,15 @@
-@import 'vars';
-@import 'mixins';
-@import 'typo';
-@import 'main';
-@import 'layout';
+@use 'vars';
+@use 'mixins';
+@use 'typo';
+@use 'main';
+@use 'layout';
 
 // components
-@import 'components/nav';
-@import 'components/footer';
-@import 'components/article';
+@use 'components/nav';
+@use 'components/footer';
+@use 'components/article';
 
 // pages
-@import 'pages/home';
-@import 'pages/wiki';
-@import 'pages/blog';
+@use 'pages/home';
+@use 'pages/wiki';
+@use 'pages/blog';

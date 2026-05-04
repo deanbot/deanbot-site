@@ -1,8 +1,11 @@
+@use "../mixins";
+@use "../vars";
+
 .footer {
   margin-top: 2.5rem;
-  margin-bottom: $content-margin;
-  @include small-breakpoint {
-    margin: $content-margin auto;
+  margin-bottom: vars.$content-margin;
+  @include mixins.small-breakpoint {
+    margin: vars.$content-margin auto;
   }
 
   .anchor {
@@ -26,15 +29,15 @@
       display: block;
       // bug: flicker when url is css var
       // background-image: var(--url-frog-small);
-      background-image: $url-frog;
+      background-image: vars.$url-frog;
       @media (prefers-color-scheme: dark) {
-        background-image: $url-frog-dark;
+        background-image: vars.$url-frog-dark;
       }
       background-size: contain;
       background-repeat: no-repeat;
       width: 100%;
       max-width: 150px;
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         width: 150px;
         height: 142px;
       }
@@ -48,7 +51,7 @@
       margin: auto;
       width: 150px;
       visibility: hidden;
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         display: none;
       }
     }
@@ -59,7 +62,7 @@
     span {
       display: none;
     }
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       > div {
         display: inline;
       }
@@ -72,11 +75,11 @@
     text-decoration: none;
   }
   a {
-    color: $color-body;
+    color: vars.$color-body;
     color: var(--color-body);
     &:hover,
     &:focus {
-      color: $color-link-hover;
+      color: vars.$color-link-hover;
       color: var(--color-link-hover);
     }
   }
@@ -88,7 +91,7 @@
       display: inline-block;
       padding: 0 2px;
     }
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       margin: 0 -4px;
       a {
         padding: 0 4px;

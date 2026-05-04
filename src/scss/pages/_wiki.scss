@@ -1,10 +1,13 @@
+@use "../mixins";
+@use "../vars";
+
 .related-link {
-  background-color: $color-background-alt;
+  background-color: vars.$color-background-alt;
   border-radius: 4px;
   padding: 5px 10px;
   display: flex;
   text-decoration: none;
-  color: $color-black;
+  color: vars.$color-black;
   i {
     width: 18px;
     margin-right: 9px;
@@ -46,7 +49,7 @@
     flex-wrap: wrap;
     margin: 0 -.755rem;
     padding-bottom: 1.5rem;
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       padding-bottom: 0;
     }
     > * {
@@ -70,14 +73,14 @@
         flex-wrap: wrap;
         flex-direction: column;
         margin: 0 -.5rem;
-        @include small-breakpoint {
+        @include mixins.small-breakpoint {
           max-height: 300px;
         }
       }
       a {
         margin: 0 .5rem .5rem;
       }
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         // align-items: flex-end;
         &.count-medium {
           a {
@@ -104,10 +107,10 @@
     a {
       margin-bottom: .5rem;
       &.active {
-        color: $color-theme-darker;
+        color: vars.$color-theme-darker;
         &:hover,
         &:focus {
-          color: $color-link-hover;
+          color: vars.$color-link-hover;
         }
       }
     }
@@ -138,7 +141,7 @@
   related-notes {
     aside {
       div {
-        background-color: $color-neutral-lighter;
+        background-color: vars.$color-neutral-lighter;
         border-radius: 5px;
         padding: 1rem;
       }

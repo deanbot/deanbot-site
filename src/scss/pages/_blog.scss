@@ -1,3 +1,6 @@
+@use "../mixins";
+@use "../vars";
+
 .blog {
   .content-container {
     display: flex;
@@ -5,24 +8,24 @@
     margin-right: -15px;
     margin-left: -15px;
     // flex-direction: column-reverse;
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       flex-direction: row;
     }
     .main,
     .sub {
       position: relative;
       width: 100%;
-      padding-right: $gutter;
-      padding-left: $gutter;
+      padding-right: vars.$gutter;
+      padding-left: vars.$gutter;
     }
     .main {
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         flex: 0 0 66.666667%;
         max-width: 66.666667%;
       }
     }
     .sub {
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
       }
@@ -44,7 +47,7 @@
     nav {
       display: flex;
       flex-direction: column;
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         align-items: flex-start;
       }
       a {
