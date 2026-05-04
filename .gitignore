@@ -21,6 +21,12 @@ temp
 /.vscode
 /.idea
 
+# Claude Code session files
+/.claude
+
+# Playwright test results
+/test-results
+
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
