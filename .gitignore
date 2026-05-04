@@ -21,8 +21,8 @@ temp
 /.vscode
 /.idea
 
-# Claude Code session files
-/.claude
+# Claude Code personal settings (machine-specific paths and permission grants)
+/.claude/settings.local.json
 
 # Playwright test results
 /test-results
