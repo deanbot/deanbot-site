@@ -1,3 +1,6 @@
+@use "mixins";
+@use "vars";
+
 body {
   margin: 0;
 }
@@ -14,7 +17,7 @@ html {
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5rem;
-  @include small-breakpoint {
+  @include mixins.small-breakpoint {
     padding: 0 2rem;
   }
 }
@@ -25,9 +28,9 @@ html {
   }
 }
 main {
-  margin-top: $header-height-sm + 50px;
-  @include small-breakpoint {
-    margin-top: $header-height-lg + 30px;
+  margin-top: vars.$header-height-sm + 50px;
+  @include mixins.small-breakpoint {
+    margin-top: vars.$header-height-lg + 30px;
   }
   // > .container {
   //   margin-top: 25px

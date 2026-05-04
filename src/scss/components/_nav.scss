@@ -1,7 +1,10 @@
+@use "../mixins";
+@use "../vars";
+
 .bar {
   height: 10px;
   // background-image: linear-gradient(90deg,$color-theme-darker 0,$color-theme-primary 35%,$color-theme-lighter);
-  background-color: $color-theme-darker;
+  background-color: vars.$color-theme-darker;
 }
 .no-js {
   .main-nav {
@@ -9,7 +12,7 @@
     .container {
       transition: none;
       height: auto;
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         height: 60px;
       }
     }
@@ -33,17 +36,17 @@
   left: 0;
   z-index: 1;
   transition: background-color .2s ease;
-  background-color: rgba(red($color-background), green($color-background), blue($color-background), 1);
+  background-color: rgba(vars.$color-background, 1);
   background-color: rgba(var(--color-background), 1);
   box-shadow: 1px 2px 18px rgba(0, 0, 0, .1);
   box-shadow: 1px 2px 18px rgba(var(--color-nav-shadow), .1);
-  @include small-breakpoint {
+  @include mixins.small-breakpoint {
     transition: none;
     box-shadow: none;
   }
   &.scroll {
     z-index: 3;
-    background: $color-background;
+    background: vars.$color-background;
     background: var(--color-background);
     box-shadow: 1px 2px 18px rgba(0, 0, 0, .1);
     box-shadow: 1px 2px 18px rgba(var(--color-nav-shadow), .1);
@@ -52,11 +55,11 @@
     }
     .container {
       transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-      height: $header-height-sm;
+      height: vars.$header-height-sm;
     }
     .brand {
       a {
-        @include small-breakpoint {
+        @include mixins.small-breakpoint {
           width: 225px;
           height: 43px;
         }
@@ -65,10 +68,10 @@
   }
   &.expanded {
     height: 100%;
-    background-color: rgba(red($color-background), green($color-background), blue($color-background), .5);
+    background-color: rgba(vars.$color-background, .5);
     background-color: rgba(var(--color-nav-overlay), .5);
-    @include small-breakpoint {
-      background-color: $color-background;
+    @include mixins.small-breakpoint {
+      background-color: vars.$color-background;
       background-color: var(--color-background);
       height: auto;
     }
@@ -87,7 +90,7 @@
         display: block;
       }
     }
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       .menu-wrapper {
         margin: 0;
         top: 0px;
@@ -103,22 +106,22 @@
   &.moving {
     .menu-wrapper {
       top: 70px;
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         top: 0;
       }
     }
   }
   .container {
-    background-color: $color-background;
+    background-color: vars.$color-background;
     background-color: var(--color-background);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    height: $header-height-sm;
+    height: vars.$header-height-sm;
     justify-content: space-between;
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       justify-content: flex-start;
-      height: $header-height-lg;
+      height: vars.$header-height-lg;
     }
   }
   .brand {
@@ -144,7 +147,7 @@
     span {
       display: none;
     }
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       flex-grow: 1;
       display: block;
       height: auto;
@@ -159,9 +162,9 @@
       background-size: contain;
       // bug: flicker when using var
       // background-image: var(--url-logo);
-      background-image: $url-logo;
+      background-image: vars.$url-logo;
       @media (prefers-color-scheme: dark) {
-        background-image: $url-logo-dark;
+        background-image: vars.$url-logo-dark;
       }
       @media (min-width: 350px) {
         font-size: 1.3rem;
@@ -172,7 +175,7 @@
         width: 250px;
         height: 48px;
       }
-      @include medium-breakpoint {
+      @include mixins.medium-breakpoint {
         width: 300px;
         height: 58px;
       }
@@ -193,7 +196,7 @@
     width: 20%;
     justify-content: flex-end;
     margin-right: -5px;
-    color: $color-nav-link;
+    color: vars.$color-nav-link;
     color: var(--color-nav-link);
     @media (min-width: 350px) {
       font-size: 2rem;
@@ -207,11 +210,11 @@
     }
     &:hover,
     ::selection {
-      color: $color-nav-link-hover;
+      color: vars.$color-nav-link-hover;
       color: var(--color-nav-link-hover);
       text-decoration: none;
     }
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       display: none;
     }
   }
@@ -221,18 +224,18 @@
     transition: left .2s ease,
     opacity .2s ease;
     width: 100%;
-    background-color: $color-background;
+    background-color: vars.$color-background;
     background-color: var(--color-background);
     position: absolute;
     top: -999px;
     z-index: 0;
-    border-top: 3px solid $color-nav-border;
+    border-top: 3px solid vars.$color-nav-border;
     border-top: 3px solid var(--color-nav-border);
-    border-bottom: 3px solid $color-nav-border;
+    border-bottom: 3px solid vars.$color-nav-border;
     border-bottom: 3px solid var(--color-nav-border);
     padding: 10px 0;
     flex-grow: 1;
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       transition: none;
       opacity: 1;
       left: 0;
@@ -247,7 +250,7 @@
     }
     .shadow {
       display: none;
-      background: $color-background;
+      background: vars.$color-background;
       background: var(--color-background);
       width: 100%;
       position: absolute;
@@ -261,7 +264,7 @@
     }
   }
   .links {
-    background: $color-background;
+    background: vars.$color-background;
     background: var(--color-background);
     position: relative;
     z-index: 2;
@@ -271,7 +274,7 @@
     flex-grow: 1;
     margin-left: -.2rem;
     margin-right: -.2rem;
-    @include small-breakpoint {
+    @include mixins.small-breakpoint {
       flex-grow: 0;
       display: flex;
       justify-content: flex-end;
@@ -285,7 +288,7 @@
           border-bottom: none;
         }
       }
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         width: auto;
       }
     }
@@ -296,10 +299,10 @@
       display: block;
       border-bottom-width: 1px;
       border-bottom-style: solid;
-      border-bottom-color: $color-border;
+      border-bottom-color: vars.$color-border;
       border-bottom-color: var(--color-border);
       font-weight: 600;
-      @include small-breakpoint {
+      @include mixins.small-breakpoint {
         font-weight: 500;
         border-bottom: none;
         width: auto;
@@ -311,28 +314,28 @@
         font-size: 1.15rem;
         padding: .75rem;
       }
-      @include medium-breakpoint {
+      @include mixins.medium-breakpoint {
         font-size: 1.2rem;
         padding: .8rem;
       }
     }
   }
   a {
-    color: $color-nav-link;
+    color: vars.$color-nav-link;
     color: var(--color-nav-link);
     background-color: transparent;
-    @include small-breakpoint {
-      color: $color-body;
+    @include mixins.small-breakpoint {
+      color: vars.$color-body;
       color: var(--color-body);
       &:hover,
       &:focus {
-        background-color: $color-link-background-hover;
+        background-color: vars.$color-link-background-hover;
         background-color: var(--color-link-background-hover);
       }
     }
     &:hover,
     &:focus {
-      color: $color-nav-link-hover;
+      color: vars.$color-nav-link-hover;
       color: var(--color-nav-link-hover);
     }
   }

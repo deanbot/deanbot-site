@@ -21,6 +21,12 @@ temp
 /.vscode
 /.idea
 
+# Claude Code personal settings (machine-specific paths and permission grants)
+/.claude/settings.local.json
+
+# Playwright test results
+/test-results
+
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------

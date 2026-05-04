@@ -1,11 +1,14 @@
+@use "mixins";
+@use "vars";
+
 // base typography styles
 
 // global
 body {
   font-size: 1rem;
   line-height: 1.6;
-  font-family: $font-body;
-  color: $color-body;
+  font-family: vars.$font-body;
+  color: vars.$color-body;
   color: var(--color-body);
 }
 
@@ -17,7 +20,7 @@ body {
   h3,
   h4,
   h5 {
-    color: $color-heading;
+    color: vars.$color-heading;
     color: var(--color-heading);
     // margin: 1.5rem 0;
     // font-weight: 600;
@@ -51,7 +54,7 @@ body {
   h5 {
     font-size: 1rem;
   }
-  @include small-breakpoint {
+  @include mixins.small-breakpoint {
     h1:not(:first-child),
     h2:not(:first-child),
     h3:not(:first-child) {
@@ -78,15 +81,15 @@ body {
 
 // links
 a {
-  color: $color-link;
+  color: vars.$color-link;
   color: var(--color-link);
 }
 a:hover,
 a:focus,
 ::selection {
-  background-color: $color-link-background-hover;
+  background-color: vars.$color-link-background-hover;
   background-color: var(--color-link-background-hover);
-  color: $color-link-hover;
+  color: vars.$color-link-hover;
   color: var(--color-link-hover);
   text-decoration: none;
 }
