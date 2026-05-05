@@ -25,7 +25,13 @@ How a single issue moves from open to merged. Provider-agnostic.
 
 ## Issue format
 
-Issues follow a standard section order: `## Context` (why the work exists) → `## Deliverable` (what's being built: human setup steps as plain bullets, agent commit points as `[ ]` checkboxes) → `## Acceptance criteria` (plain bullets, verifiable outcomes only — not process steps). See the agent-lifecycle model for the full format spec.
+Issues follow a standard section order: `## Context` (why the work exists) → `## Deliverable` (what's being built) → `## Acceptance criteria` (verifiable outcomes).
+
+**Deliverable** has two layers:
+- Human setup steps (dashboard actions, provisioning) as plain bullets — no checkboxes. Use tables for config, numbered lists for sequences, bold for UI labels.
+- Agent commit points as `[ ]` checkboxes. Checkpoint test: *what code gets committed here?* If nothing, no checkbox. Zero-checkbox issues are valid.
+
+**Acceptance criteria** — plain bullets only. Verifiable outcomes: curl checks, "site loads," smoke tests belong here, not in Deliverable. Every deliverable has a corresponding AC item. "PR merged" is not AC.
 
 ## Out-of-scope work
 
