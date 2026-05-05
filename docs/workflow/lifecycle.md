@@ -23,6 +23,10 @@ How a single issue moves from open to merged. Provider-agnostic.
 8. **Self-review.** Read the diff before merging. If anything looks off, fix it on the branch.
 9. **Merge.** Squash-merge into `main`; delete the branch.
 
+## Issue format
+
+Issues follow a standard section order: `## Context` (why the work exists) → `## Deliverable` (what's being built: human setup steps as plain bullets, agent commit points as `[ ]` checkboxes) → `## Acceptance criteria` (plain bullets, verifiable outcomes only — not process steps). See the agent-lifecycle model for the full format spec.
+
 ## Out-of-scope work
 
 The most common source of drift is bundling related cleanup into an issue branch. Don't. File a fresh issue, finish the current one.
