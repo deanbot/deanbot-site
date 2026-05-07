@@ -53,8 +53,8 @@ temp
 # ---------------
 /site/config/.license
 
-# sync module config
-.sync/config*
+# deploy config (SSH credentials)
+.deploy.config
 
 # node modules
 node_modules
