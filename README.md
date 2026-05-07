@@ -10,10 +10,9 @@ Dev tooling uses node v20.17.
 
 ## Kirby Dependencies
 
-- [tobimori/kirby-seo.git](https://github.com/tobimori/kirby-seo.git): provides meta/search tags, sitemap and and robots
-- [bnomei/kirby3-feed](https://github.com/bnomei/kirby3-feed): generate RSS feed
-https://github.com/tobimori/kirby-seo.git (submodule: site/plugins/seo)
-provides meta/search tags, sitemap and and robots
+- [tobimori/kirby-seo](https://github.com/tobimori/kirby-seo.git) (`site/plugins/seo`): meta/search tags, sitemap, robots
+- [bnomei/kirby3-feed](https://github.com/bnomei/kirby3-feed) (`site/plugins/kirby3-feed`): RSS feed
+- [thathoff/kirby-git-content](https://github.com/thathoff/kirby-git-content) (`site/plugins/kirby-git-content`): panel edits auto-commit and push to GitHub
 
 ## Develop
 
@@ -70,6 +69,18 @@ Vite is set up for sass & js compilation. Serve the site via XAMPP with a vhost 
 
 * `pnpm run build` - create prod build of css and js in `assets/builds`
 * `pnpm run start` - launch Vite dev server with HMR
+
+## Deploy
+
+`./tools/deploy.sh` — pushes to GitHub then pulls on the server.
+
+Requires `.deploy.config` at the project root (gitignored):
+
+```sh
+_key='/path/to/ssh/private/key'
+_host='user@host'
+_path='~/path/to/site'
+```
 
 ## Mentions
 
