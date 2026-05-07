@@ -2,7 +2,75 @@ Title: Error
 
 ----
 
+Pagetitle: 
+
+----
+
 Text: There's nothing here.
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: 
+
+----
+
+Robotsfollow: 
+
+----
+
+Robotsarchive: 
+
+----
+
+Robotsimageindex: 
+
+----
+
+Robotssnippet: 
+
+----
+
+Metainherit: 
 
 ----
 
