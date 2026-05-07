@@ -17,6 +17,13 @@ return [
   'tobimori.seo.canonicalBase' => 'https://deanbot.dev',
   'tobimori.seo.lang' => 'en_US',
 
+  'thathoff.git-content' => [
+    'commit' => true,
+    'push' => true,
+    'authorName' => 'Dean Verleger',
+    'authorEmail' => 'deanverleger@gmail.com',
+  ],
+
   // via https://plugins.andkindness.com/seo/docs/usage/robots
   'tobimori.seo.robots' => [
     'active' => true,
